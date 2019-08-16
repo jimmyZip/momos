@@ -1,5 +1,6 @@
 /**
  * admin page 중 admin_branch관련기능
+ * git연동 잘 되었나 test
  */
 var flag=false;
 var fileMap = new Map();//기존 등록 사진을 담을 객체
