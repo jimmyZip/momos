@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+#topManage,#subManage{
+	float:left;
+	width:50%;
+	overflow:hidden;
+	box-sizing:border-box;
+	padding-right:10px;
+}
+
+/* 상위, 하위 카테고리 이름 입력(등록)하는 영역 공통 */
+.cateNameInsert{
+	width:100%;
+	overflow:hidden;
+	margin-bottom:20px;
+}
+.cateNameInsert h3{
+	width:100%;
+	text-align:center;
+	line-height:5rem;
+}
+.cateNameInsert form{
+	display:inline-block;
+	width:calc(100% - 110px);
+	overflow:hidden;
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.cateNameInsert form input,
+.cateNameInsert button,
+.cateNameInsert select{
+	padding:.5em .8em;
+	display:inline-block;
+	vertical-align:middle;
+	box-sizing:border-box;
+	outline:none;
+}
+.cateNameInsert button{
+	border:none;
+	background-color:#223d4b;
+	border:1px solid #223d4b;
+	color:#fff;
+	transition:.3s all ease-in-out;
+	width:100px;
+}
+.cateNameInsert button:hover{
+	color:orange;
+	font-weight:700;
+}
+
+/* 상위위 카테고리 입력폼 관련 */
+input[name='topcate_name']{
+	width:100%;
+}
+button#topcateInsert{
+	margin-left:5px;
+}
+
+/* 하위 카테고리 입력폼 관련 */
+select[name='topcategory_id']{
+	width:100px;
+}
+input[name='subcate_name']{
+	width:calc(100% - 110px);
+}
+
+/* 하위에서 상위분류별 보기 input radio */
+#topRadioZone{
+	width:100%;
+	overflow:hidden;
+}
+#topRadioZone p{
+	width:100%;
+	overflow:hidden;
+	line-height:3rem;
+}
+#topRadioZone p input[type='radio']{
+	display:inline-block;
+	vertical-align:middle;
+}

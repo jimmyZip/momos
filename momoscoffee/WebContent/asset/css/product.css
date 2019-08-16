@@ -1,0 +1,307 @@
+
+#container {background-color:#efefef; position:relative; padding-bottom:20px;}
+#content {width:70%; margin:20px 26% 0 4%; background-color:#fff; overflow:hidden;}
+
+	/*############## 페이지 경로 영역 ################*/
+	.pageRoute .route_before > a {color:#6eaf8f;}
+	.pageRoute .route_product {width:300px;
+											 color:#efefef; text-align:left; text-indent:30px;
+											 background:url("../img/icons/pageRouteArrow.png") no-repeat center left;}
+
+	/*############## 컨텐츠 소개 영역 ################*/
+	#content h2 {width:100%; text-align:center; padding:40px 0 15px;}
+		#content h2 span {font-weight:400;}
+		#content h2 small {font-size:16px; font-weight:400; color:#333; padding-top:30px; display:block; width:100%;}
+	
+	.starArea {width:100%; padding-top:30px; text-align:center;}
+		.starArea input {display:none;}
+		.starArea label {color:orange;}
+	.tagArea {width:100%; height:30px; text-align:center; line-height:30px; padding-bottom:20px;
+				   font-size:15px; color:#555; padding-bottom:30px;}
+		.tagArea em {padding:0 5px;}
+
+	/*############## 제품 슬라이드 이미지 영역 ################*/
+	.product_screen {width:100%; overflow:hidden; position:relative;}
+		.product_film {width:400%;}
+			.product_scene {width:25%; float:left;}
+				.product_scene img {width:100%;}
+		.product_film:after {content:""; display:block; clear:both;}
+
+		.slideBtn {width:90%; height:50px; position:absolute; left:5%; top:50%; margin-top:-25px;}
+			.slideBtn p {width:30px; cursor:pointer; opacity:.7;}
+				.slideBtn p img {width:100%;}
+			.prevBtn {float:left;}
+			.nextBtn {float:right;}
+			.slideBtn p:hover {opacity:.9;}
+
+	/*############## 제품 탭 베이직 ################*/
+	.tabArea {width:100%;}
+		.tab {width:100%; height:50px; line-height:50px; border-bottom:1px solid #aaa; text-align:center;}
+			.tab li {display:inline-block; width:100px; padding:0 25px; height:100%;}
+				.tab li a {display:block; width:100%; height:100%; transition:all 0.3s;}
+			.selected {border-bottom:5px solid #5d9e7e; box-sizing:border-box;}
+		.panel {width:100%;}
+			.panel > li {width:80%; margin:0 auto;}
+
+			/*--------- 상품정보 영역 ---------*/
+			.product_info {}
+				.desc_imgArea {width:100%; margin:50px 0; box-sizing:border-box;}
+					.desc_imgArea img {width:100%;}
+				.desc_textArea {width:100%; font-size:18px; color:#3f2a08;}
+					.desc_textArea strong {font-size:26px; line-height:50px; }
+					.desc_textArea .detail {display:block; width:100%; line-height:25px;
+													  font-size:15px; font-weight:400; border-top:1px solid #ccc;
+													  margin-top:20px; padding-top:20px; color:#555;}
+
+				.coffee_info {width:100%; margin-top:70px;}
+					.product_info h4 {width:100%; height:20px; background-color:#3f2a08;}
+						.product_info h4 span {display:inline-block; width:250px; height:20px;
+														 margin-left:5px; color:#3f2a08; font-weight:400;
+														 line-height:20px; font-size:20px; background-color:#fff; text-align:center;}
+					/*=== 블랜딩 정보 ===*/
+					.coffee_info ul {width:100%; height:150px; margin-top:40px;}
+						.coffee_info ul li {width:25%; height:100%; float:left; text-align:center; border:1px dotted #333; box-sizing:border-box;
+												  border-right:none;}
+						.coffee_info ul li:last-child {border-right:1px dotted #333;}
+							.coffee_info ul li p {width:100%;}
+							.cofInfo1 {height:65px; padding-top:15px; font-size:13px;}
+								.cofInfo1 span {color:#c43738; font-size:30px; line-height:40px;}
+							.cofInfo2 {background-color:#3f2a08; color:#efefef; line-height:20px; padding-top:15px; height:55px;}
+					.coffee_info ul:after {content:""; display:block; clear:both;}
+
+					/*=== 싱글 정보 ===*/
+					.coffee_info ol {width:100%; height:200px; margin-top:50px; border-top:2px solid #c43738;}
+						.single4 {width:25%; float:left;}
+							.single4 p {float:left; width:50%; height:75px;}
+								.singleIcon img {width:100%;}
+							.single4 .singleText {text-align:center; padding-top:25px; line-height:22px; font-size:15px;}
+						.singleFlovar {clear:left; width:100%; position:relative;}
+							.singleFlovar .singleIcon {width:88px; height:88px; position:absolute; left:0; top:0;}
+
+							.singleFlovar .singleText {width:100%; text-align:left; line-height:100px; text-indent:110px;
+																font-size:15px;
+																border-top:1px dotted #ccc;
+																border-bottom:1px dotted #ccc;
+																box-sizing:border-box;}
+							.singleGray {color:#555; font-size:13px;}
+					.coffee_info ol:after {content:""; display:block; clear:both;}
+
+				/*=== 추출장비 info 영역 ===*/
+				.equipment_info {width:100%; margin-top:70px;}
+					.equipment_info ul {width:100%; padding-top:15px;}
+						.equipment_info ul li {width:100%; height:30px; line-height:30px; font-size:16px;
+														list-style:inherit; list-style-position:inside; text-indent:15px;}
+							.equipment_info ul span {color:#555; font-size:14px;}
+
+				/*=== 추출 가이드 영역 ===*/
+				.brew_guide {width:100%; margin-top:70px;}
+					.brew_guide h4 span {width:150px;}
+					.brew_guide ul {width:100%; height:250px; border:1px solid #aaa; box-sizing:border-box; margin-top:40px;}
+					.brew_guide ul:after {content:""; display:block; clear:both;}
+						.brew_guide ul li {width:31%; padding:0 1%; margin:10px 0; float:left; border-right:1px dotted #ccc;}
+						.brew_guide ul li:last-child {border-right:none;}
+							.guideTitle {display:block; width:95%; height:40px; background-color:#eee; 
+											 text-align:right; padding-right:5%; line-height:40px; color:#392710;}
+					.brew_guide li p {width:100%; height:40px; margin-top:7px; position:relative; }
+					.brewIcon {width:40px; height:40px; position:absolute; left:10px; top:0;}
+						.brewIcon img {width:100%; height:100%;}
+					 .brewCont {display:block; width:100%; font-size:14px; line-height:40px; text-indent:60px;}
+
+				/*=== 제품 가이드 영역 ===*/
+				.product_guide {width:100%; margin-top:70px;}
+					.product_guide h4 span {width:120px;}
+					.product_guide ul {width:100%; padding:40px 0;}
+						.product_guide ul li {width:100%; height:200px; margin-top:5px;
+													  position:relative; border-bottom:1px dashed #ccc;}
+						.product_guide ul li:first-child {margin-top:none;}
+							.filterGuide_img {position:absolute; left:0; top:0;}
+								.filterGuide_img img {width:200px; height:200px;}
+							.filterGuide_text {padding:5% 0 5% 30%; width:70%; height:90%; font-size:15px; line-height:25px;}
+								.filterGuide_text span {display:inline-block; width:100%; text-indent:15px;}
+
+				/*=== 다이렉트트레이드 상세 설명 영역 ===*/
+				.direct_desc {width:100%; margin:80px 0;}
+					.direct_desc h4 span {width:380px;}
+					.direct_desc ul {width:100%; margin-top:40px;}
+						.directy_desc ul li {width:100%; padding-bottom:5px;}
+						.direct_desc ul li:after {content:""; display:block; clear:both;}
+						.direct_desc li p {float:left;}
+							.directImg {width:32%;}
+								.directImg img {width:100%;}
+							.directText {width:65%; padding:15px 0 0 3%; font-size:14px; line-height:20px; color:#777;}
+								.directText em {font-size:17px; line-height:50px; color:#333;}
+
+			/*--------- 상품후기 영역 ---------*/
+			.review {width:100%;}
+				.reviewBox {width:100%; margin-top:50px;}
+					.reviewBox li {width:100%; padding:20px 0; border-top:1px solid #ccc; border-bottom:1px solid #ccc;}
+						.userArea {width:100%; padding-bottom:10px; }
+							.userArea form {width:90%; padding-left:10%; position:relative;}
+								.userImg {width:50px; height:50px; position:absolute; left:0; top:0;}
+									.userImg img {width:100%; height:100%;}
+								.userInfo {font-size:17px; line-height:30px;}
+									.userInfo span {padding-left:10px; color:#333;}
+								.userEval {width:100%; padding:10px 0;}
+									.userEval input {display:none;}
+									.userEval label {color:orange;}
+								.user_comment {width:100%; line-height:30px; color:#666; font-size:15px;}
+
+						.adminArea {width:84%; margin-left:6%; padding-top:10px; padding-left:10%; border-top:1px dashed #ccc;
+										   position:relative;}
+							.adminImg {width:50px; height:50px; position:absolute; left:0; top:10px;
+											 border-radius:25px; border:1px solid #ccc;
+											 text-align:center;}
+								.adminImg img {width:70%; height:70%; margin-top:15%;}
+								.adminInfo {font-size:17px; line-height:30px;}
+									.adminInfo span {padding-left:10px; color:#333;}
+								.admin_comment {width:100%; line-height:30px; color:#666; font-size:15px; padding-top:15px;}
+
+			/*--------- 배송안내 영역 ---------*/
+			.delivery_info {width:100%; padding-bottom:40px;}
+				.delivery_info > div {padding-top:50px;}
+					.delivery_info h4 {width:97%; height:40px; line-height:40px;
+											  font-size:18px; text-align:right; padding-right:3%;
+											  border-bottom:1px dotted #aaa; color:#555;}
+
+				.pdInfo_desc {width:100%;}
+					.pdInfo_desc p {width:100%; height:70px;}
+						.pdInfo_desc	em {display:block; height:70px; float:left;
+												   width:18%; line-height:70px; text-align:center;
+												   margin-right:2%;
+												   border-bottom:1px solid #ccc;
+												   box-sizing:border-box;}
+						.pdInfo_desc	em span {font-size:40px; color:#392710;}
+						.pdInfo_text {display:block; float:left; width:78%; height:50px;
+											font-size:15px; line-height:20px; margin-top:20px;
+											padding-left:2%;
+											border-left:1px solid #ccc;
+											border-bottom:1px solid #ccc;
+											box-sizing:border-box;}
+
+				.visit_receipt {width:100%; height:150px;}
+					.visit_receipt p {float:left; margin-top:20px;}
+					.visit_receipt_time {width:23%; line-height:30px;
+												margin-right:2%; height:80px;
+												border-bottom:1px solid #ccc;
+												box-sizing:border-box;}
+						.visit_receipt_time span {font-size:25px; color:#392710;}
+					.visit_receipt_text {width:73%; height:80px; line-height:23px; margin-top:10px;
+												font-size:15px; padding-left:2%;
+												border-left:1px solid #ccc;
+											    border-bottom:1px solid #ccc;
+												box-sizing:border-box;}
+
+				.sellByDate {width:100%; height:150px;}
+					.sellByDate p {float:left; margin-top:20px;}
+					.sellByDate_title {width:15%; line-height:30px;
+											 margin-right:2%; height:80px;
+											 color:#392710;
+											 text-align:center; font-size:20px;
+											 border-bottom:1px solid #ccc;
+											 box-sizing:border-box;}
+					.sellByDate_text {width:81%; height:80px; line-height:23px; margin-top:10px;
+											  font-size:15px; padding-left:2%;
+											  border-left:1px solid #ccc;
+											  border-bottom:1px solid #ccc;
+											  box-sizing:border-box;}
+
+				.refund {width:100%;}
+					.refund p {width:98%;
+									margin-top:20px; font-size:14px;
+									border-left:1px solid #ccc;
+									border-bottom:1px solid #ccc;
+									box-sizing:border-box;
+									padding:5px 0 5px 2%;
+									line-height:25px;}
+
+				.company_info {width:100%;
+										border-top:1px dotted #ccc;
+										box-sizing:border-box;}
+				.company_info p {width:100%; height:60px; line-height:60px;margin-bottom:10px;}
+					.company_info p i, .company_info p span {display:block; float:left;}
+					.company_info p i {width:18%; font-style:normal; text-align:center;
+												border-bottom:1px solid #ccc;
+												box-sizing:border-box;
+												font-size:20px;
+												margin-right:2%;}
+					.company_info p span {width:78%; font-size:18px;
+													    border-left:1px solid #ccc;
+														border-bottom:1px solid #ccc;
+														box-sizing:border-box;
+														padding-left:2%;}
+
+			/*--------- 질문과 답변 영역 ---------*/
+			.question {width:100%; padding-bottom:50px;}
+				.loginConfrom {width:100%; height:80px; line-height:80px; text-align:center; border-bottom:1px solid #aaa;}
+				.questBox {border-top:1px solid #ccc;}
+				.questBox > li {margin-top:50px;}
+				.quest_input {width:100%; margin:50px 0;}
+					.quest_input div {width:100%; height:80px; padding-left:10%;
+											 position:relative; font-size:15px;
+											 border:1px solid #ccc;
+											 box-sizing:border-box;
+											 border-bottom:none;}
+						.questImg {width:50px; height:50px; position:absolute; left:10px; top:15px;}
+							.questImg img {width:100%; height:100%;}
+						.quest_input span {display:inline-block; height:80px; line-height:80px; color:#56704b; font-size:18px;}
+				.inputArea {width:100%; height:190px;}
+					.inputArea textArea {width:100%; height:170px; padding:15px 0;
+												  text-indent:15px; font-size:17px; outline:none;
+												  border:1px solid #ccc;
+												  box-sizing:border-box;} 
+				.questBtn {width:100%; height:60px; line-height:60px;}
+					.questBtn input {width:100%; height:100%; background-color:#524835;
+											color:#efefef; font-size:25px; border:none; cursor:pointer;}
+					.questBtn input:hover, .questBtn input:focus {background-color:#2b2318;}
+
+	/*############## 사이드바 구매영역 ################*/
+	.purchase_box {width:18%; padding:0 1%; background-color:#fff; 
+							position:absolute; top:70px; right:4%;}
+			.purchaseArea form {width:100%;}
+				.purchaseArea p {width:100%; padding:10px 0; border-bottom:1px solid #ccc;}
+					.purchaseArea em {display:block; width:100%; height:30px; line-height:30px;
+												  color:#333; font-size:14px; font-weight:100;}
+					#rDate {display:inline-block; width:50%; border:none; padding-left:50%; text-align:center; font-size:20px;}
+					#rPrice {display:inline-block; width:50%; border:none; padding-left:28%; text-align:right; font-size:20px;}
+
+				.purchaseArea select {display:inline-block; width:100%; height:30px;
+												  padding-right:20%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+												  font-size:12px; border:1px solid #a79c8a;
+												  box-sizing:border-box;
+												  cursor:pointer; outline:none; color:#555;
+												  -webkit-appearance:none;
+												  -moz-appearance:none;
+												  -o-appearance:none;
+												  -ms-appearance:none;
+												  appearance:none;
+												  border-radius:0;
+												  text-indent:3px;
+												  background:url("../img/icons/selectArrow.png") no-repeat 95% center;
+												  background-size:20px 20px;}
+
+				.purchaseArea option {width:100%; padding:3px 0; text-indent:5px; background-color:#fff; color:#666;}
+				.purchaseArea option:first-child {color:#999;}
+
+				.numArea em {display:inline-block; width:35%;}
+				.numArea input {display:inline-block; width:50%; text-align:center; height:25px;
+										 border:1px solid #a79c8a;
+										 box-sizing:border-box;}
+				.numArea span {font-size:14px;}
+				
+				.resultArea {padding-bottom:0;}
+				.resultArea label {display:block; width:100%; height:30px; line-height:30px;
+										  color:#333; font-size:14px; font-weight:100;}
+				.resultArea input {display:inline-block; width:80%; height:40px; 
+										  border:none; text-align:right; font-size:24px;}
+				.won {display:inline-block; width:20%; text-align:center;}
+
+				.purchaseBtnArea {width:100%;}
+				.purchaseArea p:last-child {border-bottom:0;}
+				.purchaseBtnArea input {display:inline-block; width:100%; height:50px;
+													 text-align:center; font-size:18px; font-family:inherit;
+													 cursor:pointer; transition:all .3s;}
+				.buyBtn1 {background-color:#fff; border:1px solid #a79c8a; margin-bottom:10px;}
+					.buyBtn1:hover, .buyBtn1:focus {background-color:#eee;}
+				.buyBtn2 {background-color:#b8ad9b; color:#fff; border:none;}
+					.buyBtn2:hover, .buyBtn2:focus {background-color:#a79c8a;}
+		

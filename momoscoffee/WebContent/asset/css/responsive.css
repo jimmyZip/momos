@@ -1,0 +1,869 @@
+	/*################  PC 버전 ################*/
+	/*######################################*/
+	@media all and (min-width:1025px){
+		#mobileNavBtn {display:none;}
+		#gnbArea_mobile {display:none;}
+		}
+
+	/*################ 태블릿 버전 ################*/
+	/*########################################*/
+	@media all and (min-width:768px) and (max-width:1024px){
+
+		/*================= 공통영역 *=================*/
+		#header {/*background-color:#ff0;*/}
+		#mobileNavBtn {display:none;}
+		#gnbArea_mobile {display:none;}
+
+		/*--- Fix Navigation ---*/
+		.longText  a {line-height:20px; height:40px; padding:5px 0;}
+		.fixInfo li {margin-right:20px;}
+
+		#infoMenu {width:115px;}
+			#infoMenu li {margin-right:20px;}
+			#infoMenu .snsBtn {margin-right:0;}
+			#gnb li {width:25%; height:400px;}
+				#gnb .navList dt {height:50px; line-height:50px; padding:30px 0;}
+				#gnb .navList dt a {font-size:22px;}
+				#gnb .navList dd a {height:50px; line-height:50px;}
+			#gnb li.navImg {width:100%; height:100px; position:absolute; left:0; bottom:0;
+									background:url("../img/inner1.jpg") no-repeat 30% -440px; background-size:120%;}
+				#gnb li.navImg img {display:none;}
+			#gnb li.navAbout {clear:both;}
+
+		/*---- Footer ----*/
+		.footerMap {width:90%;}
+			.footerLeft {width:60%; position:relative;}
+				.f_logo {width:100px; height:65px; top:5px;}
+				.footerLeft address {font-size:14px;}
+			.footerRight {width:40%;}
+				.community {height:35px;}	
+				.community a {width:30px; height:30px; padding:0 5px;}
+				.copyRight {font-size:14px;}
+
+		/*================= 메인 컨테이너 영역 *=================/
+		/*---- 메인글귀 영역 ----*/
+			.main_introText {padding:40px 0;}
+				.main_introText strong {display:block; width:100%; height:120px; font-size:27px; line-height:40px;}
+				.main_introText strong b {font-size:22px;}
+				.main_introText p {width:100%; height:150px; line-height:200%;}
+				.orange {color:#c43738; font-size:28px;}
+
+		/*---- FindUs----*/
+				.findUs_box1 {width:350px; height:350px;
+									  position:absolute; right:-30px; top:80px;}
+						.findUs_img1 {height:175px;}
+						.findUs_text {height:135px; padding:30px 0 10px; line-height:60px;}
+						.findUs_text strong {font-size:20px;}
+						.findUs_text span {font-size:22px;}
+				.findUs_box2 {width:350px; height:350px;
+									  position:absolute; left:-30px; top:20px;}
+
+		/*---- Shop ----*/
+		.main_shop {padding:80px 0 40px;}
+				.main_shop h2 {height:60px; font-size:24px;}
+				.main_shopScreen {width:690px; height:350px;}
+					.main_shopFilm {width:1840px;}
+						.main_shopScene {width:220px; margin-right:10px;}
+						.main_shopScene a p strong {line-height:30px; font-size:14px; font-weight:400;}
+						.main_shop_normal span {letter-spacing:-1px;}
+				.main_shopBtn {width:750px; top:55%; margin-left:-370px;}
+		
+		/*---- Article ----*/
+		#articleWrap {padding:50px 0;}
+			#articleWrap h2 {font-size:28px;}
+			#articleArea {width:700px; transition:all .5s;}
+			#cupping {height:154px;}
+				#cupping a span {width:100px; height:25px;
+											line-height:25px; font-size:16px;
+											margin-left:-50px; margin-top:-12px;}
+				#cupping .businessCup span {font-size:16px;}
+			#busan {height:300px;}
+				#busanText {height:298px; border-width:1px;}
+				.logoAppear {padding:60px 0; height:60px; line-height:20px; font-size:13px;
+									background-size:60px 40px, 40px 40px;
+									background-position:center 15px, center 125px;}
+				.logoAppear:hover, .logoAppear:focus {background-position:center 15px, center 125px; outline:none;}
+				#busanText em {font-size:15px; line-height:25px;}
+				.busanView {width:100px; height:25px; line-height:25px; margin-top:20px;}
+				#busanImg {height:300px;}
+				#busanImg span {font-size:25px; line-height:30px;}
+			#weekly {height:170px; position:relative;}
+				#weekly a div {position:static;}
+				#weekly a p {width:100%; float:none;}
+				.leftImg {display:none;}
+				.rightText {background-color:#524835; background:url("../img/weekly_tablet.jpg") no-repeat -200px 0;}
+				.rightText:before {content:"WEEKLY MARKET"; display:block; width:100%;
+										   color:#fff; position:absolute; left:0; top:30px; font-size:20px;
+										   text-shadow:3px 3px 3px #000;}
+				.rightText em {color:#eee; padding:70px 0 0; font-size:16px; font-weight:400; font-style:normal;
+									  line-height:130%; text-shadow:1px 1px 1px #000; display:block;}
+				.rightText em:after {content:"view"; display:block; width:100px; height:25px; line-height:25px;
+											  position:absolute; left:50%; bottom:12%; 
+											  margin-left:-50px; border:1px solid #fff;}
+				.rightText .wk_desc {display:none;}
+				.wkBoxB {display:none;}
+			#delivery {height:308px;}
+				.deliveryImg {height:154px;}
+				.deliveryImg span.deliveryWord1 {top:20px; font-size:20px;}
+				.deliveryImg span.deliveryWord2 {width:60%; left:50%; top:80px; margin-left:-30%; line-height:20px;}
+				.deliveryText {height:144px; line-height:25px; border:1px solid #56704b;}
+				.deliveryText strong {height:50px; line-height:50px; font-size:18px;}
+				.deliveryText span {line-height:25px;}
+				.deliveryText a {width:100px; height:25px; margin:5px auto; line-height:25px;}
+				.deliveryText:before {margin-left:-15px;} 
+			#dripbag {height:370px;}
+				.dripbagVideo {height:200px;}
+				.dripbagText {height:160px; border-width:1px; line-height:20px; font-size:14px;}
+				.dripbagText strong {height:30px; line-height:30px; font-size:16px; padding-top:10px;}
+				.dripbagText .dripbagWord1 {font-size:14px;}
+			#academy {height:154px;}
+				.academyImg1:after {right:-40px; top:50%; margin-top:-20px;}
+				.academyImg2 a {width:100px; height:25px; line-height:25px; font-size:16px; top:65px; margin-left:-50px;}
+			#directEpisode {height:154px;}
+				#directEpisode .episodeText {width:100%; height:100%;
+															 position:absolute; left:0; top:0;
+															 line-height:25px; padding-top:15px; font-size:15px;}
+				.episodeText .text1 {font-size:18px;}
+				.episodeText a {width:100px; height:25px; margin:15px auto 0; line-height:25px; font-size:16px;}
+
+			.main_notice {height:308px;}
+				.main_notice_img {height:154px;}
+				.main_recruit2 {width:48%; height:144px; margin:5px 0 5px 2%;}
+				.main_recruit2 strong{height:53px; background-color:#fff; line-height:20px;
+												padding:5px 0 5px 5%; font-size:15px;}
+				.main_recruit2 span {height:67px; padding:5px 0 5px 5%;
+											   line-height:17px;	font-size:12px;}
+				.main_recruit2:before {margin-top:-20px; left:-49px;}
+				.main_notice_link a span {width:100px; height:25px; line-height:25px;
+													  top:64px; margin-left:-50px;}
+				.centumTitle, .recruitTitle {font-size:13px;}
+				.centumView, .recruitView {font-size:14px;}
+
+
+	/*================= 페이지 경로 =================*/
+	.pageRoute{width:100%; padding-left:0%;}
+
+	/*================= 서브1-1 philosophy =================*/
+	.philosophy_visualText span {font-size:32px;}
+		.sub1-1_upper, .sub1-1_lower {width:90%;}
+			.sub1-1_idea1 .sub1-1_imgArea:after {margin-top:-25px;}
+			.sub1-1_textArea {width:48%; padding:0 0 0 2%; line-height:30px;font-size:15px}
+			.sub1-1_textArea strong {font-weight:600; font-size:20px;}
+			.sub1-1_idea2 .sub1-1_textArea {margin-top:20px; height:280px; font-size:14px;}
+			.sub1-1_idea3 .sub1-1_textArea {margin-top:20px; height:280px; font-size:14px;}
+			.sub1-1_idea4 .sub1-1_textArea {font-size:14px; letter-spacing:-1px;}
+			.sub1-1_lineImg {height:200px;}
+
+	/*================= 서브1-2 History =================*/
+	.history_visualText span {font-size:32px;}
+	.history_content {width:100%;}
+	.yearBg {width:250px; height:250px; margin-left:-125px;}
+		.yearBg .yearArea span {font-size:70px; margin-left:-75px; margin-top:-70px;}
+	.history_list {width:100%; position:absolute; left:0; top:0;}
+		.history_list > li {width:42%; height:450px; padding-top:50px;}
+		.history_list > .history_left {margin-right:55%; margin-left:3%;}
+		.history_list > .history_right {margin-left:55%; margin-right:3%;}
+		.history_textArea {font-size:14px; font-weight:100;}
+			.history_textArea strong {font-size:20px;}
+		.history_imgScreen {width:100%; height:none; outline:none;}
+			.history_imgFilm {width:300%;}
+			.history_scene {width:33.3%; background-color:#fff;}
+			.history_imgBtn {width:90%; height:40px;
+									 position:absolute; left:50%; top:50%;
+									 margin-left:-45%; margin-top:-50px;}
+			.history_imgBtn p {width:20px; height:100%; cursor:pointer;}
+			.history_nextBtn {float:left;}
+			.history_nextBtn {float:right;}
+			.history_imgBtn p img {width:100%; height:100%; opacity:0.5; transition:all .2s;}
+			.history_imgBtn p:hover img {opacity:0.8;}	
+			
+	/*================= 서브1-3 People =================*/
+	.people_visualText {margin-top:-50px; line-height:35px;}
+	.people_visualText span {font-size:28px;}
+		.sub1-3_content {width:92%; height:1400px; margin:0 auto; position:relative;}
+		.staff_right p {width:70%; margin:60px auto 0; padding:5px 10px 10px 5px;
+							box-shadow:5px 5px 30px rgba(0,0,0,0.5);}
+			.staff_right p img {width:100%;}
+		.staff_career {font-size:14px; }
+
+	/*------ abbr_person ------*/
+	.abbr_card li {width:30%; margin:35px 1.5% 35px 1.5%;}
+		.abbr_card a .abbrImg img {width:100%; transform:scale(1.2);}
+		.abbr_card a .abbrName {font-size:14px;}
+
+	/*================= 서브1-4 People =================*/
+	.location_visualText span {font-size:30px;}
+	.location_content {width:90%; height:950px; margin:0 auto; position:relative;}
+
+	/*------  매장 : 온천장점  ------*/
+	.location_shop1 {width:600px;}
+		.location_shop1Img {width:600px; height:400px;}
+			.location_shop1Img .location_imgArea {left:-20px; top:0;}
+		.location_shop1Img:after {width:130px; height:35px; line-height:35px
+											   font-size:20px; font-weight:400;}
+		.location_dateBoxWrap {width:680px; padding:10px; left:-50px; top:180px;}
+		.location_date1 {height:80px;}
+		.location_title {height:20px; line-height:20px;}
+			.location_title span {font-size:1em;}
+			.location_date1 p {width:60%; height:80px;
+										font-size:30px; line-height:80px;}
+			.location_date1 div {height:80px;}
+				.location_date1 div address {height:35px; padding:5px 0; line-height:20px; font-size:.8em;}
+				.location_date1 div a {height:35px; line-height:35px; font-size:0.9em}
+									.location_date1 div a:hover {color:#000; font-weight:700;}
+										.location_date1 div a span {right:30%; top:5px;}
+											.location_date1 a img {width:20px; height:20px;}	
+		.location_date2 {height:35px;}
+		.location_shop1:hover .location_date2, .location_shop1:focus .location_date2 {height:35px;}
+		.location_date2 span {line-height:35px; font-size:0.8em;}
+		.location_date2 span:first-child {width:30%; text-indent:20px;}
+		.location_date2 span:last-child {width:70%; text-indent:20px;}
+
+	/*------  매장 : 센텀시티점  ------*/
+	.location_shop2 {width:600px;}
+	.location_shop2 .location_dateBoxWrap {left:-50px; top:180px;}				
+	.location_shop2Img {width:600px; height:400px;}
+	.location_shop2Img:after {width:130px; height:35px; line-height:35px;
+										   font-size:20px; font-weight:400;}									
+	.location_shop2:hover .location_date2, .location_shop2:focus .location_date2 {height:35px;}
+
+
+	/*================= 채용정보 =================*/
+	.recruit_visualText {font-size:30px;}
+
+
+
+
+
+	}
+	/*################ 모바일 가로 버전 ################*/
+	/*############################################*/
+	@media all and (min-width:481px) and (max-width:767px){
+
+	/*================= 공통영역 =================*/
+	#headerWrap {/*background-color:red;*/}
+	#navBtn {display:none;}	
+	#mobileNavBtn {display:block;}
+	#gnbArea {display:none;}
+	#gnbArea_mobile {display:block; width:100%; position:absolute; left:-767px; top:80px; z-index:3;}
+		#gnbMobile {width:100%;}
+			#gnbMobile li {width:100%;}
+				#gnbMobile li div {width:100%; height:50px;
+										   line-height:50px; text-indent:20px;
+										   position:relative; cursor:pointer;
+										   background-color:#524835;
+										   border-bottom:1px solid #56704b;}
+					#gnbMobile div em {font-style:normal; color:#fff;}
+					#gnbMobile div span {display:block; width:20px; height:2px; 
+													 position:absolute; right:20px; top:50%;
+													 margin-top:-1px; background-color:#bbb;}
+					#gnbMobile div .hLine {transform:rotate(90deg);}
+					#gnbMobile p {width:100%; background-color:#2b2318;}
+						#gnbMobile p a {display:block; width:100%; height:0;
+												  overflow:hidden; line-height:50px; font-size:14px; color:#ccc; text-indent:20px;}
+						#gnbMobile p a:before {content:"- ";}
+						#gnbMobile p a:hover {color:#fff;}
+			#mobileSvc {width:100%; height:280px; padding-top:20px; background-color:#fff;}
+				#mobileSns {width:290px; margin:0 auto;}
+					#mobileSns a {display:inline-block; width:35px; margin-left:10px;} 
+					#mobileSns a:first-child {margin-left:0;}
+						#mobileSns a img {width:100%;}
+				#mobileLogin {display:none;}
+
+	/*---- Fix Navigation ----*/
+		#fixNav {display:none;}
+
+		#infoMenu {width:30px; height:60px; top:13px; overflow:hidden;}
+			#infoMenu li {float:none;}
+			#infoMenu .cartBtn {position:absolute; left:100px; top:0;}
+			#infoMenu .snsBtn {display:none;}
+
+	/*---- Footer ----*/
+	.footer {width:100%;}
+		.footerLink a {padding:0 5px; font-size:13px;}
+		.footerMap {width:100%; height:160px; padding:15px 0;}
+			.footerLeft, .footerRight {float:none; height:80px;}
+			.footerLeft {width:90%; margin:0 auto;}
+				.f_logo, .footerLeft address {float:left;}
+				.f_logo {width:30%; height:65px; left:0; top:0; position:static;} 
+					.f_logo img {width:95px; height:65px;}
+			.footerLeft address {width:70%; height:65px; padding-left:0; line-height:22px;}
+		.footerRight {width:100%; padding:5px 0 10px; text-align:center;}
+			.community {width:330px; height:40px; margin:0 auto;}	
+				.community a {display:inline-block; width:40px; height:40px; padding:0 5px;}
+			.copyRight {height:50px; line-height:50px;}
+
+
+	/*================= 메인 컨테이너 영역 =================*/
+	/*---- 메인글귀 영역 ----*/
+		.main_introText {padding:40px 0;}
+			.main_introText strong {display:block; width:100%; height:100px; font-size:22px; line-height:35px;}
+			.main_introText strong b {font-size:18px;}
+			.main_introText p {width:90%; margin:0 auto; height:180px; line-height:150%; font-size:14px; font-weight:100; text-align:left;}
+			.orange {color:#c43738; font-size:25px;}
+
+	/*---- FindUs----*/
+	.findUs {height:350px;}
+	.findUs_box1 {width:250px; height:250px;
+						  position:absolute; right:-30px; top:80px;}
+		.findUs_img1 {height:125px;}
+		.findUs_text {height:100px; padding:20px 0 5px; line-height:40px;}
+		.findUs_text strong {font-size:16px;}
+		.findUs_text span {font-size:17px;}
+	.findUs_box2 {width:250px; height:250px;
+						  position:absolute; left:-30px; top:20px;}
+
+	/*---- Shop ----*/
+	.main_shop {padding:60px 0 30px;}
+			.main_shop h2 {height:60px; font-size:24px;}
+			.main_shopScreen {width:420px; height:320px; position:relative; left:5px;}
+				.main_shopFilm {width:1680px;}
+					.main_shopScene {width:200px; margin-right:10px;}
+					.main_shopScene a p strong {line-height:25px; font-size:13px; font-weight:400;}
+					.main_shop_normal span {letter-spacing:-1px;}
+			.main_shopBtn {width:460px; top:55%; margin-left:-230px;}
+				.main_shopBtn p {width:20px; height:20px;}
+
+	/*---- Article ----*/
+		#articleWrap {padding:30px 0;}
+			#articleWrap h2 {height:50px; font-size:20px;}
+			#articleArea {width:400px;}
+				.leftArea, .rightArea {width:100%; float:none; transition:all .5s;}
+				#cupping {height:170px;}
+					#cupping a span {width:100px; height:25px;
+											 line-height:25px; font-size:16px;
+											 margin-left:-50px; margin-top:-12px;}
+					#cupping .businessCup span {font-size:16px;}
+
+					#busan {width:100%; height:300px; margin-right:0;}
+						#busanText {width:50%; height:100%; border-width:1px; box-sizing:border-box;}
+							.logoAppear {padding:60px 0; height:60px; line-height:20px; font-size:13px;
+												background-size:60px 40px, 40px 40px;
+												background-position:center 15px, center 125px;}
+							.logoAppear:hover, .logoAppear:focus {background-position:center 15px, center 125px;}
+							#busanText em {font-size:15px; line-height:25px;}
+							.busanView {width:100px; height:25px; line-height:25px; margin-top:20px;}
+						#busanImg {width:50%; height:300px;}
+							#busanImg span {font-size:25px; line-height:30px;}
+
+				#weekly {height:170px; position:relative;}
+					#weekly a div {position:static;}
+						#weekly a p {width:100%; float:none;}
+						.leftImg {display:none;}
+						.rightText {background-color:#524835; background:url("../img/weekly_tablet.jpg") no-repeat -200px 0;}
+						.rightText:before {content:"WEEKLY MARKET"; display:block; width:100%;
+												   color:#fff; position:absolute; left:0; top:30px; font-size:20px;
+											       text-shadow:3px 3px 3px #000;}
+							.rightText em {color:#eee; padding:70px 0 0; font-size:16px; font-weight:400; font-style:normal;
+												  line-height:130%; text-shadow:1px 1px 1px #000; display:block;}
+							.rightText em:after {content:"view"; display:block; width:100px; height:25px; line-height:25px;
+														  position:absolute; left:50%; bottom:12%; 
+														  margin-left:-50px; 
+														  border:1px solid #fff;}
+							.rightText .wk_desc {display:none;}
+
+					.wkBoxB {display:none;}
+
+					#delivery {height:390px; overflow:hidden;}
+						.deliveryImg {height:154px;}
+							.deliveryImg span.deliveryWord1 {top:20px; font-size:20px;}
+								.deliveryImg span.deliveryWord2 {width:60%; left:50%; top:80px; margin-left:-30%; line-height:20px;}
+							.deliveryText {height:144px; line-height:25px; border:1px solid #56704b;}
+								.deliveryText strong {height:50px; line-height:50px; font-size:18px;}
+								.deliveryText span {line-height:25px;}
+								.deliveryText a {width:100px; height:25px; margin:5px auto; line-height:25px;}
+								.deliveryText:before {margin-left:-15px;} 
+
+					#dripbag {height:410px;}
+						.dripbagVideo {height:225px;}
+						.dripbagText {height:160px; border-width:1px;
+										   line-height:20px; font-size:14px;}
+							.dripbagText strong {height:30px; line-height:30px; font-size:16px; padding-top:20px;}
+							.dripbagText .dripbagWord1 {font-size:14px;}
+							.dripbagVideo em {display:none;}
+					#academy {height:170px;}
+						.academyImg1:after {right:-40px; top:50%; margin-top:-20px;}
+						.academyImg2 a {width:100px; height:25px;
+												 line-height:25px; font-size:16px;
+												 top:70px; margin-left:-50px;}
+					#directEpisode {height:170px;}
+						#directEpisode .episodeText {line-height:25px; padding-top:25px; font-size:15px;}
+							.episodeText .text1 {font-size:18px;}
+							.episodeText a {width:100px; height:25px; margin:15px auto 0;
+												   line-height:25px; font-size:16px;}
+
+			.main_notice {height:324px;}
+				.main_notice_img {height:170px;}
+				.main_recruit2 {height:160px; margin:5px 0 5px 2%;}
+				.main_recruit2 strong{height:68px; background-color:#fff; line-height:20px;
+												padding:5px 0 5px 5%; font-size:15px;}
+				.main_recruit2 span {height:68px; padding:5px 0 5px 5%;
+											   line-height:17px;	font-size:12px;}
+				.main_recruit2:before {margin-top:-20px; left:-49px;}
+				.main_notice_link a span {width:100px; height:25px; line-height:25px;
+													  top:70px; margin-left:-50px;}
+				.centumTitle, .recruitTitle {font-size:13px;}
+				.centumView, .recruitView {font-size:14px;}
+
+	/*================= 서브 컨테이너 영역 =================*/
+	/*================= 페이지 경로 =================*/
+	.pageRoute{width:100%; padding-left:0%;}
+		.pageRoute > li {width:120px; height:50px; line-height:50px; font-size:13px;}
+
+	/*================= 서브1-1 philosophy =================*/
+	.philosophy_visualWrap {height:150px;}
+	.philosophy_visualText span {font-size:28px;}
+
+	.sub1-1_content {width:100%;}
+	.sub1-1_upper, .sub1-1_lower {width:90%;}
+			.sub1-1_upper div, .sub1-1_lower div {width:100%; height:600px; padding-bottom:0;}
+			.sub1-1_imgArea {width:100%; float:none;}
+			.sub1-1_idea1 .sub1-1_imgArea:after {margin-top:0; margin-right:-20px;
+																	right:50%; top:264px;																	 
+																	 border-top:20px solid transparent;
+																	 border-bottom:20px solid #fff;
+																	 border-right:20px solid transparent;
+																	 border-left:20px solid transparent;}
+
+			.sub1-1_textArea {float:none; width:80%; padding:0 10%; line-height:30px;font-size:16px; }
+			.sub1-1_textArea strong {font-weight:600; font-size:20px; text-align:center;}
+			.sub1-1_idea2 {position:relative;}
+			.sub1-1_idea2 .sub1-1_textArea {margin-top:20px; height:280px; font-size:14px; position:absolute; left:0; bottom:0;}
+			.sub1-1_idea2 .sub1-1_imgArea {position:absolute; left:0; top:0;}
+			.sub1-1_idea3 .sub1-1_textArea {margin-top:20px; height:280px; font-size:14px;}
+			.sub1-1_idea4 {position:relative;}
+			.sub1-1_idea4 .sub1-1_textArea {font-size:14px; letter-spacing:-1px; position:absolute; left:0; bottom:100px; z-index:2;}
+			.sub1-1_idea4 .sub1-1_imgArea {position:absolute; left:0; top:0; z-index:1;}
+
+			.sub1-1_lineImg {height:100px;}
+
+		/*================= 서브1-2 History =================*/
+		.history_visualWrap {height:150px;}
+		.history_visualText span {font-size:28px;}
+		.history_content {width:100%;}
+		.yearBg {width:200px; height:200px; margin-left:-100px;}
+			.yearBg .yearArea span {font-size:50px; margin-left:-55px; margin-top:-100px; color:#ccc;}
+		.history_list {width:100%; position:absolute; left:0; top:0;}
+			.history_list > li {width:80%; height:450px; padding-top:50px;}
+			.history_list > .history_left {margin-right:10%; margin-left:10%;}
+			.history_list > .history_right {margin-left:10%; margin-right:10%;}
+			.history_textArea {font-size:13px; font-weight:100; color:#333;}
+				.history_textArea strong {font-size:18px;}
+			.history_imgScreen {width:100%; height:none; outline:none;}
+				.history_imgFilm {width:300%;}
+				.history_scene {width:33.3%; background-color:#fff;}
+				.history_imgBtn {width:90%; height:40px;
+										 position:absolute; left:50%; top:50%;
+										 margin-left:-45%; margin-top:-50px;}
+				.history_imgBtn p {width:20px; height:100%; cursor:pointer;}
+				.history_nextBtn {float:left;}
+				.history_nextBtn {float:right;}
+				.history_imgBtn p img {width:100%; height:100%; opacity:0.5; transition:all .2s;}
+				.history_imgBtn p:hover img {opacity:0.8;}
+
+		/*================= 서브1-3 People =================*/
+		.people_visualWrap {height:150px;}
+		.people_visualText {margin-top:-45px; line-height:30px;}
+		.people_visualText span {font-size:23px;}
+		.sub1-3_content {width:92%; height:1900px;}
+		.focus_staff {width:100%; height:500px; margin-top:40px;}
+			.staff_left {width:94%;}
+				.staff_intro {width:50%; padding:30px 0; line-height:30px; font-size:15px;}
+				.staff_name {font-size:20px; font-weight:700;}
+				.staff_role {font-size:16px; color:green;}
+				.staff_career {width:98%; padding-left:2%; padding-top:50px; line-height:22px; font-size:14px;}
+			.staff_right {width:1%; position:relative;}
+				.staff_right p {position:absolute; right:10px; top:0; width:130px; margin:10px auto 0; padding:5px 10px 10px 5px;
+									box-shadow:0px 0px 15px rgba(0,0,0,0.5);}
+
+				.staff_Btn {width:80%; height:20px; margin:40px auto 0;
+								 position:absolute; top:420px; left:50%;
+								 margin-left:-40%;}
+					.staff_Btn a {display:block; width:100px; height:30px; text-align:center; position:absolute;}
+					.staff_prevBtn:after {width:40px; left:120px;}
+					.staff_nextBtn:before {width:40px; left:-60px;}
+	
+
+				.abbr_card {margin-top:30px;}
+					.abbr_card li {width:44%; margin:35px 3% 35px;}
+						.abbr_card a .abbrImg {left:4%;}
+							.abbr_card a .abbrName {font-size:13px; width:40%; padding-left:60%;}
+							.abbr_card a .abbrRole {font-size:14px;}
+
+	/*================= 서브1-4 People =================*/
+	.location_visualWrap {height:150px;}
+	.location_visualText {margin-top:-30px; line-height:30px;}
+	.location_visualText span {font-size:23px;}
+	.location_content {width:90%; height:600px;}
+
+	/*------  매장 : 온천장점  ------*/
+	.location_shop1 {width:350px;}
+		.location_shop1Img {width:350px; height:230px;}
+			.location_shop1Img .location_imgArea {left:-20px; top:0;}
+		.location_shop1Img:after {width:100px; height:25px; line-height:25px;
+											   font-size:16px; font-weight:400;}
+		.location_dateBoxWrap {width:400px; padding:5px; left:-30px; top:80px;}
+		.location_date1 {height:50px;}
+		.location_title {height:15px; line-height:15px;}
+			.location_title span {font-size:.8em;}
+			.location_date1 p {width:60%; height:50px;
+										font-size:22px; line-height:50px;}
+			.location_date1 div {height:50px;}
+				.location_date1 div address {height:45px; padding:5px 0 0 0; line-height:20px; font-size:.8em;}
+				.location_date1 div a {display:none;}
+		.location_date2 {height:20px;}
+		.location_shop1:hover .location_date2, .location_shop1:focus .location_date2 {height:20px;}
+		.location_date2 span {line-height:20px; font-size:0.7em;}
+		.location_date2 span:first-child {width:35%; text-indent:2px;}
+		.location_date2 span:last-child {width:65%; text-indent:5px; font-size:0.6em;}
+
+		.location_dateBoxWrap:before {left:0; bottom:-30px;
+													   border-top:15px solid #B4A281;
+													   border-bottom:15px solid transparent;
+													   border-left:30px solid transparent;}
+		.location_dateBoxWrap:after {right:0; bottom:-30px;
+													border-top:15px solid #B4A281;
+													border-bottom:15px solid transparent;
+													border-right:30px solid transparent;}
+
+	/*------  매장 : 센텀시티점  ------*/
+	.location_shop2 {width:350px;}
+	.location_shop2 .location_dateBoxWrap {left:-30px; top:80px;}				
+	.location_shop2Img {width:350px; height:230px;}
+	.location_shop2Img:after {width:100px; height:25px; line-height:25px;
+										   font-size:16px; font-weight:400;}									
+	.location_shop2:hover .location_date2, .location_shop2:focus .location_date2 {height:20px;}
+
+
+	/*================= 채용정보 =================*/
+	.recruit_visualWrap {height:150px;}
+		.recruit_visualText {font-size:26px;}
+		.recruit_textArea {width:80%; margin:0 auto;}
+
+
+}
+	
+	/*################  스마트폰 세로버전 ################*/
+	/*#############################################*/
+	@media all and (min-width:320px) and (max-width:480px){
+
+	/*================= 공통영역 =================*/
+	#headerWrap {/*background-color:lightblue;*/}
+
+	#navBtn {display:none;}	
+	#mobileNavBtn {display:block;}
+	#gnbArea {display:none;}
+	#gnbArea_mobile {width:100%;  position:absolute; left:-480px; top:80px; z-index:3;}
+		#gnbMobile {width:100%;}
+			#gnbMobile li {width:100%;}
+				#gnbMobile li div {width:100%; height:50px;
+										   line-height:50px; text-indent:20px;
+										   position:relative; cursor:pointer;
+										   background-color:#524835;
+										   border-bottom:1px solid #56704b;}
+					#gnbMobile div em {font-style:normal; color:#fff;}
+					#gnbMobile div span {display:block; width:20px; height:2px;
+													 position:absolute; right:20px; top:50%;
+													 margin-top:-1px; background-color:#bbb;}
+					#gnbMobile div .hLine {transform:rotate(90deg);}
+					#gnbMobile p {width:100%; background-color:#2b2318;}
+						#gnbMobile p a {display:block; width:100%; height:0;
+												  overflow:hidden; line-height:50px; font-size:14px; color:#ccc; text-indent:20px;}
+						#gnbMobile p a:before {content:"- ";}
+						#gnbMobile p a:hover, a:focus {color:#fff;}
+						#mLoginBtn {display:block; width:100%; height:30px;}
+			#mobileSvc {width:100%; height:70px; background-color:#fff; border-bottom:3px solid #56704b;}
+				#mobileSns {width:230px; height:30px; padding-top:20px; margin:0 auto;}
+					#mobileSns a {display:inline-block; width:30px; margin-left:5px;}
+					#mobileSns a:first-child {margin-left:0;}
+						#mobileSns a img {width:100%;}
+
+		/*---- Fix Navigation ----*/
+		#fixNav {display:none;}
+
+		#infoMenu {width:30px; overflow:hidden;}
+			#infoMenu li {margin-right:0px; margin-left:0px;}
+			#infoMenu li:first-child {margin-left:0;}	
+			.loginBtn a:hover, .loginBtn a:focus {transform:scale(1);}
+			#infoMenu .cartBtn {position:absolute; left:100px; top:0;}
+			#infoMenu .snsBtn {display:none;}
+
+		/*---- Footer ----*/
+		.footerLink {height:120px; line-height:40px; text-align:left;}
+			.footerLink a {display:block; width:40%; height:40px; padding:0 0 0 10%; float:left; 
+								 border-bottom:1px dotted #ccc;}
+			.footerLink a:last-child {clear:both; border-bottom:none;}
+		.footerMap {width:100%; height:230px; padding:15px 0;}
+			.footerLeft, .footerRight {float:none; height:80px;}
+			.footerLeft {width:100%;}
+				.f_logo, .footerLeft address {float:none; text-align:center;}
+				.f_logo {width:30%; height:65px; left:10%; top:95px; position:absolute;} 
+					.f_logo img {width:95px; height:65px;}
+			.footerLeft address {width:100%; height:80px; padding-left:0; line-height:25px; font-size:15px;}
+		.footerRight {width:100%; padding:10px 0; position:relative; }
+			.community {width:50%; height:75px; margin:0 0 0 150px; position:absolute; top:10px; right:5%;}	
+				.community a {display:inline-block; width:35px; height:35px; padding:0 5px;}
+			.copyRight {height:50px; line-height:50px; text-indent:25px; padding-top:80px; font-size:15px;}
+
+	/*================= 메인 컨테이너 영역 =================*/
+	/*---- mainText ----*/
+	.main_introText {padding:40px 0;}
+		.main_introText strong {display:block; width:90%; height:100px; font-size:18px; line-height:35px; margin:0 auto;}
+		.main_introText strong b {font-size:16px;}
+		.main_introText p {width:90%; margin:0 auto; height:180px; line-height:160%; font-size:13px; font-weight:100; text-align:left;}
+
+	/*---- findUs ----*/
+	.findUs {height:450px;}
+	.findUs_box1 {width:250px; height:250px;
+						  position:absolute; right:50%; top:25px; margin-right:-125px;}
+		.findUs_img1 {height:125px;}
+		.findUs_text {height:100px; padding:20px 0 5px; line-height:40px;}
+		.findUs_text strong {font-size:16px;}
+		.findUs_text span {font-size:17px;}
+	.findUs_box2 {width:250px; height:250px;
+						  position:absolute; left:50%; top:150px; margin-left:-125px;}
+
+	/*---- Shop ----*/
+	.main_shop {padding:50px 0 30px;}
+		.main_shop h2 {height:50px; font-size:20px;}
+		.main_shopScreen {width:200px; height:320px; position:relative; left:5px;}
+			.main_shopFilm {width:1600px;}
+				.main_shopScene {width:190px; margin-right:10px;}
+				.main_shopScene a p strong {line-height:25px; font-size:13px; font-weight:400;}
+				.main_shop_normal span {letter-spacing:0px; line-height:20px;}
+				.main_shop_reduce span {line-height:20px; padding-top:5px; font-size:12px;}
+				.main_shop_reduce i {margin-top:-5px;}
+				.main_shop_normal i {margin-top:-10px;}
+		.main_shopBtn {width:260px; top:50%; margin-left:-130px;}
+		.main_shopBtn p {width:20px; height:20px;}
+
+	/*---- Article ----*/
+	#articleWrap {padding:0;}
+		#articleWrap h2 {height:80px; font-size:18px; line-height:100px;}
+		#articleArea {width:300px; margin:0 auto;}
+			.leftArea, .rightArea {width:100%; float:none; transition:all .5s;}
+				#cupping {height:263px; position:relative;}
+					#cupping a {width:100%; height:263px; float:none; transition:all .5s; position:absolute; left:0; top:0;}
+						#cupping a span {width:100px; height:25px; line-height:25px; font-size:16px;
+												   margin-left:-50px; margin-top:-12px; transition:all .5s;}
+						#cupping .businessCup {display:none;}
+
+						#busan {width:100%; height:263px; position:relative; margin:5px auto;}
+							#busan p {float:none;}
+								#busanText {width:100%; height:100%;
+													background-image:url("../img/logo_head.png"), url("../img/kimi.png"), url("../img/busan_mobile.png");
+													background-size:60px 40px, 40px 40px, 100px 155px;
+													background-repeat:no-repeat, no-repeat, no-repeat;
+													background-position:12% 48px, 82% 47px, 100% 100%;
+													}
+								#busanText:after {content:"X"; display:block; width:100%; height:30px;
+															position:absolute; left:0; top:60px; font-size:20px;}
+													
+									.logoAppear {display:none;}
+									.logoAppear:hover, .logoAppear:focus {background-position:5% 50px, 90% 50px;}
+									#busanText em {display:block; width:100%; font-size:17px; line-height:24px;
+															 font-style:normal; font-weight:400; margin-top:130px;}
+									.busanView {width:100px; height:25px; line-height:25px;
+													  border:1px solid #524835; margin:30px auto 0; background-color:#fff;
+													  }
+									.busanView:hover, .busanView:focus {background-color:#524835; color:#fff;}
+								#busanImg {display:none;}
+
+				#weekly {height:263px; position:relative;}
+					#weekly a div {position:static;}
+						#weekly a p {width:100%; float:none;}
+						.leftImg {display:none;}
+						.rightText {background-color:#524835; background-image:url("../img/weekly_mobile.jpg");}
+						.rightText:before {content:"WEEKLY MARKET"; display:block; width:100%;
+												   color:#fff; position:absolute; left:0; top:50px; font-size:22px;
+											       text-shadow:3px 3px 3px #000;}
+							.rightText em {color:#eee; padding:120px 0 0; font-size:18px; font-weight:400; font-style:normal;
+												  line-height:130%; text-shadow:1px 1px 1px #000; display:block;}
+							.rightText em:after {content:"view"; display:block; width:100px; height:25px; line-height:25px;
+														  position:absolute; left:50%; bottom:12%; 
+														  margin-left:-50px; 
+														  border:1px solid #fff;}
+							.rightText .wk_desc {display:none;}
+
+					.wkBoxB {display:none;}
+
+				#delivery {height:263px; background:url("../img/delivery_mobile.jpg") no-repeat 0 0;}
+					.deliveryImg {display:none;}
+					.deliveryText {width:100%; height:100%; line-height:25px; margin:5px 0;
+										 box-sizing:border-box; border:1px solid #56704b;}
+						.deliveryText strong {height:80px; line-height:80px; font-size:18px;
+													   padding-top:20px; color:#eee; text-shadow:1px 1px 1px #000;}
+								.deliveryText span {font-size:14px; line-height:25px; color:#efefef;}
+								.deliveryText a {width:100px; height:25px; margin:35px auto;
+														line-height:25px; color:#efefef; border:1px solid #efefef;}
+								.deliveryText:before {display:none;} 
+
+			.rightArea {margin-top:0;}
+				#dripbag {width:300px; height: 270px;margin:5px auto; border:1px solid #56704b;}
+						.dripbagVideo {height:170px; background-color:#fff;}
+						.dripbagText {height:70px; border-width:0px; line-height:20px; font-size:14px; overflow:hidden; transition:all .5s;}
+							.dripbagText strong {height:30px; line-height:30px; font-size:16px; padding-top:10px;}
+							.dripbagText .dripbagWord1 {height:30px; line-height:30px; font-size:14px;}
+							.dripbagText .dripbagWord2 {display:none; }
+
+
+						#directEpisode {height:263px; text-align:center; margin-bottom:20px;}
+							#directEpisode img {width:599px;}
+							#directEpisode .episodeText {height:100%; line-height:30px; padding-top:0;}
+								.episodeText .text1 {display:inline-block; padding:50px 0 30px; font-size:23px; font-weight:700;}
+								.episodeText .text2 {}
+								.episodeText a {width:100px; height:25px; line-height:25px;
+													   margin:30px auto 0; font-size:16px;}
+
+					#academy {display:none;}
+					.main_notice {display:none;}
+
+	/*================= 서브 컨테이너 영역 =================*/
+
+	/*================= 페이지 경로 =================*/
+	.pageRoute{width:100%; padding-left:0%;}
+		.pageRoute > li {width:100px; height:50px; line-height:50px; font-size:13px;}
+
+	/*================= 서브1-1 philosophy =================*/
+	.philosophy_visualWrap {height:130px;}
+	.philosophy_visualText span {font-size:28px;}
+
+	.sub1-1_content {width:100%;}
+	.sub1-1_upper, .sub1-1_lower {width:90%;}
+			.sub1-1_upper div, .sub1-1_lower div {width:100%; height:500px; padding-bottom:0;}
+			.sub1-1_imgArea {width:100%; float:none;}
+			.sub1-1_idea1 .sub1-1_imgArea:after {margin-top:0; margin-right:-20px;
+																	right:50%; top:264px;																	 
+																	 border-top:20px solid transparent;
+																	 border-bottom:20px solid #fff;
+																	 border-right:20px solid transparent;
+																	 border-left:20px solid transparent;}
+
+			.sub1-1_textArea {float:none; width:96%; padding:0 2%; line-height:30px;font-size:14px;}
+			.sub1-1_textArea strong {font-weight:600; font-size:20px; text-align:center;}
+			.sub1-1_idea1 .sub1-1_textArea {letter-spacing:-0.5px}
+			.sub1-1_idea2 {position:relative;}
+			.sub1-1_idea2 .sub1-1_textArea {margin-top:20px; height:280px; font-size:13px; letter-spacing:-1px; position:absolute; left:0; bottom:0;}
+			.sub1-1_idea2 .sub1-1_imgArea {position:absolute; left:0; top:0;}
+			.sub1-1_idea3 .sub1-1_textArea {margin-top:20px; height:280px; font-size:13px; letter-spacing:-0.5px;}
+			.sub1-1_idea4 {position:relative;}
+			.sub1-1_idea4 .sub1-1_textArea {font-size:13px; letter-spacing:-1.5px; position:absolute; left:0; bottom:90px; z-index:2;}
+			.sub1-1_idea4 .sub1-1_imgArea {position:absolute; left:0; top:0; z-index:1;}
+
+			.sub1-1_lineImg {height:100px;}
+
+	/*================= 서브1-2 History =================*/
+	.history_visualWrap {height:130px;}
+	.history_visualText span {font-size:28px;}
+	.history_content {width:100%;}
+	.yearBg {width:200px; height:200px; margin-left:-100px;}
+		.yearBg .yearArea span {font-size:50px; margin-left:-55px; margin-top:-100px; color:#ccc;}
+	.history_list {width:100%; position:absolute; left:0; top:0;}
+		.history_list > li {width:86%; height:450px; padding-top:50px;}
+		.history_list > .history_left {margin-right:7%; margin-left:7%;}
+		.history_list > .history_right {margin-left:7%; margin-right:7%;}
+		.history_textArea {font-size:13px; font-weight:100; color:#333;}
+			.history_textArea strong {font-size:18px;}
+		.history_imgScreen {width:100%; height:none; outline:none;}
+			.history_imgFilm {width:300%;}
+			.history_scene {width:33.3%; background-color:#fff;}
+			.history_imgBtn {width:90%; height:40px;
+									 position:absolute; left:50%; top:50%;
+									 margin-left:-45%; margin-top:-75px;}
+			.history_imgBtn p {width:20px; height:100%; cursor:pointer;}
+			.history_nextBtn {float:left;}
+			.history_nextBtn {float:right;}
+			.history_imgBtn p img {width:100%; height:100%; opacity:0.5; transition:all .2s;}
+			.history_imgBtn p:hover img {opacity:0.8;}
+
+	/*================= 서브1-3 People =================*/
+	.people_visualWrap {height:130px;}
+	.people_visualText {margin-top:-40px; line-height:28px;}
+	.people_visualText span {font-size:18px;}
+
+	.sub1-3_content {width:92%; height:2900px;}
+	.focus_staff {width:100%; height:600px; margin-top:30px;}
+		.staff_left {width:95%; padding-left:2%; padding-right:2%;}
+			.staff_intro {width:100%; padding:220px 0 20px; line-height:22px; font-size:14px;}
+			.staff_name {font-size:16px;}
+			.staff_role {font-size:15px;}
+			.staff_career {width:100%; padding-left:0; padding-top:0; line-height:20px; font-size:13px;}
+
+		.staff_right {width:1%; position:relative;}
+			.staff_right p {position:absolute; right:50%; top:0;
+								 width:120px; margin:10px 70px 0 0; padding:5px 10px 10px 5px;
+								box-shadow:0px 0px 10px rgba(0,0,0,0.5);}
+
+		.staff_Btn {width:100%; height:20px; margin:40px auto 0;
+						 top:530px; left:50%;
+						 margin-left:-50%;}
+		.staff_Btn a {width:100px; height:30px; font-size:13px;}
+		.staff_prevBtn:after {width:30px; left:100px;}
+		.staff_nextBtn:before {width:30px; left:-30px;}
+
+		.abbr_card {margin-top:30px;}
+		.abbr_card li {width:90%; height:180px; margin:35px 5% 35px;}
+			.abbr_card a .abbrImg {left:4%;}
+				.abbr_card a .abbrName {font-size:13px; width:40%; padding-left:60%;}
+				.abbr_card a .abbrRole {font-size:15px; height:50px; line-height:40px;}
+
+	/*================= 서브1-4 People =================*/
+	.location_visualWrap {height:130px;}
+	.location_visualText {margin-top:-25px; line-height:25px;}
+	.location_visualText span {font-size:18px;}
+	.location_content {width:90%; height:550px;}
+
+	/*------  매장 : 온천장점  ------*/
+	.location_shop1 {width:250px;}
+		.location_shop1Img {width:250px; height:180px;}
+			.location_shop1Img .location_imgArea {left:-10px; top:0;}
+			.location_shop1Img:hover .location_imgArea {transform:translatex(10px);}
+		.location_shop1Img:after {width:80px; height:20px; line-height:20px;
+											   font-size:14px; font-weight:400;
+											   right:50%; bottom:30px; margin-right:-40px;}
+		.location_dateBoxWrap {width:280px; padding:3px; left:-20px; top:160px;}
+		.location_date1 {height:40px;}
+		.location_title {display:none;}
+			.location_title span {font-size:.7em;}
+			.location_date1 p {width:40%; height:40px;
+										font-size:16px; line-height:40px;}
+			.location_date1 div {width:50%; height:40px;}
+				.location_date1 div address {height:35px; padding:5px 0 0 0; line-height:15px; font-size:.7em;}
+				.location_date1 div a {display:none;}
+		.location_date2 {height:20px;}
+		.location_shop1:hover .location_date2, .location_shop1:focus .location_date2 {height:20px;}
+		.location_date2 span {line-height:20px; font-size:0.6em;}
+		.location_date2 span:first-child {width:50%; text-indent:5px;}
+		.location_date2 span:last-child {width:50%; text-indent:5px; font-size:0.6em;}
+
+		.location_dateBoxWrap:before {left:0; bottom:70px;
+													   border-top:15px solid transparent;
+													   border-bottom:15px solid #B4A281;
+													   border-left:20px solid transparent;}
+		.location_dateBoxWrap:after {right:-2px; bottom:70px;
+													border-top:15px solid transparent;
+													border-bottom:15px solid #B4A281;
+													border-right:18px solid transparent;}
+
+	/*------  매장 : 센텀시티점  ------*/
+	.location_shop2 {width:250px;}
+	.location_shop2 .location_dateBoxWrap {left:-20px; top:180px;}				
+	.location_shop2Img {width:250px; height:180px;}
+	.location_shop2Img:after {width:80px; height:20px; line-height:20px;
+										   font-size:14px; font-weight:400;
+											right:50%; bottom:10px; margin-right:-40px;}
+	.location_shop2Img .location_imgArea {left:-10px;}
+	.location_shop2Img:hover .location_imgArea {transform:translatex(10px);}
+	.location_shop2:hover .location_date2, .location_shop2:focus .location_date2 {height:20px;}
+
+	/*================= 채용정보 =================*/
+	.recruit_visualWrap {height:130px;}
+		.recruit_visualText {height:100px; line-height:100px; font-size:23px;}
+	.recruit_textArea {width:92%; font-size:14px;margin:0 auto; line-height:30px; padding-bottom:70px;}
+		.recruit_textArea p:first-child {width:100%; padding:60px 0;}
+		.recruit_textArea p:nth-child(2) strong {font-size:15px;}
+
+
+
+
+	}

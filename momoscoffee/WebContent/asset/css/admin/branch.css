@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+/*======section#adminContents 하위 contentInnerWrap=======*/
+#contentInnerWrap{
+	width:100%;
+	overflow:hidden;
+	background-color:#ededed;
+	margin-bottom:20px;
+}
+
+#contentInnerWrap input,#contentInnerWrap select,.searchBtn{
+	display:inline-block;
+	vertical-align:middle;
+	padding:.5em .8em;
+}
+
+#branchSchZone,#registZone{
+	float:left;
+	overflow:hidden;
+	box-sizing:border-box;
+}
+/*contentInnerWrap 좌측 지점 검색영역 너비*/
+#branchSchZone{
+	width:30%;
+	padding:10px;
+}
+/*contentInnerWrap 우측 지점정보 등록영역 너비*/
+#registZone{
+	width:70%;
+	padding:10px;
+}
+/*contentInnerWrap 하위 div 하위 공통h3*/
+#contentInnerWrap div h3{
+	width:100%;
+	text-align:center;
+	color:#1bbc9b;
+	line-height:3rem;
+}
+
+/*contentInnerWrap 좌측 지점 검색영역 상세*/
+/* searchBtn 공통 */
+.searchBtn{
+	display:inline-block;
+	width:80px;
+	border:none;
+	border:1px solid #223d4b;
+	background-color:#223d4b;
+	color:#fff;
+	text-align:center;
+	transition:.3s all;
+}
+.searchBtn:hover,.searchBtn:focus{
+	color:orange;
+	font-weight:700;
+}
+/* 지점검색 검색어입력부분 */
+.schByName{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	overflow:hidden;
+	margin-bottom:10px;
+}
+#branchSearch{
+	display:inline-block;
+	width:calc(100% - 111px);
+	margin-right:5px;
+}
+/* 지점검색 지역선택 select 부분 */
+.selectByLoc{
+	width:100%;
+	overflow:hidden;
+}
+.selectByLoc p{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	overflow:hidden;
+}
+
+.selectByLoc p select{
+	display:inline-block;
+	width:calc(100% - 85px);
+	margin-right:5px;
+}
+/*contentInnerWrap 우측 지점정보 등록영역 상세*/
+/*row역할 하는 li 공통*/
+.regist_row{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	overflow:hidden;
+	margin-bottom:20px;	
+	box-sizing:border-box;
+}
+.regist_label{
+	width:100%;
+}
+/*li div 하위요소 공통*/
+.regist_label span{
+	display:inline-block;
+	width:80px;
+	text-align:center;
+	vertical-align:middle;
+}
+/* 첫 번째 li 하위 input너비 */
+#addrSearch{
+	width:calc(100% - 110px);
+}
+/*두 번째 li의 하위요소 div공통*/
+#registInner li:nth-child(2) div{
+	float:left;
+}
+.name_label,.tel_label{
+	width:50% !important;
+}
+.name_label input[name='branch_name'],
+.tel_label input[name='branch_tel']{
+	width:calc(100% - 110px);
+}
+/*3,4 번째 li의 하위요소 */
+.addr_label input[name='branch_addr'],.msg_label input[name='message']{
+	width:calc(100% - 110px);
+}
+/*5 번째 li의 하위요소(운영시간)*/
+.time_label label{
+	display:inline-block;
+	width:80px;
+	color:red;
+	text-align:center;
+}
+.time_label input{
+	width:100px;
+}
+/*6 번째 li하위요소(이미지업로드)*/
+input.fake_input{
+	display:inline-block;
+	width:465px;
+	background-color:#1bbc9b;
+	color:#fff;
+	font-weight:700;
+	border:1px solid #1bbc9b;/* 필요 없으나 너비보정 때문에 설정 */
+}
+.img_label label{
+	padding:.4em .8em;
+	vertical-align:middle;
+	color:#1bbc9b;
+	border:none;
+	background-color:transparent;
+	border:1px solid #1bbc9b;
+	cursor:pointer;
+	transition:.3s all ease-in-out;
+}
+.img_label label:hover{
+	background-color:#1bbc9b;
+	font-weight:700;
+	color:#fff;
+}
+
+/*지점 수, 검색결과 수 표시영역*/
+/*상품수, 검색결과 수 표시영역*/
+.infoBtnZone{
+	width:100%;
+	overflow:hidden;
+	margin-bottom:20px;
+}
+.infoBtnZone div{
+	float:left;
+	display:inline-block;
+}
+/*summary info : 상품 수, 검색결과 수 */
+.summInfo{
+	width:30%;
+}
+/*버튼 영역*/
+.prod_btn_zone{
+	width:70%;
+	text-align:right;
+}
+.prod_btn_zone button{
+	display:inline-block;
+	padding:.5em .8em;
+	font-weight:700;
+	text-align:right;
+}
+
+/*================테이블 출력영역===================*/
+/*테이블에 출력된 지점명 hover effect*/
+.branchName a{
+	transition:.3s all;
+}
+.branchName a:hover,.branchName a:focus{
+	color:red;
+	text-decoration:none;
+	font-weight:700;
+}

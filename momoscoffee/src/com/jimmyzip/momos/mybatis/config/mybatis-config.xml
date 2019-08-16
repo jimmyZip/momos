@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.jimmyzip.momos.model.domain.member.Members" alias="Members"/>
+		<typeAlias type="com.jimmyzip.momos.model.domain.member.Auth" alias="Auth"/>
+		<typeAlias type="com.jimmyzip.momos.model.domain.product.Topcategory" alias="Topcategory"/>
+		<typeAlias type="com.jimmyzip.momos.model.domain.product.Subcategory" alias="Subcategory"/>
+		<typeAlias type="com.jimmyzip.momos.model.domain.product.Product" alias="Product"/>
+		<typeAlias type="com.jimmyzip.momos.model.domain.product.ProductImage" alias="ProductImage"/>
+		<typeAlias type="com.jimmyzip.momos.model.domain.branch.Branch" alias="Branch"/>
+		<typeAlias type="com.jimmyzip.momos.model.domain.branch.BranchImage" alias="BranchImage"/>
+	</typeAliases>
+	<mappers>
+		<mapper resource="com/jimmyzip/momos/mybatis/mapper/MemberMapper.xml"/>
+		<mapper resource="com/jimmyzip/momos/mybatis/mapper/AuthMapper.xml"/>
+    	<mapper resource="com/jimmyzip/momos/mybatis/mapper/TopcategoryMapper.xml"/>
+    	<mapper resource="com/jimmyzip/momos/mybatis/mapper/SubcategoryMapper.xml"/>
+    	<mapper resource="com/jimmyzip/momos/mybatis/mapper/ProductMapper.xml"/>
+    	<mapper resource="com/jimmyzip/momos/mybatis/mapper/ProductImageMapper.xml"/>
+    	<mapper resource="com/jimmyzip/momos/mybatis/mapper/BranchMapper.xml"/>
+    	<mapper resource="com/jimmyzip/momos/mybatis/mapper/BranchImageMapper.xml"/>
+	</mappers>
+</configuration>

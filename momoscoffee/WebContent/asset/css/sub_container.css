@@ -1,0 +1,35 @@
+	/*#################### container ####################*/
+	#container {width:100%;}
+		/*################## page_location ##################*/
+		.pageRoute{width:95%; height:50px; background-color:#56704b; padding-left:5%;}
+			.pageRoute > li {display:inline-block; width:150px; height:50px; line-height:50px; text-align:center; font-size:14px; position:relative;}
+			.pageRoute > li:first-child {color:#6eaf8f; background:url("../img/icons/pageRouteArrow.png") no-repeat center right;}
+			.pageRoute > li:last-child > a {color:#efefef;}
+				.pageRoute li ul {display:none; position:absolute; left:-10px; top:50px; border:1px solid #ccc; z-index:100; background-color:#fefefe;}
+				.pageRoute > li:hover ul {display:block;}
+				.pageRoute li ul li {width:150px; height:40px; line-height:40px; border-bottom:1px dashed #ccc;}
+				.pageRoute li ul li:last-child {border:0;}
+				.pageRoute li ul li:hover, .pageRoute li ul li:focus {background-color:#eee;}
+					.pageRoute li ul li a {color:#333;}
+					
+		/*################## topBtn ##################*/
+		.topBtn {width:50px; height:50px; position:fixed; right:2%; bottom:20%;}
+			.topBtn a {display:block; width:100%; height:100%; position:relative;}
+				.circle1 {width:40px; height:40px; position:absolute; left:50%; top:50%;
+							background-color:rgba(250,250,250,0.2);
+							 margin-left:-20px; margin-top:-20px; animation:circle1 2s infinite linear 1s;
+							 border-radius:20px; border-left:1px solid #56704b;
+							 box-shadow:0 0 10px rgba(100,100,100,0.2);}
+					@keyframes circle1{ 0% {transform:rotatez(-360deg);} 100% {}}
+
+				.circle2 {width:50px; height:50px; position:absolute; left:0; top:0;
+							 border-radius:25px; border-left:1px solid #56704b;
+							 animation:circle2 2s infinite linear;
+							 
+							 box-shadow:0 0 10px rgba(200,200,200,0.5);}
+					@keyframes circle2{ 0% {transform:rotatez(360deg);}100% {}}
+
+				.topBtn span {display:block; width:50px; height:50px; 
+									  position:absolute; left:50%; top:50%;
+									  margin-left:-25px; margin-top:-25px;
+									  text-align:center; line-height:50px; font-size:12px;}

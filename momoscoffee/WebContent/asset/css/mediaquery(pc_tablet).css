@@ -1,0 +1,153 @@
+	/*################  PC 버전 ################*/
+	@media all and (min-width:1025px){
+		#mobileNavBtn {display:none;}
+		#gnbArea_mobile {display:none;}
+		}
+
+
+	/*################ 태블릿 버전 ################*/
+	@media all and (min-width:768px) and (max-width:1024px){
+	/*#header {background-color:#ff0;}*/
+
+	#mobileNavBtn {display:none;}
+	#gnbArea_mobile {display:none;}
+
+	/*--- Fix Navigation ---*/
+		.longText  a {line-height:20px; height:40px; padding:5px 0;}
+		.fixInfo li {margin-right:20px;}
+
+	#infoMenu {width:115px;}
+		#infoMenu li {margin-right:20px;}
+		#infoMenu .snsBtn {margin-right:0;}
+
+		#gnb li {width:25%; height:400px;}
+			#gnb .navList dt {height:50px; line-height:50px; padding:30px 0;}
+				#gnb .navList dt a {font-size:22px;}
+				#gnb .navList dd a {height:50px; line-height:50px;}
+		#gnb li.navImg {width:100%; height:100px; position:absolute; left:0; bottom:0;
+								background:url("../img/inner1.jpg") no-repeat 30% -440px; background-size:120%;
+								}
+			#gnb li.navImg img {display:none;}
+		#gnb li.navAbout {clear:both;}
+	/*----------------------- visual-----------------------*/
+	.visualFilm li p {width:350px; height:280px; margin-left:-175px; margin-top:-140px;}
+		.visualFilm li p span.sName {font-size:18px;}
+		.visualFilm li p strong {line-height:40px; font-size:30px; padding:15px 0;}
+		.visualFilm li p span.visualDesc {width:100%; line-height:20px; font-size:14px;}
+		.visualFilm li p a {width:120px; height:40px; line-height:40px; font-size:15px;}
+		.visualFilm li.visual0 p {height:220px; margin-top:-110px;}
+
+	#btn1 {height:100px; margin-top:-50px;}
+		#btn1 p {width:30px;}
+	#btn2 {width:80px; height:20px; margin-left:-40px; opacity:1;}
+		#btn2 p {width:35px; height:20px;}
+		#btn2 .playBtn {margin-right:10px;}
+
+	/*----------------------- findUs ----------------------*/
+			#findUs {height:500px;}
+				#findBox1 {width:400px; height:400px; right:-40px; top:30px;}
+					#findBox1 .findImg1 {height:200px;}
+					#findBox1 .findText {height:140px; padding:40px 0 20px; line-height:50px;}
+						#findBox1 .findText strong {font-size:21px;}
+						#findBox1 .findText span {font-size:23px;}
+						#findBox1 a:hover span:after {bottom:50px; width:320px;margin-left:-160px;}
+				#findBox2 {width:400px; height:400px; left:-40px; top:0;}
+
+	/*----------------------- Shop -----------------------*/
+			#shopArea {height:380px; padding-top:50px; padding-bottom:20px;}
+				#shopArea h2 {font-size:23px;}
+				#shopArea ul {width:700px; height:272px; margin:0 auto;}
+					#shopArea ul li {width:210px; height:272px;}
+						#shopArea ul li .title, #shopArea ul li .view {height:40px; line-height:40px; font-size:100%;}
+							#shopArea ul li .desc {height:70px; font-size:14px; bottom:0;}
+								#shopArea ul li .desc strong {height:30px; padding:5px 0; line-height:20px; font-size:15px;}
+								#shopArea ul li .desc span {height:30px; line-height:30px; text-align:right;}
+
+	/*----------------------- Article -----------------------*/
+		#articleWrap {padding:50px 0;}
+			#articleWrap h2 {font-size:28px;}
+			#articleArea {width:700px; transition:all .5s;}
+				#cupping {height:154px;}
+					#cupping a span {width:100px; height:25px;
+											 line-height:25px; font-size:16px;
+											 margin-left:-50px; margin-top:-12px;}
+					#cupping .businessCup span {font-size:16px;}
+
+					#busan {height:300px;}
+						#busanText {height:298px; border-width:1px;}
+							.logoAppear {padding:60px 0; height:60px; line-height:20px; font-size:13px;
+												background-size:60px 40px, 40px 40px;
+												background-position:center 15px, center 125px;}
+							.logoAppear:hover, .logoAppear:focus {background-position:center 15px, center 125px; outline:none;}
+							#busanText em {font-size:15px; line-height:25px;}
+							.busanView {width:100px; height:25px; line-height:25px; margin-top:20px;}
+						#busanImg {height:300px;}
+							#busanImg span {font-size:25px; line-height:30px;}
+
+				#weekly {height:170px; position:relative;}
+					#weekly a div {position:static;}
+						#weekly a p {width:100%; float:none;}
+						.leftImg {display:none;}
+						.rightText {background-color:#524835; background:url("../img/weekly_tablet.jpg") no-repeat -200px 0;}
+						.rightText:before {content:"WEEKLY MARKET"; display:block; width:100%;
+												   color:#fff; position:absolute; left:0; top:30px; font-size:20px;
+											       text-shadow:3px 3px 3px #000;}
+							.rightText em {color:#eee; padding:70px 0 0; font-size:16px; font-weight:400; font-style:normal;
+												  line-height:130%; text-shadow:1px 1px 1px #000; display:block;}
+							.rightText em:after {content:"view"; display:block; width:100px; height:25px; line-height:25px;
+														  position:absolute; left:50%; bottom:12%; 
+														  margin-left:-50px; 
+														  border:1px solid #fff;}
+							.rightText .wk_desc {display:none;}
+
+					.wkBoxB {display:none;}
+
+					#delivery {height:308px;}
+						.deliveryImg {height:154px;}
+							.deliveryImg span.deliveryWord1 {top:20px; font-size:20px;}
+								.deliveryImg span.deliveryWord2 {width:60%; left:50%; top:80px; margin-left:-30%; line-height:20px;}
+							.deliveryText {height:144px; line-height:25px; border:1px solid #56704b;}
+								.deliveryText strong {height:50px; line-height:50px; font-size:18px;}
+								.deliveryText span {line-height:25px;}
+								.deliveryText a {width:100px; height:25px; margin:5px auto; line-height:25px;}
+								.deliveryText:before {margin-left:-15px;} 
+					#dripbag {height:370px;}
+						.dripbagVideo {height:200px;}
+						.dripbagText {height:160px; border-width:1px;
+										   line-height:20px; font-size:14px;}
+							.dripbagText strong {height:30px; line-height:30px; font-size:16px; padding-top:10px;}
+							.dripbagText .dripbagWord1 {font-size:14px;}
+					#academy {height:154px;}
+						.academyImg1:after {right:-40px; top:50%; margin-top:-20px;}
+						.academyImg2 a {width:100px; height:25px;
+												 line-height:25px; font-size:16px;
+												 top:65px; margin-left:-50px;}
+						#directEpisode {height:154px;}
+						#directEpisode .episodeText {width:100%; height:100%;
+																   position:absolute; left:0; top:0;
+																   line-height:25px; padding-top:15px; font-size:15px;}
+							.episodeText .text1 {font-size:18px;}
+							.episodeText a {width:100px; height:25px; margin:15px auto 0;
+												   line-height:25px; font-size:16px;}
+					#notice {height:308px;}
+						#notice p {height:154px;}
+						#notice .recruit {height:134px; outline-width:1px;}
+							.recruit:before {left:-45px; top:50%; margin-top:-20px;}
+							.recruit strong {height:47px; font-size:17px;
+												  line-height:20px; padding:5px 0 0 5%;}
+							.recruit span {height:77px; padding:5px 0 0 5%; font-size:12px; line-height:18px;}
+							.centum2 a span, .recruitImg a span {width:100px; height:25px; line-height:25px;										
+																				top:60px; margin-left:-50px;}													 
+								.centum2 span.centumTitle, .recruitImg span.recruitTitle {font-size:12px;}
+								.centum2 span.centumView, .recruitImg span.recruitView {font-size:14px;}
+
+	/*----------------------- Footer -----------------------*/
+		#footerMap {width:90%;}
+			#footerLeft {width:60%; position:relative;}
+				.f_logo {width:100px; height:65px; top:5px;}
+			#footerLeft address {font-size:14px;}
+		#footerRight {width:40%;}
+			#community {height:35px;}	
+				#community a {width:30px; height:30px; padding:0 5px;}
+			#copyRight {font-size:14px;}
+}

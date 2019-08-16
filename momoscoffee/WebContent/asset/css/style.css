@@ -1,0 +1,1423 @@
+/*#################### 초기화 ####################*/
+/*#############################################*/
+* {margin:0;padding:0;}
+html,body,header,nav,section,footer,article,address,aside {margin:0; padding:0;}
+header,nav,section,footer,article,address,aside {display:block;}
+li {list-style-type:none;}
+a:link, a:visited {text-decoration:none; color:#000;}
+a:hover, a:focus {text-decoration:none;}
+img {border:0;}
+.hidden {width:1px; height:1px; font-size:1px; line-height:0; overflow:hidden; position:absolute; left:-9999px;}
+em,i {font-style:normal;}
+body {height:100%; font-family:'Jg', 'gulim', sans-serif;}
+#wrap {width:100%; max-width:1280px; margin:0 auto;}
+html {height:100%;}
+/*-------------- font --------------*/	
+@font-face {font-family:"Jg"; src:url("../font/JejuGothic.woff");}
+
+/*#################### 공통영역 ####################*/
+/*##############################################*/
+	/*===================== header =====================*/
+		#headerWrap {width:100%; height:80px;}
+		#header {width:100%; height:100%; margin:0 auto; position:relative;}
+			h1 {width:90px; position:absolute; left:50%; top:10px; margin-left:-45px;}
+				h1 img {width:100%; height:100%;}
+
+			/*--- 네비게이션 버튼 ---*/
+			#navBtn {display:block; width:40px; height:21px;
+						 position:absolute; top:15px; left:5%;
+						 overflow:hidden;}
+			#mobileNavBtn {display:none; width:40px; height:21px;
+								   position:absolute; top:15px; left:5%;
+								   overflow:hidden;}
+				#navBtn span, #mobileNavBtn span {display:block; height:3px; border-radius:3px;
+																		background-color:#333; position:absolute;
+																		transition:all .3s ease-out;}
+				 .bar {width:30px;}
+				 .bar1 {left:0px; top:0;}
+				 .bar2 {left:0px; top:9px;}
+				 .bar3 {left:0px; bottom:0;}
+				.arrowBtn {width:15px; left:-30px;}
+				.arrowBtn1 {top:5px; transform:rotate(45deg);}
+				.arrowBtn2 {top:13px; transform:rotate(-45deg);}
+
+			/*--- 네비게이션 영역 ---*/
+			#gnbArea {width:100%;}
+				#gnb {display:block; width:100%; height:0;
+						  background-color:rgba(0,0,0,0.7);
+						  position:absolute; left:0; top:80px;
+						  z-index:999; overflow:hidden;}
+					#gnb li {width:20%; height:500px; float:left;
+								border:1px solid #fff;
+								box-sizing:border-box;
+								background-color:rgba(86,112,75,0.9);}
+						#gnb .navList dl {width:100%; text-align:center;}
+							#gnb .navList dt {display:block; width:100%; height:60px;
+													  line-height:60px; color:#fff;
+													  padding:80px 0 20px; font-size:24px;}
+							#gnb .navList dd {width:100%}
+								#gnb .navList dd a {display:block; width:100%; height:60px; line-height:60px; color:#eee;}
+								#gnb .navList dt a:hover, #gnb .navList dt a:focus {background-color:#eee; color:#000; text-decoration:none;}
+								#gnb .navList dd a:hover, #gnb li.navList dd a:focus {color:#000; text-decoration:none; background-color:#aaa;}
+
+			/*--- 네비게이션 이미지 영역 ---*/
+				#gnb li.navImg {overflow:hidden; position:relative;}
+					#gnb li.navImg img {width:500px; margin-left:-250px; position:absolute; left:50%; top:-10px;}
+
+			/*--- Fix Navigation ---*/
+			#fixNav {width:100%; height:60px; position:fixed; left:0; top:-80px;
+						  background-color:#fff; z-index:100; box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+				.logoBox, .fixGnb, .fixInfo {float:left;}
+				.logoBox {width:15%; height:100%; text-align:center;}
+					.logoBox a {display:block; width:100%; height:100%;}
+						.logoBox a img {width:70px; height:50px; padding-top:5px;}
+
+				.fixGnb {width:50%; height:100%; padding:0 5%;}
+					.fixGnb > li {display:inline-block; width:24%; height:100%; line-height:60px; text-align:center; position:relative;}
+						.fixGnb > li > a {display:block; width:100%; height:100%;}
+
+					.fixGnb > li:after {content:""; display:block; height:4px;
+											  opacity:0; transition:all .3s; position:absolute; left:50%; bottom:0;}
+					.fixGnb > li:hover:after {opacity:1; background-color:#5d9e7e; bottom:10px;}
+					.fixGnbList1:after {width:70px; margin-left:-35px;}
+					.fixGnbList2:after {width:60px; margin-left:-30px;}
+					.fixGnbList3:after {width:84px; margin-left:-42px;}
+					.fixGnbList4:after {width:100px; margin-left:-50px;}
+
+						.fix_subNav {width:120%; height:0; background-color:#fff;
+											border-left:1px solid #777; border-right:1px solid #777; box-sizing:border-box;
+											position:absolute; left:-10%; top:50px;
+											z-index:999; overflow:hidden; transition:all .3s;}
+
+						.fixGnb > li.fixGnbList1:hover .fix_subNav {height:250px;}
+						.fixGnb > li.fixGnbList2:hover .fix_subNav {height:100px;}
+						.fixGnb > li.fixGnbList3:hover .fix_subNav {height:200px;}
+						.fixGnb > li.fixGnbList4:hover .fix_subNav {height:150px;}
+					
+						.fix_subNav li {width:100%; height:50px; line-height:50px;
+											  border-top:1px solid #aaa; box-sizing:border-box;}
+						.fix_subNav li:last-child {border-bottom:1px solid #aaa;}
+							.fix_subNav a {display:block; width:100%; height:100%; color:#999; font-size:14px;}
+							.fix_subNav li:hover a, .fix_subNav li:focus a {color:#333; background-color:#efefef;}
+
+				.fixInfo {width:20%; padding-left:5%;}
+					.fixInfo li {display:inline-block; width:25px; margin-right:30px; margin-top:17px; }
+						.fixInfo li a {display:block; width:100%; transition:all .5s;}
+						.fix_loginBtn a:hover, .fix_loginBtn a:focus,
+						.fix_cartBtn a:hover, .fix_cartBtn a:focus {transform:scale(1.1);}
+							.fixInfo li a img {width:100%; height:25px;}
+
+					.fix_snsBtn {margin-right:0; position:relative;}
+						.fix_snsBtnArea {width:100%; height:0; overflow:hidden; position:absolute; left:0; top:0; margin-top:30px; transition:all .5s;}
+
+						.fix_snsBtn:hover .fix_snsBtnArea, .fix_snsBtn:focus .fix_snsBtnArea {height:140px;}
+								.fix_snsBtnArea a {display:block; width:25px; height:25px; border-radius:3px; overflow:hidden; margin-bottom:3px;}
+								.fix_snsBtnArea a:hover, .fix_snsBtnArea a:focus {transform:rotatey(360deg);}
+									.fix_snsBtnArea a img {background-color:#fff;}
+
+			#fixNav:after {content:""; display:block; clear:both;}
+
+			/*----------------- 인포메뉴영역 ---------------------*/
+			#infoMenu {width:190px; height:25px;
+							 position:absolute; right:5%; top:15px;
+							 z-index:3;}
+				#infoMenu li {display:block; width:25px; height:25px;
+								   float:left; margin-right:30px;}
+					#infoMenu li a {display:block; width:100%; transition:all .5s;}
+						.loginBtn a:hover, .loginBtn a:focus, .cartBtn a:hover, .cartBtn a:focus {transform:scale(1.1);}
+						#infoMenu li a img {width:100%; height:100%;}
+
+				#infoMenu .snsBtn {margin-right:0;}
+					.snsBtnIcon img {width:100%; height:100%;}
+					.snsBtnArea a {height:25px; overflow:hidden; position:relative; margin-top:5px; border-radius:3px; background-color:#fff;}
+						.snsBtnArea a img {position:absolute; left:0; top:0;}
+						.snsBtnArea a:hover, .snsBtnArea a:focus {background-color:#afafaf;}
+
+			
+			/*----------------- 로그인 시 인포메뉴영역 하단에 welcome문구 표시, 로그아웃 버튼 추가 ---------------------*/
+			.welcomeMan {
+				width:300px;
+				height:25px;
+				line-height:25px;
+				color:#1bbc9b;
+				position:absolute; right:2%; top:45px; z-indx:3;
+			}
+			
+			.logoutBtn{
+				cursor:pointer;
+				display:inline-block !important;
+				width:70px;height:25px;
+				text-align:center;
+				line-height:25px;
+				font-weight:700;
+				background-color:transparent;
+				border:none;
+				border:1px solid #1bbc9b;
+				color:#1bbc9b;
+				border:1px solid #1bbc9b;
+				border-radius:3px;
+				transition:.3s all;
+			}
+			.logoutBtn:hover{
+				background-color:#1bbc9b;
+				color:#fff;
+			}
+			/*----------------- 로그인 시 인포메뉴영역 하단에 welcome문구 표시, 로그아웃 버튼 추가 ---------------------*/
+			
+	.topLine {position:absolute; left:0; top:0; width:100%; height:60px;
+				  background-image:url('../img/content_line.png'); background-repeat:repeat-x;}
+
+	/*===================== footer =====================*/
+	.footer {width:100%;}
+
+		/*--------------- 링크페이지 영역 ---------------*/
+		.footerLink {width:100%; height:50px;
+						  line-height:50px;
+						  text-align:center;
+						  border-top:1px solid #ccc;
+						  border-bottom:1px solid #eee;}
+			.footerLink a {padding:0 12px; color:#555; font-size:14px;}
+			.footerLink a:hover, .footerLink a:focus {color:#B98C4D;
+																	  text-decoration:none;
+																	  font-weight:400;}
+
+		/*--------------- copyright and address 영역 ---------------*/
+		.footerMap {width:1025px; margin:0 auto;
+						  height:80px; padding:30px 0; overflow:hidden;}
+			.footerLeft, .footerRight {float:left; height:80px;}
+			.footerLeft {width:65%; position:relative;}
+				.f_logo {width:110px; height:75px; 
+							position:absolute; left:0; top:0;}
+				.f_logo img {width:100%; height:100%;}
+			.footerLeft address {width:70%; height:80px; padding-left:30%; font-style:normal; line-height:25px;}
+		.footerRight {width:35%;}
+			.community {width:100%; height:40px;}	
+				.community a {display:inline-block; width:40px; height:40px; padding:0 5px; transition:all .3s;}
+					.community a img {width:100%; height:100%;}
+			.copyRight {width:100%; height:40px; line-height:50px; text-indent:5px;}
+
+	/*===================== 페이지 준비중 =====================*/
+	.preparing {width:800px; height:500px; margin:50px auto;}
+		.preparing .imgArea {width:300px; height:250px; margin:0 auto;}
+			.preparing .imgArea img {width:100%; height:100%;}
+		.preparing .textArea {width:100%; height:150px; text-align:center; line-height:30px;}
+			.textArea strong {font-size:30px; line-height:60px;}
+		.preparing a {display:block; width:180px; height:50px; line-height:50px;
+							border-radius:10px; background-color:#392710; color:#fff;
+							text-align:center; margin:0 auto;}
+		.preparing a:hover, .preparing a:focus {background-color:#fff; border:2px solid #392710; color:#392710;}
+			.preparing a:hover span {animation:lt 1s infinite; position:relative;}
+				@keyframes lt {0% {left:0} 50% {left:-5px;} 100% {left:0;}}
+
+	/*===================== TOP 버튼 =====================*/
+		.topBtn {width:50px; height:50px; position:fixed; right:5%; bottom:20%;}
+			.topBtn a {display:block; width:100%; height:100%; position:relative;}
+				.circle1 {width:40px; height:40px; position:absolute; left:50%; top:50%;
+							background-color:rgba(250,250,250,0.2);
+							 margin-left:-20px; margin-top:-20px; animation:circle1 2s infinite linear 1s;
+							 border-radius:20px; border-left:1px solid #56704b;
+							 box-shadow:0 0 10px rgba(100,100,100,0.2);}
+					@keyframes circle1{ 0% {transform:rotatez(-360deg);} 100% {}}
+
+				.circle2 {width:50px; height:50px; position:absolute; left:0; top:0;
+							 border-radius:25px; border-left:1px solid #56704b;
+							 animation:circle2 2s infinite linear;
+							 
+							 box-shadow:0 0 10px rgba(200,200,200,0.5);}
+					@keyframes circle2{ 0% {transform:rotatez(360deg);}100% {}}
+
+				.topBtn span {display:block; width:50px; height:50px; 
+									  position:absolute; left:50%; top:50%;
+									  margin-left:-25px; margin-top:-25px;
+									  text-align:center; line-height:50px; font-size:12px;}
+
+	/*===================== 로그인 영역 =====================*/
+	.login_container {width:100%; position:relative; }
+	.login_content {width:460px; height:480px; margin:0 auto; padding:100px 0;}
+		.welcome {width:100%; height:330px;}
+			.login_imgArea {width:100%; height:245px; position:relative;}
+				.box {width:100%; height:100%; position:absolute; left:0; top:0;}
+				.boxA {z-index:2;}
+					.boxA li {position:absolute; background-color:rgb(63,29,21); animation:colorChange 4s ease-in-out;}
+					
+					@keyframes colorChange {
+						0% {background-color:rgba(251,96,75,1);} 10% {background-color:rgba(255,126,8,1);}
+						20% {background-color:rgba(162,153,4,1);} 30% {background-color:rgba(195,126,85,1);}
+						40% {background-color:rgba(161,94,51,1);} 50% {background-color:rgba(255,89,90,1);}
+						60% {background-color:rgba(255,115,152,1);} 70% {background-color:rgba(255,115,152,1);}
+						80% {background-color:rgba(63,29,21,1);} 90% {background-color:rgba(255,255,255,1);}
+						100% {background-color:rgba(63,29,21,0);}		}
+
+					.hBox {width:101px; height:141px;}
+					.wBox {width:346px; height:93px;}
+					.box1 {left:0; top:0;}
+					.box2 {right:0; top:0;}
+					.box3 {right:0; bottom:0;}
+					.box4 {left:0; bottom:0;}
+
+				.boxB {z-index:1;}
+					.boxB li {position:absolute; background-color:rgb(63,29,21);}
+					.boxB li.hBox {height:0;}
+					.boxB li.wBox {width:0;}
+
+				.boxC img {width:100%; height:100%;}
+
+			.login_textArea {width:100%; height:60px; line-height:60px; margin-top:30px; text-align:center; font-size:18px;}
+		.login_content form {width:100%; height:200px;}
+			#idPw {width:100%; height:40px;}
+				#idPw p {width:40%; height:30px; padding:5px 6% 5px 7%; float:left;}
+				#idPw p:last-child {padding:5px 7% 5px 0;}
+					#idPw input {width:100%; height:30px; border:1px solid #aaa;
+									   box-sizing:border-box; text-indent:10px; pointer:text;
+									   font-size:14px;}
+			#idPw:after {content:""; display:block; clear:both;}
+			.logBtn {width:100%; height:50px; line-height:50px; text-align:center;}
+				.logBtn input {width:50%; height:30px; border:none; background-color:#3f2a08; color:#fff; cursor:pointer; transition:all .2s;}
+			.logBtn:hover input {background-color:#2b2318;}
+			.joinMember {width:100%; height:50px; line-height:50px; text-align:center;}
+				.joinMember a {font-size:14px;}
+				.joinMember a:hover, .joinMember a:focus {color:#524835;}
+				.joinMember span {padding:0 20px;}
+
+	/*===================== 회원가입 영역 =====================*/
+			.join_container {width:100%; height:730px;
+									background:url("../img/login_insert_bg.jpg") no-repeat center center;
+									background-size:cover;
+									-webkit-background-size:cover;
+								   -o-background-size:cover;
+								   -ms-background-size:cover;
+									padding:50px 0;
+									position:relative;
+									}
+			.join_container form {width:300px; margin:0 auto; border-radius:3px;
+											border:1px solid #ccc; font-size:13px;
+											padding:10px 20px; background-color:rgba(255,255,255,0.8);}
+				.join_container form legend {display:block; width:100%; padding:10px 0;
+														  text-align:center;  font-size:18px; font-weight:700;}
+				.join_textArea {width:100%; margin:0 auto; text-align:center;
+									   line-height:18px;	font-size:14px;
+									   padding-bottom:10px;
+									   border-bottom:2px dotted #fff;
+									   box-sizing:border-box;}
+				.join_container form label {width:100%; line-height:27px; text-indent:5px;
+													    color:#803c11; border:none; display:block; font-size:16px;}
+				.join_container form label:after {content:"*";}
+				.join_container form p {padding:5px 0;}
+				.join_container form input {width:100%; border:1px solid #ccc;
+														box-sizing:border-box;
+														text-indent:10px; height:30px; line-height:30px;}
+					#join_button {width:150px; margin:0 auto; text-align:center;}
+						#join_button input {display:inline-block; width:60px; height:30px; line-height:30px;
+											  font-size:12px; border-radius:5px; background-color:#fff; color:#a15e33;
+											  text-indent:0; border:1px solid #a15e33;}
+						#join_button input:first-child {margin-right:5px;}
+						#join_button input:hover {background-color:#ff7e08; color:#fff; cursor:pointer;}
+		
+					#IDchkDesc{float:left; width:220px; font-size:12px; height:30px; line-height:30px;
+									   text-align:right; padding:5px 10px 0 0; overflow:hidden;}
+					#IDchkBtn{display:block; width:65px; height:30px; line-height:30px; color:#fff; background-color:#333;
+									 font-size:12px; text-align:center; text-indent:0; margin-top:5px; border-radius:5px;}
+					#IDchkBtn:hover, #IDchkBtn:focus {background-color:#666;}
+
+				#postArea{ width:100%;}
+					#postArea input{width:47%; border:1px solid #ccc; margin-bottom:5px;}
+					#postArea span {width:6%; text-align:center;}
+					#postArea #post3{width:191px;}
+						#postArea #postBtn {text-indent:0; width:95px; margin-left:5px; cursor:pointer; font-size:12px;
+														 background-color:#333; color:#fff; border-radius:5px;}
+					#postArea #postBtn:hover, #postArea #postBtn:focus {background-color:#666;}
+
+					#add1, #add2{width:100%; border:1px solid #ccc;}
+					#add2{width:298px; margin-top:5px;}	
+
+	/*===================== 장바구니 영역 =====================*/
+	.cartWrap {width:100%; margin:0 auto; padding-top:60px; border-top:1px solid #efefef; position:relative;}
+	.cartWrap h2 {width:100%; text-align:center; line-height:100px; font-size:30px; letter-spacing:3px;}
+	.cartBox {width:1025px; margin:0 auto;}
+	.cartBox th {height:50px; font-weight:100; font-size:14px;
+					   border-top:1px solid #333;
+					   border-bottom:1px solid #aaa;
+					   background-color:#efefef;
+					   border-left:1px solid #ccc;}
+	.cartBox th:first-child {border-left:none;}
+	 .cartBox td {height:200px; text-align:center; border-bottom:1px solid #aaa;}
+	 .select_del_btn {width:1025px; margin:20px auto 50px;;} 
+	 .select_del_btn p {width:150px;  text-align:center; line-height:30px;
+								border-width:1px 1px 2px 1px;
+								border-style:solid;
+								border-color:#ccc;
+								cursor:pointer;}
+	 .select_del_btn p:hover {background-color:#333; color:#efefef;}
+	.calculWrap {width:1025px; margin:0 auto; position:relative;}
+	.calcul_box {width:100%; text-align:center; border-collapse: collapse; border:1px solid #333; font-size:15px;}
+	.calcul_box th {height:50px;
+						   border-bottom:1px solid #ccc;
+						   border-right:1px solid #ccc;
+						   background-color:#efefef;
+						   font-weight:100;}
+	.calcul_box th:last-child, .calcul_box td:last-child {border-right:none;}
+	.calcul_box td {height:50px; border-right:1px solid #ccc; color:#555;}
+	.calculWrap p {width:35px; height:35px; text-align:center; line-height:35px; background-color:#333; color:#efefef; font-size:20px;}
+	.plusBox {position:absolute; left:188px; top:50%; margin-top:-17.5px;}
+	.equalBox {position:absolute; left:598px; top:50%; margin-top:-17.5px;}
+	.btnArea {width:1025px; margin:30px auto 50px; text-align:center;}
+		.btnArea a {display:inline-block;width:100px; height:30px;
+						  border:1px solid #ccc; line-height:30px;
+						  padding:5px; font-size:14px;
+						  text-align:center; margin:0 5px; box-shadow:3px 3px 5px #ccc;
+						  font-weight:600; transition:all .1s ease-in-out;}
+		.btnArea a:hover, .btnArea a:focus {box-shadow:0 0 0 #fff;}
+
+	/*===================== 서브페이지 경로 영역 =====================*/
+	.pageRoute{width:95%; height:50px; background-color:#56704b; padding-left:5%;}
+		.pageRoute > li {display:inline-block; width:150px; height:50px;
+								 line-height:50px; text-align:center;
+								 font-size:14px; position:relative;}
+		.pageRoute > li:first-child {background:url("../img/icons/pageRouteArrow.png") no-repeat center right;
+												color:#6eaf8f;}
+		.pageRoute > li:first-child a {color:#6eaf8f;}
+		.pageRoute > li:last-child > a {color:#efefef;}
+			.pageRoute li ul {display:none;
+									 position:absolute; left:-10px; top:50px;
+									 border:1px solid #ccc; z-index:100;
+									 background-color:#fefefe;}
+			.pageRoute li ul li {width:150px; height:40px;
+									   line-height:40px; border-bottom:1px dashed #ccc;}
+			.pageRoute li ul li:last-child {border:0;}
+				.pageRoute li ul li a {color:#333;}
+	.pageRoute .route_before > a {color:#6eaf8f;}
+	.pageRoute .route_product {width:300px; color:#efefef; 
+											  text-align:left; text-indent:30px;
+											  background:url("../img/icons/pageRouteArrow.png") no-repeat center left;}
+	.route_here:before {content:""; display:block; width:15px; height:50px; position:absolute;
+								  left:0; top:0; background-color:red;
+								  background:url("../img/icons/pageRouteArrow.png") no-repeat 0 0; z-index:99;}
+
+/*#################### 메인 인덱스 ####################*/
+/*################################################*/
+	.main_container {width:100%;}
+		/*===================== 메인 글귀영역 =====================*/
+		.main_introText {width:100%; padding:50px 0; text-align:center;}
+			.main_introText strong {display:block; width:100%; height:120px; font-size:32px; line-height:50px;}
+			.main_introText p {width:100%; height:150px; line-height:200%;}
+			.orange {color:#c43738; font-size:28px;}
+
+		/*===================== 매장찾기 영역 =====================*/
+		.findUs {width:1px; height:500px; margin:0 auto; position:relative;}
+			.findUs_box1 {width:500px; height:500px;
+								  position:absolute; right:-30px; top:80px;
+								  box-shadow:0 0 30px rgba(0,0,0,0.5);
+								  z-index:2;}
+				.findUs_box1 a {width:100%; height:100%;}
+					.findUs_img1 {width:100%; height:250px;
+										 background:url('../img/findus1.jpg') no-repeat center center;
+										 background-size:100% 100%;
+										 }
+					.findUs_text {width:100%; height:180px; padding:50px 0 20px;
+										 line-height:70px; text-align:center;
+										 background-color:#fff;}
+					.findUs_text strong {font-size:23px;}
+					.findUs_text span {font-size:25px;}
+
+			.findUs_box2 {width:500px; height:500px; background-color:#000; 
+								  position:absolute; left:-30px; top:20px;
+								  box-shadow:0 0 30px rgba(0,0,0,0.5);
+								  overflow:hidden; z-index:1;}
+				.findUs_box2 a {display:block; width:100%; height:100%;
+										 background:url('../img/findus3.jpg') no-repeat center center;
+										 background-size:100%;
+										 }
+
+		/*===================== 메인 Shop 영역 =====================*/
+		.main_shop {width:100%; padding:150px 0 30px;
+							background-color:#392710;
+							background:url("../img/brownbg.png") repeat center center;
+							background-size:100% 100%;
+							position:relative;
+							}
+			.main_shop h2 {width:100%; height:80px; text-align:center; color:#ccc; font-size:30px;}
+			.main_shopScreen {width:1000px; height:400px; margin:0 auto; overflow:hidden;}
+				.main_shopFilm {width:200%; height:100%;}
+					.main_shopScene {width:12%; margin-right:0.5% ; height:100%; float:left;}
+				.main_shopFilm:after {content:""; display:block; clear:both;}
+					.main_shopScene a {width:100%; height:100%;}
+					.main_shopScene a img {width:100%;}
+					.main_shopScene a p {width:90%; padding:0 5%;}
+					.main_shopScene a p strong {display:block; width:100%; line-height:40px;
+																 color:#fff; border-bottom:1px solid #aaa; font-weight:100;
+																 font-size:15px;}
+					.main_shopScene a p span {display:block; width:100%; color:#ccc; font-size:13px;}
+					.main_shopScene a p i {display:block; width:100%; line-height:30px;
+														text-align:right; color:#fff; font-size:15px;}
+
+					.main_shop_reduce span {line-height:20px; padding-top:5px;}
+					.main_shop_normal span {line-height:30px;}
+					.main_shop_reduce i {margin-top:-15px;}
+
+			.main_shopBtn {width:1100px; height:30px;
+									 position:absolute; left:50%; top:400px;
+									 margin-left:-550px;}
+				.main_shopBtn p {width:30px; height:30px; cursor:pointer;}
+				.main_shopBtn p img {width:100%; height:100%; opacity:0.6;}
+				.main_shopBtn p img:hover {opacity:0.9;}
+				.main_shop_nextBtn {float:right;}
+				.main_shop_prevBtn {float:left;}
+
+
+		/*===================== Article =====================*/
+			#articleWrap {width:100%; background-color:#fff; padding:100px 0; overflow:hidden;}
+				#articleWrap h2 {width:100%; height:150px; text-align:center; font-size:30px;}
+				#articleArea {width:1025px; margin:0 auto;}
+					.leftArea, .rightArea {width:50%; float:left;}
+
+					/*---------- 왼쪽 박스 영역 ----------*/
+						/*--- 커 핑 ---*/
+						#cupping {width:100%; height:250px;}
+							#cupping a {display:block; width:50%; height:100%; float:left; position:relative; overflow:hidden;}
+								#cupping a img {width:100%; height:100%; transition:all 1s;}
+								#cupping a:hover img, #cupping a:focus img {transform:scale(1.1);}
+								#cupping a p{width:100%; height:100%;
+													position:absolute; left:0; top:0;
+													background-color:rgba(0,0,0,0.2);
+													text-align:center; transition:all .5s;}
+								#cupping a:hover p, #cupping a:focus p {background-color:rgba(0,0,0,0.4); perspective:150px;}
+									#cupping a span {width:120px; height:30px;
+															line-height:30px; text-align:center;
+															color:#fff; font-size:18px;
+														    font-weight:700; display:inline-block;
+															border:1px solid #fff;
+															position:absolute; left:50%; top:50%;
+															margin-left:-60px; margin-top:-15px;
+															transition:all .5s;}
+
+									#cupping .businessCup span {font-size:18px;}
+									#cupping a span.view {opacity:0; transform:rotatex(180deg);}
+									#cupping a:hover span.cuppingTitle, #cupping a:focus span.cuppingTitle {
+										transform:rotatex(-180deg); opacity:0;}
+									#cupping a:hover span.view, #cupping a:focus span.view {
+										opacity:1; transform:rotatex(0deg); background-color:rgba(200,200,100,0.5);}
+
+						/*---------- 이벤트 : 모모스 부산하다----------*/
+						#busan {width:98%; height:480px; margin:10px 1% 10px 0;}
+							#busan p {float:left;}
+								#busanText {width:51%; height:476px; text-align:center; box-sizing:border-box;
+												 border:2px solid #524835; color:#524835;}
+									.logoAppear {display:block; width:100%; height:90px; transition:all .5s;
+														 padding:100px 0; line-height:30px;
+														 background-image:url("../img/logo_head.png"), url("../img/kimi.png");
+														 background-repeat:no-repeat, no-repeat;
+														 background-size:100px 60px, 60px 60px;
+														 background-position:370px -20px, -110px 230px;}
+									.logoAppear:hover, .logoAppear:focus {background-position:center 20px, center 210px;}
+									#busanText em {display:block; width:100%; font-size:22px; line-height:40px;
+															 font-style:normal; font-weight:700;}
+									.busanView {display:block; width:120px; height:30px;
+														line-height:30px; border:1px solid #524835;
+														color:#524835; margin:30px auto 0;}
+									.busanView:hover, .busanView:focus {background-color:#524835; color:#fff;}
+								#busanImg {width:48%; height:480px; background-color:#EC6900; position:relative;}
+									#busanImg img {width:100%; height:100%;}
+									#busanImg span {position:absolute; right:40%; top:5%;
+														  color:#132E71; font-size:35px; font-weight:700;}
+
+						/*---------- 위클리마켓 ----------*/
+						#weekly {width:100%; height:250px; position:relative; perspective:1000px;}
+							#weekly a {display:block; width:100%; height:100%;}
+								#weekly a div {width:100%; height:100%; position:absolute; left:0; top:0;}
+									#weekly a p {width:50%; height:100%; float:left;}
+										#weekly a p img {width:100%; height:100%;}
+											.rightText {background-color:#fff; text-align:center;
+															border:1px solid #ccc; box-sizing:border-box;}
+												.rightText em {display:block; font-style:normal; font-weight:700;
+																	color:#c43738; padding:40px 0 20px; font-size:18px;
+																	line-height:160%;}
+												.rightText .wk_desc {font-size:14px; line-height:150%;}
+
+								.wkBoxB {transform:rotatey(180deg);
+												-ms-transform:rotatey(180deg);
+												transition:all .5s ease-in-out;}
+									.rightImg {position:relative; }
+										.rightImg img {position:absolute; left:0; top:0; transition:.5s ease-in-out;}
+										.wkFront {box-shadow:1px 0 5px rgba(0,0,0,0.5);
+													   transform:rotatey(180deg); opacity:1;
+													   -ms-transform:rotatey(180deg);}
+										.wkBack {opacity:0; box-shadow:-2px 0 5px rgba(0,0,0,0.5);}
+
+							#weekly a:hover .wkBoxB, #weekly a:focus .wkBoxB {transform:rotatey(0deg);}
+							#weekly a:hover .wkBack, #weekly a:focus .wkBack {opacity:1;}
+							#weekly a:hover .wkFront, #weekly a:focus .wkFront {opacity:0;}
+
+
+						/*---------- 원두정기배달 ----------*/
+						#delivery {width:100%; height:500px;}
+								.deliveryImg {width:100%; height:250px; position:relative; text-align:center;}
+									.deliveryImg img {width:100%; height:100%;}
+									.deliveryImg span {position:absolute; display:block;}
+									.deliveryImg span.deliveryWord1 {width:100%; left:0; top:70px; font-size:25px;}
+									.deliveryImg span.deliveryWord2 {width:100%; left:0; top:150px;}
+
+								.deliveryText {width:96%; height:240px;
+													margin:10px 2% 0;
+													border:2px solid #56704b;
+													position:relative;
+													line-height:30px;
+													text-align:center;}
+									.deliveryText strong {display:block; width:100%; height:100px;
+																  line-height:100px; font-size:20px; color:#56704b;}
+									.deliveryText a {display:block; width:120px; height:30px;
+														   line-height:30px; margin:30px auto 0;
+														   border:1px solid #56704b;
+														   color:#524835;}
+									.deliveryText a:hover, .deliveryText a:focus {
+										background-color:#524835; color:#fff; text-decoration:none;}
+									.deliveryText:before {content:""; display:block;
+															   position:absolute; left:50%; top:-50px; margin-left:-10px;
+															   border-top:20px solid transparent;
+															   border-bottom:20px solid #fff;
+															   border-right:20px solid transparent;
+															   border-left:20px solid transparent;} 
+
+					/*---------- 오른쪽 박스 영역 ----------*/	
+					.rightArea {margin-top:-70px;}
+						/*--- 드립백 홍보 ---*/
+						#dripbag {width:100%; height:515px;}
+							.dripbagVideo {width:100%;/* height:289px;*/ background-color:#eee; position:relative;}
+								.dripbagVideo video {width:100%; height:100%;}
+								.dripbagVideo em {display:block; width:100%; text-align:center;
+														  font-style:normal; position:absolute; left:0; top:40%;
+														  font-size:30px; color:#fff;}
+							.dripbagVideo:hover em {display:none;}
+								.dripbagText {width:99%; height:200px;
+												   margin-top:10px;
+												   text-align:center;
+												   border:2px solid #56704b;
+												   line-height:25px;}
+									.dripbagText strong {display:block; width:100%; height:70px;
+																 line-height:70px; font-size:20px;}
+									.dripbagText .dripbagWord1 {display:block;
+																			height:15px;
+																			line-height:20px;
+																			font-size:15px;
+																			font-weight:700;}
+
+						/*---커피교실 ---*/
+						#academy {width:100%; height:250px;}
+							#academy p {width:50%; height:100%; float:left; position:relative;}
+								#academy p img {width:100%; height:100%; transition:all 1s;}
+								.academyImg1:after {content:""; display:block;
+															  position:absolute; right:-40px; top:50%;
+															  margin-top:-20px; z-index:2;															  
+															  border-top:20px solid transparent;
+															  border-bottom:20px solid transparent;
+															  border-right:20px solid transparent;
+															  border-left:20px solid  #C9B298;}
+									.academyImg1 a {display:block; width:100%; height:100%;}
+										.academyImg1 img {position:absolute; left:0; top:0;}
+										.academyImg1 img.hobbyBack {opacity:0; transition:all .5s;}
+								.academyImg2 {overflow:hidden;}
+									.academyImg2 a {display:block; width:120px; height:30px;
+															 line-height:30px; text-align:center;
+															 color:#fff; font-size:18px; margin-left:-60px;
+															 position:absolute; left:50%; top:110px;															 
+															 font-weight:700; border:1px solid #fff;}
+													
+						/*---다이렉트 에피소드 ---*/
+						#directEpisode {width:100%; height:250px; overflow:hidden;
+											   position:relative; background-color:#56704b;}
+							#directEpisode img {width:100%; height:100%; transition:all 2s;}
+							#directEpisode .episodeText {width:100%; height:200px; color:#fff;
+																	   position:absolute; left:0; top:0;
+																	   line-height:30px; text-align:center;
+																	   padding-top:50px; transition:all .5s;}
+								.episodeText .text1 {font-size:23px; font-weight:700;}
+								.episodeText .text3:before {content:"-";}
+								.episodeText .text3:after {content:"-";}
+								.episodeText a {display:block; width:120px; height:30px;
+													   line-height:30px; border:1px solid #fff; color:#fff;
+													   margin:30px auto 0; font-size:18px;}
+
+						/*---공지사항 ---*/
+						.main_notice {width:100%; height:500px;}
+						.main_notice:after {content:""; display:block; clear:both;}
+							.main_notice p {float:left;}
+								.main_notice p img {width:100%; height:100%;}
+							.main_notice_img {width:50%; height:250px;}
+
+							.main_recruit2 {width:48%; height:230px;
+												  margin:10px 0 10px 2%;
+												  border:2px solid #56704b;
+												  box-sizing:border-box;
+												  position:relative;}
+							.main_recruit2 strong{display:block; width:95%; height:75px; 
+															background-color:#fff; line-height:25px;
+															padding:15px 0 15px 5%; font-size:20px;}
+							.main_recruit2 span {display:block; width:95%; height:91px;
+														   padding:15px 0 15px 5%; color:#fff;
+														   background-color:#392710;
+														   line-height:25px;	font-size:15px;}
+							.main_recruit2:before {content:""; display:block; margin-top:-15px;
+															 position:absolute; left:-50px; top:50%;
+															 border-top:20px solid transparent;
+															 border-bottom:20px solid transparent;
+															 border-right:20px solid #fff;
+															 border-left:20px solid transparent;}
+							.main_notice_link {overflow:hidden; position:relative; transition:all 1s;}
+							.main_notice_link a {display:block; width:100%; height:100%;
+														  position:absolute; left:0; top:0;}
+							.main_notice_link img {transition:all 1s;}
+							.main_notice_link a span {display:block; width:120px; height:30px;
+																   line-height:30px; border:1px solid #fff;
+																   position:absolute; left:50%; top:105px;
+																   margin-left:-60px; text-align:center;
+																   transition:all .5s; font-weight:700;} 		
+							.centumTitle, .recruitTitle {color:#fff; font-size:15px;}
+							.centumView, .recruitView {opacity:0; transform:rotatex(180deg); color:#fff; font-size:18px;}
+
+							.main_centum2:hover .centumTitle,
+							.main_recruit1:hover .recruitTitle {transform:rotatex(-180deg); opacity:0;}
+							.main_centum2:hover .centumView,
+							.main_recruit1:hover .recruitView {opacity:1; transform:rotatex(0deg);
+																			 background-color:rgba(255,255,126,0.5);}
+
+/*#################### 서브페이지 ####################*/
+/*################################################*/
+
+	/*################## sub1-1 영역 ##################*/
+	.philosophy_visualWrap {width:100%; height:200px; background-color:#857264; overflow:hidden;
+								   position:relative;
+								   background:url('../img/panorama1.jpg') no-repeat center center;
+								   -webkit-background-size:cover;
+								   -o-background-size:cover;
+								   -ms-background-size:cover;
+								   }
+			.philosophy_visualText {width:500px; height:100px;
+									      position:absolute; left:50%; top:50%;
+								          margin-left:-250px; margin-top:-50px;
+										  text-align:center;
+								          line-height:50px; color:#fff;}
+			.philosophy_visualText span {font-size:40px;}
+
+	.sub1-1_content {width:100%;}
+		.sub1-1_upper, .sub1-1_lower {width:800px; margin:50px auto 0; }
+			.sub1-1_upper div, .sub1-1_lower div {width:100%; height:300px; padding-bottom:50px;}
+
+			.sub1-1_imgArea {position:relative; width:50%; float:left;}
+				.sub1-1_imgArea img {width:100%;}
+			.sub1-1_idea1 .sub1-1_imgArea:after {content:""; display:block; margin-top:-40px;
+																	 position:absolute; right:0; top:50%;
+																	 border-top:20px solid transparent;
+																	 border-bottom:20px solid transparent;
+																	 border-right:20px solid #fff;
+																	 border-left:20px solid transparent;}
+
+			.sub1-1_textArea {float:left; width:44%; padding:0 3%; font-weight:100; line-height:30px;font-size:16px}
+			.sub1-1_textArea strong {display:block; width:100%;
+												  padding:20px 0; color:#c43738;
+												  font-weight:700; font-size:20px;}
+			.sub1-1_idea2 .sub1-1_textArea {margin-top:20px; height:280px; font-size:15px;}
+			.sub1-1_idea3 .sub1-1_textArea {margin-top:20px; height:280px;}
+			.sub1-1_idea4 .sub1-1_textArea {font-size:15px; letter-spacing:-0.5px;}
+
+
+			.sub1-1_lineImg {width:100%; height:250px;
+									 background:url('../img/sub1_1/bg_traditional_03.jpg') no-repeat center center;
+									 background-size:cover;
+									 -webkit-background-size:cover;
+									 -ms-background-size:cover;
+									 -o-background-size:cover;
+									 /*background-color:#1D1D1D; position:relative;*/}
+
+	/*################## sub1-2 영역 ##################*/
+	.history_visualWrap {width:100%; height:200px; background-color:#6F5C4E; 
+								   position:relative; overflow:hidden;
+								   background:url('../img/panorama2.jpg') no-repeat center center;
+								   -webkit-background-size:cover;
+								   -o-background-size:cover;
+								   -ms-background-size:cover;
+								   }
+		.history_visualText {width:500px; height:100px;
+								      position:absolute; left:50%; top:50%;
+									 margin-left:-250px; margin-top:-50px;
+									  text-align:center; line-height:40px; color:#fff;}
+		.history_visualText span {font-size:40px;}
+
+	.history_content {width:100%; height:5600px; position:relative;}
+		.yearBg {width:400px; height:400px; margin-top:150px;
+					  position:fixed; left:50%; top:0;
+					  margin-left:-200px;
+					  background:url("../img/sub1_2/circleBg.png") no-repeat center center;
+					  background-size:100% 100%;
+					  }
+		.yearArea {width:100%; height:100%;
+						position:relative; text-align:center; line-height:400px;}
+		.yearArea span {position:absolute; left:center; top:center;
+								opacity:0; font-size:110px;
+								margin-left:-125px; font-weight:400;
+								font-family:'dotum', sans-serif;}
+					
+		.history_list {width:100%; position:absolute; left:0; top:0;}
+			.history_list > li {width:45%; height:450px; padding-top:50px;}
+				.history_list > .history_left {margin-right:52%; margin-left:3%;}
+				.history_list > .history_right {margin-left:52%; margin-right:3%;}
+				.history_textArea {width:100%; padding:10px 0; text-align:center; font-size:15px; line-height:20px;}
+				.history_textArea strong {display:block; width:100%; height:40px; font-size:24px;}
+				.history_imgScreen {width:450px; height:300px; overflow:hidden;
+											  outline:2px solid #000; margin:0 auto; position:relative;}
+					.history_imgFilm {width:1350px;}
+						.history_scene {width:450px; float:left; background-color:#000;}
+							.history_scene img {width:100%;}
+				.history_imgFilm:after {content:""; display:block; clear:both;}
+					.history_imgBtn {width:90%; height:40px;
+											 position:absolute; left:50%; top:50%;
+											 margin-left:-45%; margin-top:-20px;}
+						.history_imgBtn p {width:20px; height:100%; cursor:pointer;}
+						.history_nextBtn {float:left;}
+						.history_nextBtn {float:right;}
+							.history_imgBtn p img {width:100%; height:100%; opacity:0.5; transition:all .2s;}
+							.history_imgBtn p:hover img {opacity:0.8;}				
+
+	/*################## sub1-3 영역 ##################*/
+	.sub1-3_container {width:100%;}
+	.people_visualWrap {width:100%; height:200px; background-color:#6F5C4E; 
+								   position:relative; overflow:hidden;
+								   background:url('../img/panorama3.jpg') no-repeat bottom center;
+								   -webkit-background-size:cover;
+								   -o-background-size:cover;
+								   -ms-background-size:cover;
+								   }
+		.people_visualText {width:500px; height:100px;
+								      position:absolute; left:50%; top:50%;
+									 margin-left:-250px; margin-top:-60px;
+									  text-align:center; line-height:40px; color:#fff;}
+		.people_visualText span {font-size:30px;}
+
+		.sub1-3_content {width:1025px; margin:0 auto; position:relative;}
+
+		/*============= focus_person =============*/
+		.focus_staff {width:100%; height:500px; margin-top:80px;}
+			.focus_staff li {width:100%; height:100%; border:1px dotted green; border-radius:10px; display:none;}
+			.focus_staff li.focus_selected {display:block;}
+
+			.staff_left, .staff_right {float:left; height:100%;}
+			.staff_left {width:55%; padding-left:5%; position:relative;}
+			.staff_right {width:40%;}
+				.staff_right p {width:70%; margin:10px auto 0; padding:5px 10px 10px 5px;
+									box-shadow:5px 5px 30px rgba(0,0,0,0.5);}
+				.staff_right p img {width:100%;}
+
+			.staff_intro {width:100%; padding:30px 0; line-height:30px;
+							  position:relative; left:0; top:0;}
+				.staff_name {font-size:22px; font-weight:700;}
+				.staff_role {font-size:18px; color:#22B14C;}
+
+			.staff_otherJob {width::100%; padding-bottom:30px; line-height:30px;}
+			.staff_career {width:98%; padding-left:2%; line-height:30px;}
+
+				/*============= people button=============*/
+				.staff_Btn {width:50%; height:50px; margin:50px auto 0; position:absolute; top:380px; left:50px; display:none;}
+					.staff_Btn a {display:block; width:100px; height:30px; text-align:center; position:absolute;}
+					.staff_prevBtn {left:0; top:0;}
+					.staff_prevBtn:after {content:""; display:block; width:50px; height:8px;
+													  background-color:#56704b; position:absolute; left:120px; top:5px;}
+					.staff_nextBtn {right:0; top:0;}
+					.staff_nextBtn:before {content:""; display:block; width:50px; height:8px; background-color:#56704b;
+														 position:absolute; left:-70px; top:5px;}
+
+					.staff_prevBtn:hover, .staff_prevBtn:focus, .staff_nextBtn:hover, .staff_nextBtn:focus {color:#f09;}					
+
+				/*============= abbr_person =============*/
+				.abbr_card {width:100%; margin-top:60px;}
+					.abbr_card li {width:26%; height:200px; margin:35px 3% 35px; float:left;}
+						.abbr_card li a {display:block; width:100%; height:100%;
+											   position:relative; border:1px solid #68936d;
+											   box-shadow:0 0 20px rgba(0,0,0,0.5);
+											   transition:all 0.1s ease-in-out;
+											   border-radius:10px;}
+
+							.abbr_card a .abbrImg {width:50%; height:150px;
+															  padding:3px 3px 10px 3px;
+															  box-shadow:0 0 10px rgba(0,0,0,0.5);
+															  position:absolute; left:5%; top:-30px; overflow:hidden;}
+								.abbr_card a .abbrImg	img {width:100%; transform:scale(1.2);}
+							.abbr_card a .abbrName {width:40%; padding-left:60%;
+																 padding-top:20px;
+																 height:120px;}
+							.abbr_card a .abbrRole {width:100%; height:60px; line-height:60px; text-align:center;}
+				.abbr_card:after {content:""; display:block; clear:both;}
+				.abbr_card li:first-child {display:none;}
+
+	/*################## sub1-4 영역 ##################*/
+	.sub1-4_container {width:100%;}
+	.location_visualWrap {width:100%; height:200px; background-color:#6F5C4E; 
+								   position:relative; overflow:hidden;
+								   background:url('../img/panorama4.jpg') no-repeat bottom center;
+								   -webkit-background-size:cover;
+								   -o-background-size:cover;
+								   -ms-background-size:cover;
+								   }
+		.location_visualText {width:500px; height:100px;
+								      position:absolute; left:50%; top:50%;
+									 margin-left:-250px; margin-top:-50px;
+									  text-align:center; line-height:40px; color:#fff;}
+		.location_visualText span {font-size:30px;}
+
+	.location_content {width:1025px; height:1150px; margin:0 auto; position:relative;}
+
+		/*============= 매장 : 온천장점  =============*/
+		.location_shop1 {width:800px; margin:0 auto; position:relative; box-shadow:0 0 30px rgba(0,0,0,0.5);}
+			.location_shop1Img {display:block; width:800px; height:500px; margin:50px auto; position:relative; overflow:hidden;}
+				.location_shop1Img .location_imgArea {width:100%; height:100%; position:absolute; left:-20px; top:0; transition:all 5s;}
+					.location_shop1Img .location_imgArea img {width:100%; height:100%;}
+				.location_shop1Img .location_bg {width:100%; height:100%; background:url("../img/sub1_4/gridBg.png") repeat 0 0;}
+			.location_shop1Img:after {content:"자세히보기"; display:block;
+												   width:150px; height:40px;
+												   line-height:40px; text-align:center;
+												   font-size:22px; color:#fff; font-weight:700;
+												   box-shadow:0 5px 10px rgba(0,0,0,0.5);
+												   position:absolute; right:30px; bottom:15px;
+												   background-color:#B4A281;}
+											 
+					.location_shop1Img:hover:after {color:#000;}
+						.location_shop1Img:hover .location_imgArea {transform:translatex(20px);}
+
+					.location_dateBoxWrap {width:880px;
+										  padding:10px;
+										  position:absolute; left:-50px; top:220px;
+										  background-color:#fff;
+										  box-shadow:0 0 5px rgba(0,0,0,0.2);}
+						.location_dateBox {width:100%;
+									   border:2px solid #524835;
+									   box-sizing:border-box;}
+							.location_title {width:100%; height:30px; line-height:30px; border-bottom:1px solid #392710; box-sizing:border-box;}
+								.location_title span {display:block; height:100%; font-size:1.2em; float:left;}
+									.location_title span:first-child {width:60%; text-indent:10px;}
+									.location_title span:last-child {width:35%; padding-left:5%;}
+							.location_date1 {width:100%; height:100px;}
+								.location_date1 p, .location_date1 div {float:left;}	
+								.location_date1 p {width:60%; height:100%;
+											  font-size:50px; line-height:100px;
+											  text-indent:10px; 
+											  background:url("../img/sub1_4/titleBg.png") repeat 0 0;}
+								.location_date1 div {width:35%; padding-left:5%; height:100%;}
+									.location_date1 div address {display:block; width:100%; height:50px; padding:10px 0;
+																font-style:normal; line-height:25px; font-size:18px;}
+									.location_date1 div a {display:block; width:100%; height:30px;
+													   line-height:30px;
+													   position:relative;
+													   color:#392710;}
+									.location_date1 div a:hover {color:#000; font-weight:700;}
+										.location_date1 div a span {position:absolute; right:45%; top:5px;}
+											.location_date1 a img {width:20px; height:20px;}	
+
+							.location_date2 {width:100%; height:0; border-top:1px solid #392710; box-sizing:border-box; overflow:hidden; transition:all .5s;}
+						.location_shop1:hover .location_date2, .location_shop1:focus .location_date2 {height:48px;}
+								.location_date2 span {display:block; height:100%; float:left; line-height:48px;}
+								.location_date2 span:first-child {width:40%; text-indent:30px;
+																border-right:1px solid #392710;
+																box-sizing:border-box;}
+								.location_date2 span:last-child {width:55%; text-indent:50px;}
+
+						.location_dateBoxWrap:before {content:""; display:block;
+														position:absolute;
+														left:0; bottom:-50px;
+														border-top:30px solid #B4A281;
+														border-bottom:20px solid transparent;
+														border-left:50px solid transparent;}
+						.location_dateBoxWrap:after {content:""; display:block;
+													 position:absolute;
+													 right:0; bottom:-50px;
+													 border-top:30px solid #B4A281;
+													 border-bottom:20px solid transparent;
+													 border-right:50px solid transparent;}
+
+				/*============= 매장 : 센텀시티점  =============*/
+				.location_shop2 {width:800px; margin:0 auto; position:relative; top:30px; box-shadow:0 0 30px rgba(0,0,0,0.5);}
+					.location_shop2 .location_dateBoxWrap {left:-50px; top:220px;}				
+					.location_shop2Img {display:block; width:800px; height:500px; margin:50px auto; position:relative; overflow:hidden;}
+						.location_shop2Img .location_imgArea {width:100%; height:100%; position:absolute; left:-20px; top:0; transition:all 5s;}
+							.location_shop2Img .location_imgArea img {width:100%; height:100%;}
+						.location_shop2Img .location_bg {width:100%; height:100%; background:url("../img/sub1_4/gridBg.png") repeat 0 0;}
+					.location_shop2Img:after {content:"자세히보기"; display:block;
+											 width:150px; height:40px;
+											 line-height:40px; text-align:center;
+											 font-size:22px; color:#fff;
+											 font-weight:700;
+											 box-shadow:0 5px 10px rgba(0,0,0,0.5);
+											 position:absolute; right:30px; bottom:15px;
+											 background-color:#B4A281;}
+											 
+					.location_shop2Img:hover:after {color:#000;}
+						.location_shop2Img:hover .location_imgArea {transform:translatex(20px);}
+						.location_shop2:hover .location_date2, .location_shop2:focus .location_date2 {height:48px;}
+
+	/*################## sub1-4-store1 영역 ##################*/
+	.sub1-4-store {width:100%;}
+	.store_visualWrap {width:100%; height:200px; background-color:#857264;
+								   position:relative; overflow:hidden;
+								   background-position:bottom center;
+								   background-repeat:no-repeat;
+								   -webkit-background-size:cover;
+								   -o-background-size:cover;
+								   -ms-background-size:cover;
+								   }
+		.store_visualText {width:500px; height:100px;
+								    position:absolute; left:50%; top:50%;
+									margin-left:-250px; margin-top:-50px;
+									text-align:center; line-height:40px; color:#fff;}
+		.store_visualText span {font-size:30px;}
+
+	.store_content {width:100%; padding-top:40px;}
+
+	.store_addr {width:800px; height:120px; margin:0 auto; padding-bottom:20px;}	
+		.store_addr p {width:45%; height:60px; float:left; padding-left:5%;}
+		.store_addr p em {display:inline-block; width:25%; height:100%; line-height:50px;} 
+		.store_addr p span, .store_addr a {display:inline-block; width:75; height:100%; color:#333; line-height:30px;}
+		.store_addr p:first-child span {letter-spacing:-1px;}
+					
+		.store_direct {width:100%; height:700px; background-color:#333;}
+		.store_direct h3 {width:100%; height:100px; font-weight:400; font-size:28px;
+								 line-height:100px; text-align:center; color:#fff;}
+		.store_map {width:420px; height:370px; margin:0 auto; border:1px solid #fff;}
+		.store_transit {width:600px; height:100px; margin:0 auto; color:#fff; padding:50px 0;}
+		.store_transit p {width:100%; height:50px; line-height:25px;}
+		.store_transit p em {display:inline-block; width:20%;}
+		.store_transit p span {display:inline-block; width:80%;}
+
+	.store1Visual {background-image:url('../img/panorama4_1.jpg');}
+	.store2Visual {background-image:url('../img/panorama4_2.jpg');}
+
+	.route_before {color:#6eaf8f; background:url("img/icons/pageRouteArrow.png") no-repeat center right;}
+
+
+	/*################## sub2-1 영역 ##################*/
+	.showAll_container{width:100%;}
+	.showAll_visualWrap {width:100%; height:200px; background-color:#857264;
+								   position:relative; overflow:hidden;
+								   background-image:url('../img/panorama2_1.jpg');
+								   background-position:bottom center;
+								   background-repeat:no-repeat;
+								   -webkit-background-size:cover;
+								   -o-background-size:cover;
+								   -ms-background-size:cover;
+								   }
+		.showAll_visualText {width:500px; height:100px;
+								    position:absolute; left:50%; top:50%;
+									margin-left:-250px; margin-top:-50px;
+									text-align:center; line-height:40px; color:#fff;}
+		.showAll_visualText span {font-size:30px;}
+
+		/*============= 추천상품 : banner =============*/
+		.showAll_content {width:100%;}
+			.showAll_banner {width:1025px; height:300px; margin:0 auto 80px;}
+				.showAll_banner h4 {width:100%; height:100px; line-height:120px; text-align:center; font-size:18px;}
+				.showAll_banner ul {width:100%; height:200px;}
+				.showAll_banner ul li {width:32%; height:100%; margin-left:2%; float:left; overflow:hidden;}
+				.showAll_banner ul li:hover {box-shadow:0 0 20px rgba(0,0,0,0.5);}
+				.showAll_banner ul li:first-child {margin-left:0;}
+				.showAll_banner li a {display:block; width:100%; height:100%; position:relative;}
+				.showAll_banner a p {position:absolute; right:0; bottom:0;
+												 width:94%; height:60px; padding:0 3%;
+												 background-color:rgba(0,0,0,0.5); 
+												 color:#fff; font-family:gothic, sans-serif;
+												 line-height:25px;}
+				.showAll_banner li:nth-child(1) img {width:150%;}
+				.showAll_banner li:nth-child(2) img{width:100%; margin-top:-10px;}
+				.showAll_banner li:nth-child(3) img {width:100%; margin-top:-15px;}
+
+				.showAll_banner li p span:first-child {font-size:13px; font-weight:700;}
+				.showAll_banner li p span:last-child {display:block; width:30px; height:30px; position:absolute; right:5px; bottom:15px;}
+				.showAll_banner li p span:last-child img {width:100%; height:100%;}
+
+		/*============= 제품 버튼영역 =============*/
+		.goods_btnArea {width:100%; height:70px; margin-bottom:50px;
+								  border-top:1px solid #E9E4DB; border-bottom:1px solid #E9E4DB;}
+	 		.goods_btnArea ul {width:1025px; height:100%; margin:0 auto; line-height:90px;}
+	 		.goods_btnArea ul li {display:inline-block; padding:0 15px; position:relative;}
+			.goods_btnArea ul li a:hover, .goods_btnArea ul li a:focus {color:#a6a197;}
+
+			.goods_btnArea ul li a.goods_selected:before {content:""; display:block;
+																	  width:90%; height:5px;
+																	  background-color:#848075;
+																	  position:absolute; left:50%; margin-left:-45%; bottom:20px;}
+
+		/*============= 모든 제품 =============*/
+		.showAll_goodsWrap {width:100%; background-color:#fff;}
+			.showAll_goodsWrap h4 {width:100%; height:100px; line-height:120px; text-align:center; font-size:18px;}
+			.showAll_goodsWrap > ul {width:1025px; margin:0 auto;}
+			.showAll_goodsWrap > ul:after {content:""; display:block; clear:both;}
+			.showAll_goods {width:185px; height:300px; margin:0 10px 70px; float:left;}
+				.showAll_goods a {display:block; width:100%; height:250px;
+											 border-bottom:1px dashed #666; position:relative;}
+				.showAll_goods a p:first-child {width:100%; height:220px; position:relative;}
+					.showAll_goods a img {width:100%;}
+				.showAll_goods a p:last-child {width:100%; height:30px; text-align:center;
+														      line-height:30px; font-size:13px; text-indent:5px; color:#333;}
+
+				.showAll_goods3 a:before,
+				.showAll_goods4 a:before,
+				.showAll_goods5 a:before,
+				.showAll_goods6 a:before,
+				.showAll_goods7 a:before,
+				.showAll_goods10 a:before,
+				.showAll_goods12 a:before,
+				.showAll_goods14 a:before	{content:""; display:block;
+														  position:absolute; right:0; top:0;
+														  border-top:60px solid #fff;
+														  border-bottom:60px solid transparent;
+														  border-left:60px solid transparent;
+														  z-index:2;
+														  }
+				.showAll_goods3 a:after,
+				.showAll_goods4 a:after,
+				.showAll_goods5 a:after,
+				.showAll_goods6 a:after,
+				.showAll_goods7 a:after,
+				.showAll_goods10 a:after,
+				.showAll_goods12 a:after,
+				.showAll_goods14 a:after {content:"BEST"; display:block; width:50px; height:30px;
+													   position:absolute; right:-2px; top:17px;
+													   transform:rotatez(45deg);
+													   z-index:3;}
+													
+
+				.showAll_goods div {width:100%; height:50px; padding:5px 0; font-size:13px; font-size:100;}
+					.goods_desc {height:30px; font-family:'gulim',sans-serif; font-size:12px;}
+					.goods_price {width:97%; height:20px; line-height:20px; text-align:right; padding-right:3%;}
+					.gray {font-size:15px; padding-left:3px; color:#333;}
+
+
+				.showAll_goods6 a p {letter-spacing:-1.5px;}
+				
+				.feel_review {display:none; width:100%; height:75%; padding-top:25%;
+									position:absolute; left:0; top:0;
+									background-color:rgba(0,0,0,0.7); color:#fff;
+									font-family:'myungjo',sans-serif;
+									text-align:center; line-height:25px;
+									font-weight:700; font-size:14px;
+									z-index:1; letter-spacing:0;}
+				.feel_review i {color:#ccc; padding-top:15px; font-size:13px; display:inline-block;}
+				.feel_review b {font-size:23px;}
+
+
+	/*################## 제품 상세페이지 영역 ##################*/
+	.detail_container {background-color:#efefef; position:relative; padding-bottom:20px;}
+		.detail_content {width:70%; margin:20px 26% 0 4%; background-color:#fff; overflow:hidden;}
+
+		/*============= 제품 컨텐츠 소개 영역 =============*/
+	.detail_content h2 {width:100%; text-align:center; padding:70px 0 15px;}
+		.detail_content h2 span {font-weight:400;}
+		.detail_content h2 small {font-size:16px; font-weight:400; color:#333; padding-top:30px; display:block; width:100%;}
+	
+	.starArea {width:100%; padding-top:30px; text-align:center;}
+		.starArea input {display:none;}
+		.starArea label {color:orange;}
+
+	.tagArea {width:100%; height:30px; text-align:center; line-height:30px; padding-bottom:5px;
+				   font-size:13px; color:#555; padding-bottom:30px; font-weight:100;}
+		.tagArea em {padding:0 5px;}
+
+		/*============= 제품 탭 베이직 =============*/
+	.detail_tabArea {width:100%;}
+		.detail_tab {width:100%; height:50px; line-height:50px; border-bottom:1px solid #aaa; text-align:center;}
+			.detail_tab li {display:inline-block; width:100px; padding:0 25px; height:100%;}
+				.detail_tab li a {display:block; width:100%; height:100%; transition:all 0.3s;}
+			.detail_selected {border-bottom:5px solid #5d9e7e; box-sizing:border-box;}
+		.detail_panel {width:100%;}
+			.detail_panel > li {width:80%; margin:0 auto;}
+
+			/*--------- 상품정보 영역 ---------*/
+			.product_info {}
+				.desc_imgArea {width:600px; margin:50px auto; box-sizing:border-box;}
+					.desc_imgArea img {width:100%;}
+				.desc_textArea {width:100%; font-size:18px; color:#3f2a08;}
+					.desc_textArea strong {font-size:26px; line-height:50px; }
+					.desc_textArea .detail_descText {display:block; width:100%; line-height:25px;
+													  font-size:15px; font-weight:400; border-top:1px solid #ccc;
+													  margin-top:20px; padding-top:20px; color:#555;}
+
+				.coffee_info {width:100%; margin-top:70px;}
+					.product_info h4 {width:100%; height:20px; background-color:#3f2a08;}
+						.product_info h4 span {display:inline-block; width:250px; height:20px;
+														 margin-left:5px; color:#3f2a08; font-weight:400;
+														 line-height:20px; font-size:20px; background-color:#fff; text-align:center;}
+					/*=== 블랜딩 정보 ===*/
+					.coffee_info ul {width:100%; height:150px; margin-top:40px;}
+						.coffee_info ul li {width:25%; height:100%; float:left; text-align:center; border:1px dotted #333; box-sizing:border-box;
+												  border-right:none;}
+						.coffee_info ul li:last-child {border-right:1px dotted #333;}
+							.coffee_info ul li p {width:100%;}
+							.cofInfo1 {height:65px; padding-top:15px; font-size:13px;}
+								.cofInfo1 span {color:#c43738; font-size:30px; line-height:40px;}
+							.cofInfo2 {background-color:#3f2a08; color:#efefef; line-height:20px; padding-top:15px; height:55px;}
+					.coffee_info ul:after {content:""; display:block; clear:both;}
+
+					/*=== 싱글 정보 ===*/
+					.coffee_info ol {width:100%; height:200px; margin-top:50px; border-top:2px solid #c43738;}
+						.single4 {width:25%; float:left;}
+							.single4 p {float:left; width:50%; height:75px;}
+								.singleIcon img {width:100%;}
+							.single4 .singleText {text-align:center; padding-top:25px; line-height:22px; font-size:15px;}
+						.singleFlovar {clear:left; width:100%; position:relative;}
+							.singleFlovar .singleIcon {width:88px; height:88px; position:absolute; left:0; top:0;}
+
+							.singleFlovar .singleText {width:100%; text-align:left; line-height:100px; text-indent:110px;
+																font-size:15px;
+																border-top:1px dotted #ccc;
+																border-bottom:1px dotted #ccc;
+																box-sizing:border-box;}
+							.singleGray {color:#555; font-size:13px;}
+					.coffee_info ol:after {content:""; display:block; clear:both;}
+
+				/*=== 추출장비 info 영역 ===*/
+				.equipment_info {width:100%; margin-top:70px;}
+					.equipment_info ul {width:100%; padding-top:15px;}
+						.equipment_info ul li {width:100%; height:30px; line-height:30px; font-size:16px;
+														list-style:inherit; list-style-position:inside; text-indent:15px;}
+							.equipment_info ul span {color:#555; font-size:14px;}
+
+				/*=== 추출 가이드 영역 ===*/
+				.brew_guide {width:100%; margin-top:70px;}
+					.brew_guide h4 span {width:150px;}
+					.brew_guide ul {width:100%; height:250px; border:1px solid #aaa; box-sizing:border-box; margin-top:40px;}
+					.brew_guide ul:after {content:""; display:block; clear:both;}
+						.brew_guide ul li {width:31%; padding:0 1%; margin:10px 0; float:left; border-right:1px dotted #ccc;}
+						.brew_guide ul li:last-child {border-right:none;}
+							.guideTitle {display:block; width:95%; height:40px; background-color:#eee; 
+											 text-align:right; padding-right:5%; line-height:40px; color:#392710;}
+					.brew_guide li p {width:100%; height:40px; margin-top:7px; position:relative; }
+					.brewIcon {width:40px; height:40px; position:absolute; left:10px; top:0;}
+						.brewIcon img {width:100%; height:100%;}
+					 .brewCont {display:block; width:100%; font-size:14px; line-height:40px; text-indent:60px;}
+
+				/*=== 제품 가이드 영역 ===*/
+				.product_guide {width:100%; margin-top:70px;}
+					.product_guide h4 span {width:120px;}
+					.product_guide ul {width:100%; padding:40px 0;}
+						.product_guide ul li {width:100%; height:200px; margin-top:5px;
+													  position:relative; border-bottom:1px dashed #ccc;}
+						.product_guide ul li:first-child {margin-top:none;}
+							.filterGuide_img {position:absolute; left:0; top:0;}
+								.filterGuide_img img {width:200px; height:200px;}
+							.filterGuide_text {padding:5% 0 5% 30%; width:70%; height:90%; font-size:15px; line-height:25px;}
+								.filterGuide_text span {display:inline-block; width:100%; text-indent:15px;}
+
+				/*=== 다이렉트트레이드 상세 설명 영역 ===*/
+				.direct_desc {width:100%; margin:80px 0;}
+					.direct_desc h4 span {width:380px;}
+					.direct_desc ul {width:100%; margin-top:40px;}
+						.directy_desc ul li {width:100%; padding-bottom:5px;}
+						.direct_desc ul li:after {content:""; display:block; clear:both;}
+						.direct_desc li p {float:left;}
+							.directImg {width:32%;}
+								.directImg img {width:100%;}
+							.directText {width:65%; padding:15px 0 0 3%; font-size:14px; line-height:20px; color:#777;}
+								.directText em {font-size:17px; line-height:50px; color:#333;}
+
+			/*--------- 상품후기 영역 ---------*/
+			.detail_review {width:100%;}
+				.detail_reviewBox {width:100%; margin-top:50px;}
+				.detail_reviewBox li {width:100%; padding:20px 0; border-top:1px solid #ccc; border-bottom:1px solid #ccc;}
+					.userArea {width:100%; padding-bottom:10px; }
+					.userArea form {width:90%; padding-left:10%; position:relative;}
+					.userImg {width:50px; height:50px; position:absolute; left:0; top:0;}
+					.userImg img {width:100%; height:100%;}
+					.userInfo {font-size:17px; line-height:30px;}
+					.userInfo span {padding-left:10px; color:#333;}
+					.userEval {width:100%; padding:10px 0;}
+					.userEval input {display:none;}
+					.userEval label {color:orange;}
+					.user_comment {width:100%; line-height:30px; color:#666; font-size:15px;}
+
+				.adminArea {width:84%; margin-left:6%; padding-top:10px;
+								   padding-left:10%; border-top:1px dashed #ccc; position:relative;}
+				.adminImg {width:50px; height:50px;
+								 position:absolute; left:0; top:10px;
+								 border-radius:25px; border:1px solid #ccc;
+								 text-align:center;}
+				.adminImg img {width:70%; height:70%; margin-top:15%;}
+				.adminInfo {font-size:17px; line-height:30px;}
+				.adminInfo span {padding-left:10px; color:#333;}
+				.admin_comment {width:100%; line-height:30px; color:#666; font-size:15px; padding-top:15px;}
+
+			/*--------- 배송안내 영역 ---------*/
+			.delivery_info {width:100%; padding-bottom:40px;}
+				.delivery_info > div {padding-top:50px;}
+					.delivery_info h4 {width:97%; height:40px; line-height:40px;
+											  font-size:18px; text-align:right; padding-right:3%;
+											  border-bottom:1px dotted #aaa; color:#555;}
+
+				.pdInfo_desc {width:100%;}
+					.pdInfo_desc p {width:100%; height:70px;}
+						.pdInfo_desc	em {display:block; height:70px; float:left;
+												   width:18%; line-height:70px; text-align:center;
+												   margin-right:2%;
+												   border-bottom:1px solid #ccc;
+												   box-sizing:border-box;}
+						.pdInfo_desc	em span {font-size:40px; color:#392710;}
+						.pdInfo_text {display:block; float:left; width:78%; height:50px;
+											font-size:15px; line-height:20px; margin-top:20px;
+											padding-left:2%;
+											border-left:1px solid #ccc;
+											border-bottom:1px solid #ccc;
+											box-sizing:border-box;}
+
+				.visit_receipt {width:100%; height:150px;}
+					.visit_receipt p {float:left; margin-top:20px;}
+					.visit_receipt_time {width:23%; line-height:30px;
+												margin-right:2%; height:80px;
+												border-bottom:1px solid #ccc;
+												box-sizing:border-box;}
+						.visit_receipt_time span {font-size:25px; color:#392710;}
+					.visit_receipt_text {width:73%; height:80px; line-height:23px; margin-top:10px;
+												font-size:15px; padding-left:2%;
+												border-left:1px solid #ccc;
+											    border-bottom:1px solid #ccc;
+												box-sizing:border-box;}
+
+				.sellByDate {width:100%; height:150px;}
+					.sellByDate p {float:left; margin-top:20px;}
+					.sellByDate_title {width:15%; line-height:30px;
+											 margin-right:2%; height:80px;
+											 color:#392710;
+											 text-align:center; font-size:20px;
+											 border-bottom:1px solid #ccc;
+											 box-sizing:border-box;}
+					.sellByDate_text {width:81%; height:80px; line-height:23px; margin-top:10px;
+											  font-size:15px; padding-left:2%;
+											  border-left:1px solid #ccc;
+											  border-bottom:1px solid #ccc;
+											  box-sizing:border-box;}
+
+				.refund {width:100%;}
+					.refund p {width:98%;
+									margin-top:20px; font-size:14px;
+									border-left:1px solid #ccc;
+									border-bottom:1px solid #ccc;
+									box-sizing:border-box;
+									padding:5px 0 5px 2%;
+									line-height:25px;}
+
+				.company_info {width:100%;
+										border-top:1px dotted #ccc;
+										box-sizing:border-box;}
+				.company_info p {width:100%; height:60px; line-height:60px;margin-bottom:10px;}
+					.company_info p i, .company_info p span {display:block; float:left;}
+					.company_info p i {width:18%; font-style:normal; text-align:center;
+												border-bottom:1px solid #ccc;
+												box-sizing:border-box;
+												font-size:20px;
+												margin-right:2%;}
+					.company_info p span {width:78%; font-size:18px;
+													    border-left:1px solid #ccc;
+														border-bottom:1px solid #ccc;
+														box-sizing:border-box;
+														padding-left:2%;}
+
+			/*--------- 질문과 답변 영역 ---------*/
+			.detail_question {width:100%; padding-bottom:50px;}
+				.loginConfrom {width:100%; height:80px; line-height:80px; text-align:center; border-bottom:1px solid #aaa;}
+				.detail_questBox {border-top:1px solid #ccc;}
+				.detail_questBox > li {margin-top:50px;}
+				.quest_input {width:100%; margin:50px 0;}
+					.quest_input div {width:100%; height:80px; padding-left:10%;
+											 position:relative; font-size:15px;
+											 border:1px solid #ccc;
+											 box-sizing:border-box;
+											 border-bottom:none;}
+						.questImg {width:50px; height:50px; position:absolute; left:10px; top:15px;}
+							.questImg img {width:100%; height:100%;}
+						.quest_input span {display:inline-block; height:80px; line-height:80px; color:#56704b; font-size:18px;}
+				.inputArea {width:100%; height:190px;}
+					.inputArea textArea {width:100%; height:170px; padding:15px 0;
+												  text-indent:15px; font-size:17px; outline:none;
+												  border:1px solid #ccc;
+												  box-sizing:border-box;} 
+				.questBtn {width:100%; height:60px; line-height:60px;}
+					.questBtn input {width:100%; height:100%; background-color:#524835;
+											color:#efefef; font-size:25px; border:none; cursor:pointer;}
+					.questBtn input:hover, .questBtn input:focus {background-color:#2b2318;}
+
+	/*===================== 사이드바 구매영역 =====================*/
+	.purchase_box {width:18%; padding:0 1%; background-color:#fff; 
+							position:absolute; top:70px; right:4%;}
+			.purchaseArea form {width:100%;}
+				.purchaseArea p {width:100%; padding:10px 0; border-bottom:1px solid #ccc;}
+					.purchaseArea em {display:block; width:100%; height:30px; line-height:30px;
+												  color:#333; font-size:14px; font-weight:100;}
+					#rDate {display:inline-block; width:50%; border:none; padding-left:50%; text-align:center; font-size:20px;}
+					#rPrice {display:inline-block; width:50%; border:none; padding-left:28%; text-align:right; font-size:20px;}
+
+				.purchaseArea select {display:inline-block; width:100%; height:30px;
+												  padding-right:20%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+												  font-size:12px; border:1px solid #a79c8a;
+												  box-sizing:border-box;
+												  cursor:pointer; outline:none; color:#555;
+												  -webkit-appearance:none;
+												  -moz-appearance:none;
+												  -o-appearance:none;
+												  -ms-appearance:none;
+												  appearance:none;
+												  border-radius:0;
+												  text-indent:3px;
+												  background:url("../img/icons/selectArrow.png") no-repeat 95% center;
+												  background-size:20px 20px;}
+
+				.purchaseArea option {width:100%; padding:3px 0; text-indent:5px; background-color:#fff; color:#666;}
+				.purchaseArea option:first-child {color:#999;}
+
+				.numArea em {display:inline-block; width:35%;}
+				.numArea input {display:inline-block; width:50%; text-align:center; height:25px;
+										 border:1px solid #a79c8a;
+										 box-sizing:border-box;}
+				.numArea span {font-size:14px;}
+				
+				.resultArea {padding-bottom:0;}
+				.resultArea label {display:block; width:100%; height:30px; line-height:30px;
+										  color:#333; font-size:14px; font-weight:100;}
+				.resultArea input {display:inline-block; width:80%; height:40px; 
+										  border:none; text-align:right; font-size:24px;}
+				.won {display:inline-block; width:20%; text-align:center;}
+
+				.purchaseBtnArea {width:100%;}
+				.purchaseArea p:last-child {border-bottom:0;}
+				.purchaseBtnArea input {display:inline-block; width:100%; height:50px;
+													 text-align:center; font-size:18px; font-family:inherit;
+													 cursor:pointer; transition:all .3s;}
+				.buyBtn1 {background-color:#fff; border:1px solid #a79c8a; margin-bottom:10px;}
+					.buyBtn1:hover, .buyBtn1:focus {background-color:#eee;}
+				.buyBtn2 {background-color:#b8ad9b; color:#fff; border:none;}
+					.buyBtn2:hover, .buyBtn2:focus {background-color:#a79c8a;}
+
+
+	/*################## RECRUIT ##################*/
+	.recruit_container {width:100%;}
+	.recruit_visualWrap {width:100%; height:200px; background-color:#6F5C4E; 
+								   position:relative; overflow:hidden;
+								   background:url('../img/recruit_img.jpg') no-repeat center center;
+								   -webkit-background-size:cover;
+								   -o-background-size:cover;
+								   -ms-background-size:cover;
+								   }
+		.recruit_visualText {width:500px; height:100px;
+								     position:absolute; left:50%; top:50%;
+									 margin-left:-250px; margin-top:-50px;
+									 text-align:center; line-height:100px; color:#fff;
+									 font-size:40px; font-style:italic;
+									 text-shadow:0 0 10px rgba(0,0,0,0.5);
+									 }
+		.recruit_textArea {width:100%; text-align:center; line-height:40px; padding-bottom:70px;}
+		.recruit_textArea p:first-child {width:100%; padding:60px 0;}
+		.recruit_textArea p:nth-child(2) {color:#555;}
+		.recruit_textArea p:nth-child(2) strong {font-size:17px; color:#000;}
+
+	/*################## 공지사항 ##################*/
+	.notice_container {width:100%; position:relative;}
+	.notice_content {width:900px;height:200px; padding:100px 0 200px; margin:0 auto;}
+		.noticeBoard {width:100%; line-height:22px; font-size:14px;}
+			.noticeBoard caption {font-size:25px; padding:10px 0;}
+			.noticeBoard th, .noticeBoard td {padding:10px; border-bottom:1px solid #f1f1f1;}
+			.noticeBoard th {background-color:#f5f5f5; color:#5d9e7e; border-right:1pxs solid #fefefe;}
+				.noticeBoard .writeClk td {border:none;}
+		.writeClk {text-align:right;}
+			.writeClk a {border:1px solid #ccc; padding:5px 10px; color:#333;}
+			.writeClk a:hover, .writeClk a:focus {font-weight:700; color:#fff; background-color:#392710;}

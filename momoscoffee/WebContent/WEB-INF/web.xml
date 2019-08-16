@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>momoscoffee</display-name>
+  <!-- 
+  	Spring bean config파일을 2개 이상의 설정파일을 사용함에 따라
+  	xml이 서블릿이 생성되는 시점보다 더 빠른 시점에 생성될 수 있도록 하며,
+  	접근 범위도 서블릿의 scope보다 넓은 범위로,
+  	즉 ServletContext범위로 확대
+  	ServletContext:웹 어플리케이션의 전역 정보를 가진 객체로
+  	생성 시점은 서버 가동시
+  	톰캣이 가동되는 시점을 캐치하기 위한 태그는 listener
+  	listener태그를 이용하면 웹 컨테이너가 가동되는 시점에 이벤트를 감지하는
+  	클래스를 명시할 수 있다. 이 타이밍에 servletContext객체가 메모리에 올라오니까
+  	xml위치를 알려주기 위해 init-param을 통해 넘긴다.
+   -->
+  <listener>
+  	<listener-class>
+  		org.springframework.web.context.ContextLoaderListener
+  	</listener-class>
+  </listener>
+  <context-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>classpath:com/jimmyzip/momos/spring/context/service.xml</param-value>
+  </context-param>
+  
+  <!-- filter -->
+  <filter>
+  	<filter-name>encodingFilter</filter-name>
+  	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>utf8</param-value>
+  	</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>encodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- PUT/DELETE 메서드 사용을 위한 설정 -->
+	<filter>
+		<filter-name>httpMethodFilter</filter-name>
+		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>httpMethodFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+  <!-- normal servlet -->
+  <servlet>
+  	<servlet-name>dispatcher</servlet-name>
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  	<init-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>WEB-INF/front.xml</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>dispatcher</servlet-name>
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  <!-- servlet:rest -->
+	<servlet>
+		<servlet-name>restServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>WEB-INF/rest.xml</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>restServlet</servlet-name>
+		<url-pattern>/rest</url-pattern>
+	</servlet-mapping>
+</web-app>

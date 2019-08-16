@@ -1,0 +1,62 @@
+	
+	/* 서브페이지 헤더_푸터*/
+	/*#################### header ####################*/
+	#headerWrap {width:100%; height:160px;}
+		#header {width:100%; height:100%; margin:0 auto; position:relative;}
+			h1 {width:90px; position:absolute; left:5%; top:10px;}
+				h1 img {width:100%; height:100%;}
+
+			/*================= 네비게이션 영역 =================*/
+			#gnbArea {width:100%; height:80px;}
+				#gnb {width:100%; height:100%; line-height:80px; text-align:center;}
+					#gnb li, #subNav li {display:inline;}
+						#gnb li a {font-size:17px; padding:0 20px;}
+			#subNavArea {width:100%; height:70px; background-color:#eee;}
+				#subNav {width:100%; height:100%; line-height:70px; text-align:center;}
+						#subNav a {font-size:19px; padding:0 20px;}
+
+			/*================= 인포메뉴영역 =================*/
+			#infoMenu {width:135px; height:25px;
+							 position:absolute; right:5%; top:25px;
+							 z-index:3;}
+				#infoMenu li {display:block; width:25px; height:25px;
+								   float:left; margin-right:30px;}
+					#infoMenu li a {display:block; width:100%; transition:all .5s;}
+						.loginBtn a:hover, .loginBtn a:focus, .cartBtn a:hover, .cartBtn a:focus {transform:scale(1.1);}
+						#infoMenu li a img {width:100%; height:100%;}
+
+				#infoMenu .snsBtn {margin-right:0;}
+					.snsBtnIcon img {width:100%; height:100%;}
+					.snsBtnArea a {height:25px; overflow:hidden; position:relative; margin-top:5px; border-radius:3px; background-color:#fff;}
+						.snsBtnArea a img {position:absolute; left:0; top:0;}
+						.snsBtnArea a:hover, .snsBtnArea a:focus {background-color:#afafaf;}
+
+	/*#################### footer ####################*/
+	#footer {width:100%;}
+		/*============= 링크페이지 영역 =============*/
+		#footerLink {width:100%; height:50px;
+						  line-height:50px;
+						  text-align:center;
+						  border-top:1px solid #ccc;
+						  border-bottom:1px solid #eee;}
+			#footerLink a {padding:0 12px; color:#555; font-size:14px;}
+			#footerLink a:hover, #footerLink a:focus {color:#B98C4D; font-weight:700;}
+
+		/*============= copyright and address 영역 =============*/
+		#footerMap {width:1025px; margin:0 auto;
+						  height:80px; padding:30px 0;}
+			#footerLeft, #footerRight {float:left; height:80px;}
+			#footerLeft {width:65%; position:relative;}
+				.f_logo {width:110px; height:75px; 
+							position:absolute; left:0; top:0;}
+				.f_logo img {width:100%; height:100%;}
+			#footerLeft address {width:70%; height:80px;
+									   padding-left:30%;
+									   font-style:normal;
+									   line-height:25px;}
+
+		#footerRight {width:35%;}
+			#community {width:100%; height:40px;}	
+				#community a {display:inline-block; width:40px; height:40px; padding:0 5px; transition:all .3s;}
+					#community a img {width:100%; height:100%;}
+			#copyRight {width:100%; height:40px; line-height:50px; text-indent:5px;}

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="Members">
+  	<resultMap type="Members" id="memberMap">
+  		<id column="member_id" property="member_id"/>
+  		<result column="userid" property="userid"/>
+  		<result column="userpass" property="userpass"/>
+  		<result column="username" property="username"/>
+  		<result column="usermail" property="usermail"/>
+  		<result column="userphone" property="userphone"/>
+  		<result column="add1" property="add1"/>
+  		<result column="add2" property="add2"/>
+  		<result column="post1" property="post1"/>
+  		<result column="post2" property="post2"/>
+  		<result column="post3" property="post3"/>
+  		<association column="auth_id" property="auth" javaType="Auth" select="Auth.select"/>
+  	</resultMap>
+  	
+  	<sql id="sql_select">
+  		select member_id,auth_id,userid,userpass,username,usermail,userphone,add1,add2,post1,post2,post3
+  		from members
+  	</sql>
+  	<!-- 전체조회 -->
+  	<select id="selectAll" resultMap="memberMap">
+  		<include refid="sql_select"/> order by member_id desc
+  	</select>
+  	<!-- PK로 1건 조회 -->
+  	<select id="select" parameterType="int" resultMap="memberMap">
+  		<include refid="sql_select"/> where member_id=#{member_id}
+  	</select>
+  	<!-- id로 1건 조회 -->
+  	<select id="selectById" parameterType="Members">
+  		<include  refid="sql_select"/> where userid=#{userid}
+  	</select>
+  	
+  	<!-- (관리자용)권한으로 조회 -->
+  	<select id="selectByAuth" parameterType="int" resultMap="memberMap">
+		  	<include refid="sql_select"/> where auth_id=#{auth.auth_id}
+		  	<!-- <include refid="sql_select"/> where auth_id=#{auth_id} -->
+  	</select>
+  	
+  	<!-- 회원가입 -->
+  	<insert id="insert" parameterType="Members">
+  		insert into members(userid,userpass,username,usermail,userphone,add1,add2,post1,post2,post3)
+  		values(#{userid},#{userpass},#{username},#{usermail},#{userphone},#{add1},#{add2},#{post1},#{post2},#{post3})
+  	</insert>
+  	
+  	<!-- 아이디 중복확인 -->
+  	<select id="idCheck" parameterType="String" resultMap="memberMap">
+  		<include refid="sql_select"/> where userid=#{userid}
+  	</select>
+  	
+  	<!-- 회원정보 수정 시 현재 비밀번호 일치여부 확인 -->
+  	<select id="passCheck" parameterType="String" resultMap="memberMap">
+  		<include refid="sql_select"/> where userpass=#{userpass}
+  	</select>
+  	
+  	<!-- 로그인 체크 -->
+  	<select id="loginCheck" parameterType="Members" resultMap="memberMap">
+  		<include refid="sql_select"/> where userid=#{userid} and userpass=#{userpass}
+  	</select>
+  	
+  	<!-- 회원정보 수정 -->
+  	<update id="update" parameterType="Members">
+  		update members set userpass=#{userpass},usermail=#{usermail},add1=#{add1},add2=#{add2},post1=#{post1},post2=#{post2}
+  		where member_id=#{member_id}
+  	</update>
+  	
+  	<!-- 멤버의 권한수정 -->
+  	<update id="updateAuth" parameterType="Members">
+  		update members set auth_id=#{auth.auth_id}
+  		where member_id=#{member_id}
+  	</update>
+  	
+  	<!-- 아이디 찾기 -->
+  	<select id="findId" parameterType="Members" resultMap="memberMap">
+  		select userid from members where username=#{username} and userphone=#{userphone} 
+  	</select>
+  	
+  	<!-- 비번변경 -->
+  	<update id="resetPass" parameterType="Members">
+  		update members set userpass=#{userpass} where userid=#{userid} and usermail=#{usermail}
+  	</update>
+  	
+  	<!-- infoCheck -->
+  	<select id="infoCheck" parameterType="Members" resultMap="memberMap">
+  		<include refid="sql_select"/> where userid=#{userid} and usermail=#{usermail}
+  	</select>
+  	
+  	<!-- 회원검색 -->
+  	<select id="search" parameterType="String" resultMap="memberMap">
+  		<include refid="sql_select"/> where userid like CONCAT('%',#{searchWord},'%')
+  		or username like CONCAT("%",#{searchWord},"%")
+  		or usermail like CONCAT("%",#{searchWord},"%")
+  	</select>
+  </mapper>

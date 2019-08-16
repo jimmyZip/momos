@@ -1,0 +1,26 @@
+
+##################### shop ##########################
+#shopArea ul li div {background-color:#fff);}
+#shopArea ul li .title, #shopArea ul li .view {background-color:rgba(0,0,0,0.5);}
+#shopArea ul a:hover .title, #shopArea ul a:focus .title {background-color:rgba(0,0,0,0.5)}
+#shopArea ul a:hover .view, #shopArea ul a:focus .view {background-color:rgba(0,0,0,0.5);}
+
+##################### weekly market ##########################
+		.leftImg {position:relative; background:url("../img/market.jpg") no-repeat 0 0; background-size:100% 100%;}
+			.leftImg img {display:none;}
+		.leftImg:after {content:""; display:block; z-index:999;
+							 position:absolute; left:50%; top:50%; margin-top:-20px; margin-left:-39px;
+							 border-top:20px solid transparent;
+							 border-bottom:20px solid transparent;
+							 border-right:20px solid #fff;
+							 border-left:20px solid transparent;}
+
+	.wkBoxB {transform:none; -ms-transform:none}
+		.rightImg {position:relative; background:url("../img/market.jpg") no-repeat 0 0; background-size:100% 100%;}
+		.wkFront {opacity:0; display:none;}
+		.wkBack {opacity:1;}
+		#weekly a:hover .wkBoxB, #weekly a:focus .wkBoxB {transform:none;}
+		#weekly a:hover .wkBack, #weekly a:focus .wkBack {opacity:1;}
+		#weekly a:hover .wkFront, #weekly a:focus .wkFront {opacity:0;}
+
+

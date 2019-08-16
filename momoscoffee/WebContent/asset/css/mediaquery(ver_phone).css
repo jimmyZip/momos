@@ -1,0 +1,365 @@
+
+	/*################  스마트폰 가로버전 ################ */
+	@media all and (min-width:481px) and (max-width:767px){
+	/*#headerWrap {background-color:red;}*/
+
+	#navBtn {display:none;}	
+	#mobileNavBtn {display:block;}
+
+	#gnbArea {display:none;}
+	#gnbArea_mobile {display:block; width:100%; position:absolute; left:-767px; top:80px; z-index:3;}
+		#gnbMobile {width:100%;}
+			#gnbMobile li {width:100%;}
+				#gnbMobile li div {width:100%; height:50px;
+										   line-height:50px; text-indent:20px;
+										   position:relative; cursor:pointer;
+										   background-color:#524835;
+										   border-bottom:1px solid #56704b;}
+					#gnbMobile div em {font-style:normal; color:#fff;}
+					#gnbMobile div span {display:block; width:20px; height:2px; 
+													 position:absolute; right:20px; top:50%;
+													 margin-top:-1px; background-color:#bbb;}
+					#gnbMobile div .hLine {transform:rotate(90deg);}
+					#gnbMobile p {width:100%; background-color:#2b2318;}
+						#gnbMobile p a {display:block; width:100%; height:0;
+												  overflow:hidden; line-height:50px; font-size:14px; color:#ccc; text-indent:20px;}
+						#gnbMobile p a:before {content:"- ";}
+						#gnbMobile p a:hover {color:#fff;}
+			#mobileSvc {width:100%; height:280px; padding-top:20px; background-color:#fff;}
+				#mobileSns {width:290px; margin:0 auto;}
+					#mobileSns a {display:inline-block; width:35px; margin-left:10px;} 
+					#mobileSns a:first-child {margin-left:0;}
+						#mobileSns a img {width:100%;}
+				#mobileLogin {display:none;}
+
+			/*--- Fix Navigation ---*/
+			#fixNav {display:none;}
+
+		#infoMenu {width:30px; height:60px; top:13px; overflow:hidden;}
+			#infoMenu li {float:none;}
+			#infoMenu .cartBtn {position:absolute; left:100px; top:0;}
+			#infoMenu .snsBtn {display:none;}
+	/*----------------------- visual -----------------------*/
+	.visualFilm li p {width:270px; height:200px; margin-left:-135px; margin-top:-100px;}
+		.visualFilm li p span.sName {font-size:16px;}
+		.visualFilm li p strong {line-height:25px; font-size:20px; padding:10px 0;}
+		.visualFilm li p span.visualDesc {display:block; width:100%; height:50px; margin:0 auto; line-height:16px; font-size:12px;}
+		.visualFilm li p a {width:100px; height:30px; line-height:30px; font-size:13px; margin-top:-5px;}
+		.visualFilm li.visual0 p {height:160px; margin-top:-80px;}
+
+	#btn1 {height:70px; margin-top:-35px;}
+		#btn1 p {width:20px;}
+	#btn2 {display:none;}
+
+	/*----------------------- mainText -----------------------*/
+	#mainText {padding:20px 0; text-align:center;}
+		#mainText strong {height:80px; font-size:25px; line-height:40px;}
+			#mainText strong .orange {font-size:22px;}
+		#mainText p {width:80%; height:130px;
+							padding-top:20px; line-height:120%;
+							font-size:14px; text-align:left;
+							margin:0 auto;}	
+	/*----------------------- findUs -----------------------*/
+	#findUs {width:100%; height:350px;}
+		#findBox1 {width:250px; height:250px; right:45%; top:50px;}
+			#findBox1 .findImg1 {height:125px;}
+			#findBox1 .findText {height:85px; padding:25px 0 15px; line-height:35px;}
+				#findBox1 .findText strong {font-size:17px;}
+				#findBox1 .findText span {font-size:13px;}
+				#findBox1 a:hover span:after, #findBox1 a:focus span:after {content:""; display:none; }
+		#findBox2 {width:250px; height:250px; left:45%;}
+	/*----------------------- Shop -----------------------*/
+	#shopArea {height:260px; padding-top:30px; padding-bottom:20px;}
+		#shopArea h2 {font-size:20px; height:50px;}
+		#shopArea ul {width:455px; height:187px; margin:0 auto;}
+			#shopArea ul li {width:145px; height:100%; margin-left:10px;}
+				#shopArea ul li .title, #shopArea ul li .view {height:25px; line-height:25px; font-size:80%; bottom:0px;}
+					#shopArea ul li .desc {height:43px; font-size:12px;background-color:rgba(200,200,200,0.8); bottom:0;}
+						#shopArea ul li .desc strong {height:20px; padding:3px 0 0; line-height:15px; font-size:12px;}
+						#shopArea ul li .desc span {height:20px; line-height:20px; text-align:right;}
+
+	/*----------------------- Article -----------------------*/
+		#articleWrap {padding:30px 0;}
+			#articleWrap h2 {height:50px; font-size:20px;}
+			#articleArea {width:400px;}
+				.leftArea, .rightArea {width:100%; float:none; transition:all .5s;}
+				#cupping {height:170px;}
+					#cupping a span {width:100px; height:25px;
+											 line-height:25px; font-size:16px;
+											 margin-left:-50px; margin-top:-12px;}
+					#cupping .businessCup span {font-size:16px;}
+
+					#busan {width:100%; height:300px; margin-right:0;}
+						#busanText {width:50%; height:100%; border-width:1px; box-sizing:border-box;}
+							.logoAppear {padding:60px 0; height:60px; line-height:20px; font-size:13px;
+												background-size:60px 40px, 40px 40px;
+												background-position:center 15px, center 125px;}
+							.logoAppear:hover, .logoAppear:focus {background-position:center 15px, center 125px;}
+							#busanText em {font-size:15px; line-height:25px;}
+							.busanView {width:100px; height:25px; line-height:25px; margin-top:20px;}
+						#busanImg {width:50%; height:300px;}
+							#busanImg span {font-size:25px; line-height:30px;}
+
+				#weekly {height:170px; position:relative;}
+					#weekly a div {position:static;}
+						#weekly a p {width:100%; float:none;}
+						.leftImg {display:none;}
+						.rightText {background-color:#524835; background:url("../img/weekly_tablet.jpg") no-repeat -200px 0;}
+						.rightText:before {content:"WEEKLY MARKET"; display:block; width:100%;
+												   color:#fff; position:absolute; left:0; top:30px; font-size:20px;
+											       text-shadow:3px 3px 3px #000;}
+							.rightText em {color:#eee; padding:70px 0 0; font-size:16px; font-weight:400; font-style:normal;
+												  line-height:130%; text-shadow:1px 1px 1px #000; display:block;}
+							.rightText em:after {content:"view"; display:block; width:100px; height:25px; line-height:25px;
+														  position:absolute; left:50%; bottom:12%; 
+														  margin-left:-50px; 
+														  border:1px solid #fff;}
+							.rightText .wk_desc {display:none;}
+
+					.wkBoxB {display:none;}
+
+					#delivery {height:390px; overflow:hidden;}
+						.deliveryImg {height:154px;}
+							.deliveryImg span.deliveryWord1 {top:20px; font-size:20px;}
+								.deliveryImg span.deliveryWord2 {width:60%; left:50%; top:80px; margin-left:-30%; line-height:20px;}
+							.deliveryText {height:144px; line-height:25px; border:1px solid #56704b;}
+								.deliveryText strong {height:50px; line-height:50px; font-size:18px;}
+								.deliveryText span {line-height:25px;}
+								.deliveryText a {width:100px; height:25px; margin:5px auto; line-height:25px;}
+								.deliveryText:before {margin-left:-15px;} 
+
+					#dripbag {height:410px;}
+						.dripbagVideo {height:225px;}
+						.dripbagText {height:160px; border-width:1px;
+										   line-height:20px; font-size:14px;}
+							.dripbagText strong {height:30px; line-height:30px; font-size:16px; padding-top:20px;}
+							.dripbagText .dripbagWord1 {font-size:14px;}
+							.dripbagVideo em {display:none;}
+					#academy {height:170px;}
+						.academyImg1:after {right:-40px; top:50%; margin-top:-20px;}
+						.academyImg2 a {width:100px; height:25px;
+												 line-height:25px; font-size:16px;
+												 top:70px; margin-left:-50px;}
+					#directEpisode {height:170px;}
+						#directEpisode .episodeText {line-height:25px; padding-top:25px; font-size:15px;}
+							.episodeText .text1 {font-size:18px;}
+							.episodeText a {width:100px; height:25px; margin:15px auto 0;
+												   line-height:25px; font-size:16px;}
+					#notice {height:324px;}
+						#notice p {height:170px;}
+						#notice .recruit {height:150px; outline-width:1px;}
+							.recruit:before {left:-45px; top:50%; margin-top:-20px;}
+							.recruit strong {height:67px; font-size:17px;
+												  line-height:18px; padding:5px 0 0 5%;}
+							.recruit span {height:74px; padding:5px 0 0 5%; font-size:12px; line-height:18px;}
+							.centum2 a span, .recruitImg a span {line-height:25px; top:70px; width:100px; height:25px;
+																				   margin-left:-50px;}													 
+								.centum2 span.centumTitle, .recruitImg span.recruitTitle {font-size:12px;}
+								.centum2:hover span.centumView, .recruitImg:hover span.recruitView {font-size:13px;}
+
+	/*----------------------- Footer -----------------------*/
+	#footer {width:100%;}
+			#footerLink a {padding:0 5px; font-size:13px;}
+		#footerMap {width:100%; height:160px; padding:15px 0;}
+			#footerLeft, #footerRight {float:none; height:80px;}
+			#footerLeft {width:90%; margin:0 auto;}
+				.f_logo, #footerLeft address {float:left;}
+				.f_logo {width:30%; height:65px; left:0; top:0; position:static;} 
+					.f_logo img {width:95px; height:65px;}
+			#footerLeft address {width:70%; height:65px; padding-left:0; line-height:22px;}
+		#footerRight {width:100%; padding:5px 0 10px; text-align:center;}
+			#community {width:330px; height:40px; margin:0 auto;}	
+				#community a {display:inline-block; width:40px; height:40px; padding:0 5px;}
+			#copyRight {height:50px; line-height:50px;}
+	}
+
+	/*################  스마트폰 세로버전 ################*/
+	@media all and (min-width:100px) and (max-width:480px){
+	/*#headerWrap {background-color:lightblue;}*/
+
+	#navBtn {display:none;}	
+	#mobileNavBtn {display:block;}
+	#gnbArea {display:none;}
+	#gnbArea_mobile {width:100%;  position:absolute; left:-480px; top:80px; z-index:3;}
+		#gnbMobile {width:100%;}
+			#gnbMobile li {width:100%;}
+				#gnbMobile li div {width:100%; height:50px;
+										   line-height:50px; text-indent:20px;
+										   position:relative; cursor:pointer;
+										   background-color:#524835;
+										   border-bottom:1px solid #56704b;}
+					#gnbMobile div em {font-style:normal; color:#fff;}
+					#gnbMobile div span {display:block; width:20px; height:2px;
+													 position:absolute; right:20px; top:50%;
+													 margin-top:-1px; background-color:#bbb;}
+					#gnbMobile div .hLine {transform:rotate(90deg);}
+					#gnbMobile p {width:100%; background-color:#2b2318;}
+						#gnbMobile p a {display:block; width:100%; height:0;
+												  overflow:hidden; line-height:50px; font-size:14px; color:#ccc; text-indent:20px;}
+						#gnbMobile p a:before {content:"- ";}
+						#gnbMobile p a:hover, a:focus {color:#fff;}
+						#mLoginBtn {display:block; width:100%; height:30px;}
+			#mobileSvc {width:100%; height:70px; background-color:#fff; border-bottom:3px solid #56704b;}
+				#mobileSns {width:230px; height:30px; padding-top:20px; margin:0 auto;}
+					#mobileSns a {display:inline-block; width:30px; margin-left:5px;}
+					#mobileSns a:first-child {margin-left:0;}
+						#mobileSns a img {width:100%;}
+
+			/*--- Fix Navigation ---*/
+			#fixNav {display:none;}
+
+		#infoMenu {width:30px; overflow:hidden;}
+			#infoMenu li {margin-right:0px; margin-left:0px;}
+			#infoMenu li:first-child {margin-left:0;}	
+			.loginBtn a:hover, .loginBtn a:focus {transform:scale(1);}
+			#infoMenu .cartBtn {position:absolute; left:100px; top:0;}
+			#infoMenu .snsBtn {display:none;}
+	/*----------------------- visual -----------------------*/
+	.visualFilm li p {width:200px; height:120px; margin-left:-100px; margin-top:-60px; overflow:hidden; }
+		.visualFilm li p span.sName {font-size:12px;}
+		.visualFilm li p strong {line-height:20px; font-size:14px; padding:10px 0;}
+		.visualFilm li p span.visualDesc {display:none; width:100%; height:24px; line-height:12px; font-size:10px;}
+		.visualFilm li p a {width:80px; height:20px; line-height:20px; font-size:12px; margin-top:0px;}
+		.visualFilm li.visual0 p {height:120px; margin-top:-60px;}
+		.visualFilm li.visual0 p strong {padding:5px 0;}
+		.visualFilm li.visual0 p span.visualDesc {display:inline;}
+
+	#btn1 {height:40px; margin-top:-20px;}
+		#btn1 p {width:10px;}
+	#btn2 {display:none;}
+
+	/*----------------------- mainText -----------------------*/
+	#mainText {padding:30px 0; text-align:center;}
+		#mainText strong {height:70px; font-size:17px; line-height:35px;}
+			#mainText strong .orange {font-size:15px;}
+		#mainText p {display:none;}	
+
+	/*----------------------- findUs -----------------------*/
+	#findUs {width:300px; height:450px; margin:0 auto;}
+		#findBox1 {width:100%; height:250px; right:50%; top:0;
+						margin-right:-150px; box-shadow:none; transition:all 1s;}
+			#findBox1 .findImg1 {height:150px;}
+			#findBox1 .findText {height:70px; padding:15px 0; line-height:35px; background-color:rgb(200,200,125);}
+					#findBox1 .findText strong {color:#5A4931; font-size:18px;}
+					#findBox1 .findText span {color:#fff; font-weight:700; text-shadow:3px 3px 5px rgba(0,0,0,0.5); font-size:16px;}
+					#findBox1 a:hover span:after, #findBox1 a:focus span:after {
+						width:230px; height:5px; left:50%; bottom:15px; margin-left:-115px;}
+		#findBox2 {width:100%; height:150px; transition:all 1s; box-shadow:none;
+						left:50%; top:250px; margin-left:-150px;}
+			#findBox2 .findImg2 img {margin-top:-100px;}
+
+	/*----------------------- Shop -----------------------*/
+	#shopArea {height:480px; padding-top:0; position:relative;}
+		#shopArea h2 {width:100%; height:80px; font-size:18px; line-height:100px;}
+		#shopBox {display:none;}
+		#shopScreen {display:block; width:280px; height:350px; margin:0 auto; overflow:hidden;}
+			#shopFilm {width:840px; height:100%;}
+				#shopArea ul li {width:280px; height:100%; float:left; margin-left:0;}
+					#shopArea ul li .title, #shopArea ul li .view {height:40px; line-height:40px;	font-size:90%;}
+						#shopArea ul li .desc {font-size:14px; bottom:0;}
+								#shopArea ul li .desc strong {height:40px; line-height:50px; font-size:15px;}
+
+				#shopMobileBtn {display:block; width:100px; height:30px; position:absolute; left:50%; bottom:8px; margin-left:-50px;}
+					#shopMobileBtn ul {width:100%;}
+			
+					 	#shopMobileBtn ul li {width:16px; height:16px; border-radius:8px; background-color:#fff; float:left; margin-left:25px;}
+							#shopMobileBtn li span {display:none;}
+							#shopMobileBtn li.addBtn {background-color:#c43738;}
+
+	/*----------------------- Article -----------------------*/
+	#articleWrap {padding:0;}
+		#articleWrap h2 {height:80px; font-size:18px; line-height:100px;}
+		#articleArea {width:300px; margin:0 auto;}
+			.leftArea, .rightArea {width:100%; float:none; transition:all .5s;}
+				#cupping {height:263px; position:relative;}
+					#cupping a {width:100%; height:263px; float:none; transition:all .5s; position:absolute; left:0; top:0;}
+						#cupping a span {width:100px; height:25px; line-height:25px; font-size:16px;
+												   margin-left:-50px; margin-top:-12px; transition:all .5s;}
+						#cupping .businessCup {display:none;}
+
+						#busan {width:100%; height:263px; position:relative; margin:5px auto;}
+							#busan p {float:none;}
+								#busanText {width:100%; height:100%;
+													background-image:url("../img/logo_head.png"), url("../img/kimi.png"), url("../img/busan_mobile.png");
+													background-size:60px 40px, 40px 40px, 100px 155px;
+													background-repeat:no-repeat, no-repeat, no-repeat;
+													background-position:12% 48px, 82% 47px, 100% 100%;
+													}
+								#busanText:after {content:"X"; display:block; width:100%; height:30px;
+															position:absolute; left:0; top:60px; font-size:20px;}
+													
+									.logoAppear {display:none;}
+									.logoAppear:hover, .logoAppear:focus {background-position:5% 50px, 90% 50px;}
+									#busanText em {display:block; width:100%; font-size:17px; line-height:24px;
+															 font-style:normal; font-weight:400; margin-top:130px;}
+									.busanView {width:100px; height:25px; line-height:25px;
+													  border:1px solid #524835; margin:30px auto 0; background-color:#fff;
+													  }
+									.busanView:hover, .busanView:focus {background-color:#524835; color:#fff;}
+								#busanImg {display:none;}
+
+				#weekly {height:263px; position:relative;}
+					#weekly a div {position:static;}
+						#weekly a p {width:100%; float:none;}
+						.leftImg {display:none;}
+						.rightText {background-color:#524835; background-image:url("../img/weekly_mobile.jpg");}
+						.rightText:before {content:"WEEKLY MARKET"; display:block; width:100%;
+												   color:#fff; position:absolute; left:0; top:50px; font-size:22px;
+											       text-shadow:3px 3px 3px #000;}
+							.rightText em {color:#eee; padding:120px 0 0; font-size:18px; font-weight:400; font-style:normal;
+												  line-height:130%; text-shadow:1px 1px 1px #000; display:block;}
+							.rightText em:after {content:"view"; display:block; width:100px; height:25px; line-height:25px;
+														  position:absolute; left:50%; bottom:12%; 
+														  margin-left:-50px; 
+														  border:1px solid #fff;}
+							.rightText .wk_desc {display:none;}
+
+					.wkBoxB {display:none;}
+
+				#delivery {height:263px; background:url("../img/delivery_mobile.jpg") no-repeat 0 0;}
+					.deliveryImg {display:none;}
+					.deliveryText {width:100%; height:100%; line-height:25px; margin:5px 0;
+										 box-sizing:border-box; border:1px solid #56704b;}
+						.deliveryText strong {height:80px; line-height:80px; font-size:18px;
+													   padding-top:20px; color:#eee; text-shadow:1px 1px 1px #000;}
+								.deliveryText span {font-size:14px; line-height:25px; color:#efefef;}
+								.deliveryText a {width:100px; height:25px; margin:35px auto;
+														line-height:25px; color:#efefef; border:1px solid #efefef;}
+								.deliveryText:before {display:none;} 
+
+			.rightArea {margin-top:0;}
+				#dripbag {width:300px; height: 270px;margin:5px auto; border:1px solid #56704b;}
+						.dripbagVideo {height:170px; background-color:#fff;}
+						.dripbagText {height:70px; border-width:0px; line-height:20px; font-size:14px; overflow:hidden; transition:all .5s;}
+							.dripbagText strong {height:30px; line-height:30px; font-size:16px; padding-top:10px;}
+							.dripbagText .dripbagWord1 {height:30px; line-height:30px; font-size:14px;}
+							.dripbagText .dripbagWord2 {display:none; }
+
+
+						#directEpisode {height:263px; text-align:center; margin-bottom:20px;}
+							#directEpisode img {width:599px;}
+							#directEpisode .episodeText {height:100%; line-height:30px; padding-top:0;}
+								.episodeText .text1 {display:inline-block; padding:50px 0 30px; font-size:23px; font-weight:700;}
+								.episodeText .text2 {}
+								.episodeText a {width:100px; height:25px; line-height:25px;
+													   margin:30px auto 0; font-size:16px;}
+
+					#academy {display:none;}
+					#notice {display:none;}
+
+	/*----------------------- Footer -----------------------*/
+		#footerLink { height:120px; line-height:40px; text-align:left;}
+			#footerLink a {display:block; width:40%; height:40px; padding:0 0 0 10%; float:left;}
+			#footerLink a:last-child {clear:both;}
+		#footerMap {width:100%; height:230px; padding:15px 0;}
+			#footerLeft, #footerRight {float:none; height:80px;}
+			#footerLeft {width:100%;}
+				.f_logo, #footerLeft address {float:none; text-align:center;}
+				.f_logo {width:30%; height:65px; left:10%; top:95px; position:absolute;} 
+					.f_logo img {width:95px; height:65px;}
+			#footerLeft address {width:100%; height:80px; padding-left:0; line-height:25px; font-size:15px;}
+		#footerRight {width:100%; padding:10px 0; position:relative; }
+			#community {width:50%; height:75px; margin:0 0 0 150px; position:absolute; top:10px; right:5%;}	
+				#community a {display:inline-block; width:35px; height:35px; padding:0 5px;}
+			#copyRight {height:50px; line-height:50px; text-indent:25px; padding-top:80px; font-size:15px;}
+	}

@@ -1,0 +1,117 @@
+
+	/*################  스마트폰 가로버전 ################ */
+	@media all and (min-width:481px) and (max-width:767px){
+	/*#headerWrap {background-color:red;}*/
+
+	#navBtn {display:none;}	
+	#mobileNavBtn {display:block;}
+
+	#gnbArea {display:none;}
+	#gnbArea_mobile {display:block; width:100%; position:absolute; left:-767px; top:80px; z-index:3;}
+		#gnbMobile {width:100%;}
+			#gnbMobile li {width:100%;}
+				#gnbMobile li div {width:100%; height:50px;
+										   line-height:50px; text-indent:20px;
+										   position:relative; cursor:pointer;
+										   background-color:#524835;
+										   border-bottom:1px solid #56704b;}
+					#gnbMobile div em {font-style:normal; color:#fff;}
+					#gnbMobile div span {display:block; width:20px; height:2px; 
+													 position:absolute; right:20px; top:50%;
+													 margin-top:-1px; background-color:#bbb;}
+					#gnbMobile div .hLine {transform:rotate(90deg);}
+					#gnbMobile p {width:100%; background-color:#2b2318;}
+						#gnbMobile p a {display:block; width:100%; height:0;
+												  overflow:hidden; line-height:50px; font-size:14px; color:#ccc; text-indent:20px;}
+						#gnbMobile p a:before {content:"- ";}
+						#gnbMobile p a:hover {color:#fff;}
+			#mobileSvc {width:100%; height:280px; padding-top:20px; background-color:#fff;}
+				#mobileSns {width:290px; margin:0 auto;}
+					#mobileSns a {display:inline-block; width:35px; margin-left:10px;} 
+					#mobileSns a:first-child {margin-left:0;}
+						#mobileSns a img {width:100%;}
+				#mobileLogin {display:none;}
+
+			/*--- Fix Navigation ---*/
+			#fixNav {display:none;}
+
+		#infoMenu {width:30px; height:60px; top:13px; overflow:hidden;}
+			#infoMenu li {float:none;}
+			#infoMenu .cartBtn {position:absolute; left:100px; top:0;}
+			#infoMenu .snsBtn {display:none;}
+
+	/*----------------------- Footer -----------------------*/
+	#footer {width:100%;}
+			#footerLink a {padding:0 5px; font-size:13px;}
+		#footerMap {width:100%; height:100px; padding:15px 0;}
+			#footerLeft, #footerRight {float:none; height:80px;}
+			#footerLeft {width:90%; margin:0 auto;}
+				.f_logo, #footerLeft address {float:left;}
+				.f_logo {width:30%; height:65px; left:0; top:0; position:static;} 
+					.f_logo img {width:95px; height:65px;}
+			#footerLeft address {width:70%; height:65px; padding-left:0; line-height:22px;}
+		#footerRight {width:100%; padding:5px 0 10px; text-align:center;}
+			#community {width:330px; height:40px; margin:0 auto;}	
+				#community a {display:inline-block; width:40px; height:40px; padding:0 5px;}
+			#copyRight {height:50px; line-height:50px;}
+	}
+
+
+	/*################  스마트폰 세로버전 ################*/
+	@media all and (min-width:1px) and (max-width:480px){
+	/*#headerWrap {background-color:lightblue;}*/
+
+	#navBtn {display:none;}	
+	#mobileNavBtn {display:block;}
+	#gnbArea {display:none;}
+	#gnbArea_mobile {width:100%;  position:absolute; left:-480px; top:80px; z-index:3;}
+		#gnbMobile {width:100%;}
+			#gnbMobile li {width:100%;}
+				#gnbMobile li div {width:100%; height:50px;
+										   line-height:50px; text-indent:20px;
+										   position:relative; cursor:pointer;
+										   background-color:#524835;
+										   border-bottom:1px solid #56704b;}
+					#gnbMobile div em {font-style:normal; color:#fff;}
+					#gnbMobile div span {display:block; width:20px; height:2px;
+													 position:absolute; right:20px; top:50%;
+													 margin-top:-1px; background-color:#bbb;}
+					#gnbMobile div .hLine {transform:rotate(90deg);}
+					#gnbMobile p {width:100%; background-color:#2b2318;}
+						#gnbMobile p a {display:block; width:100%; height:0;
+												  overflow:hidden; line-height:50px; font-size:14px; color:#ccc; text-indent:20px;}
+						#gnbMobile p a:before {content:"- ";}
+						#gnbMobile p a:hover, a:focus {color:#fff;}
+						#mLoginBtn {display:block; width:100%; height:30px;}
+			#mobileSvc {width:100%; height:70px; background-color:#fff; border-bottom:3px solid #56704b;}
+				#mobileSns {width:230px; height:30px; padding-top:20px; margin:0 auto;}
+					#mobileSns a {display:inline-block; width:30px; margin-left:5px;}
+					#mobileSns a:first-child {margin-left:0;}
+						#mobileSns a img {width:100%;}
+
+			/*--- Fix Navigation ---*/
+			#fixNav {display:none;}
+
+		#infoMenu {width:30px; overflow:hidden;}
+			#infoMenu li {margin-right:0px; margin-left:0px;}
+			#infoMenu li:first-child {margin-left:0;}	
+			.loginBtn a:hover, .loginBtn a:focus {transform:scale(1);}
+			#infoMenu .cartBtn {position:absolute; left:100px; top:0;}
+			#infoMenu .snsBtn {display:none;}
+
+	/*----------------------- Footer -----------------------*/
+		#footerLink { height:120px; line-height:40px; text-align:left;}
+			#footerLink a {display:block; width:40%; height:40px; padding:0 0 0 10%; float:left;}
+			#footerLink a:last-child {clear:both;}
+		#footerMap {width:100%; height:230px; padding:15px 0;}
+			#footerLeft, #footerRight {float:none; height:80px;}
+			#footerLeft {width:100%;}
+				.f_logo, #footerLeft address {float:none; text-align:center;}
+				.f_logo {width:30%; height:65px; left:10%; top:95px; position:absolute;} 
+					.f_logo img {width:95px; height:65px;}
+			#footerLeft address {width:100%; height:80px; padding-left:0; line-height:25px; font-size:15px;}
+		#footerRight {width:100%; padding:10px 0; position:relative; }
+			#community {width:50%; height:75px; margin:0 0 0 150px; position:absolute; top:10px; right:5%;}	
+				#community a {display:inline-block; width:35px; height:35px; padding:0 5px;}
+			#copyRight {height:50px; line-height:50px; text-indent:25px; padding-top:80px; font-size:15px;}
+	}

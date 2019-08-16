@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/* admin page 전용 공통부분 styling */
+/*===================== admin page main_container =====================*/
+.main_container h2.green{
+	width:100%;
+	color:#1bbc9b;
+	text-align:center;
+	line-height:4rem;
+	border:1px solid red;
+}
+
+/*
+	admin페이지 main_container하위의 admin_container
+	admin_container 하위에 sidebar와 adminContents 양분
+*/
+.admin_container{
+	width:100%;
+	overflow:hidden;/*float 끊기*/
+}
+.sidebar_wrap, #adminContents{
+	float:left;
+}
+/*admin_container의 자식들 float 끊기*/
+.admin_container:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+
+/*=====admin page의 admin_container 하위 사이드바======*/
+.sidebar_wrap{
+	width:200px;
+	background-color:#1bbc9b;
+}
+.sidebar_h2{
+	width:100%;
+	text-align:center;
+	line-height:3rem;
+	margin:1rem 0;
+}
+.sidebar_wrap ol{
+	width:100%;
+	overflow:hidden;
+}
+.sidebar_wrap ol li{
+	width:100%;
+	height:50px;
+	overflow:hidden;
+	border-top:1px solid #fff;
+}
+.sidebar_wrap ol li a{
+	display:block;
+	width:100%;
+	height:100%;
+	line-height:50px;
+	text-align:center;
+	color:#fff;
+	transition:.3s all ease-in-out;
+}
+.sidebar_wrap ol li:hover a,
+.sidebar_wrap ol li a:focus{
+	color:red;
+	font-weight:700;
+	background-color:#fff;
+}
+
+/*=== adminContents ====*/
+#adminContents{
+	width:calc(100% - 200px);
+	padding:10px;
+	box-sizing:border-box;
+	overflow:hidden;
+}
+
+/*adminContents 내부 데이터 출력 테이블*/
+.table_basic{
+	width:100%;
+	border-collapse:collapse;
+	font-size:0.8rem;
+	margin:0 auto;
+	box-sizing:border-box;
+	/* background-color:#efefef; */
+}
+.table_basic thead{
+	border-top:2px solid #1b2d58;
+}
+.table_basic th, .table_basic td{
+	border-bottom:1px solid #f0f0f0;
+	text-align:center;
+	padding:15px 0;
+}
+.table_basic select[name='auth']{
+	padding:.5em .8em;
+}
+.table_basic button{
+	background-color:transparent;
+	border:none;
+	border:1px solid #ddd;
+	padding:.5em .8em;
+	color:#223d4b;
+	transition:.3s all ease-in-out;
+}
+.table_basic button:hover{
+	background-color:#ddd;
+	color:red;
+	font-weight:700;
+}

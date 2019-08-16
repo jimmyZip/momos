@@ -1,0 +1,391 @@
+	/*#################### container ####################*/
+	#container {width:100%;}
+
+		/*################## visual ##################*/
+			#visualScreen {width:100%; position:relative; overflow:hidden;}
+				.visualFilm {width:400%;}
+					.visualFilm li {width:25%; background-color:#E8DFDA; float:left; position:relative;}
+						.visualFilm li img {width:100%;}
+						.visualFilm li p {width:500px; height:400px; position:absolute; left:50%; top:50%;
+												 margin-left:-250px; margin-top:-200px; text-align:center;}
+						.visualFilm li p span.sName {color:#C4A978; font-size:20px;}
+						.visualFilm li p strong {display:block; width:100%; line-height:60px; font-size:40px;
+														    padding:20px 0; color:#efefef; font-weight:400;
+															font-family:'Sg',sans-serif;}															
+
+						.visualFilm li p span.visualDesc {line-height:25px; color:#efefef;}
+						.visualFilm li p a {display:block; width:150px; height:50px;
+												    text-align:center; line-height:50px; color:#efefef;
+													background-color:#56704b; margin:20px auto 0;
+													font-size:16px;}
+						.visualFilm li.visual0 p {height:300px; margin-top:-150px;}
+						.visualFilm li.visual1 p a:hover, .visualFilm li.visual1 p a:focus {background-color:rgba(250,250,250,0.8); color:#235029;}
+						.visualFilm li.visual2 p a {background-color:#746a57;}
+						.visualFilm li.visual2 p a:hover, .visualFilm li.visual2 p a:focus {background-color:rgba(250,250,250,0.8); color:#302613;}
+						.visualFilm li.visual3 p a {background-color:#c43738;}
+						.visualFilm li.visual3 p a:hover, .visualFilm li.visual3 p a:focus {background-color:rgba(250,250,250,0.8); color:#a21516;}
+
+				.visualArea:after{ content:""; display:block; clear:both;}
+
+				#btn1 {width:80%; height:150px; position:absolute; left:50%; top:50%; margin-left:-40%; margin-top:-75px;}
+					#btn1 p {width:50px; height:100%; cursor:pointer;}
+					#btn1 p.nextBtn {float:left;}
+					#btn1 p.nextBtn {float:right;}
+						#btn1 p img {width:100%; height:100%; opacity:0.5; transition:all .2s;}
+						#btn1 p:hover img {opacity:0.8;}
+
+				#btn2 {width:100px; height:25px; position:absolute; left:50%; top:90%; margin-left:-50px; opacity:0; transition:all .5s;}
+					#btn2 p {width:40px; height:25px; cursor:pointer; float:left;}
+					#btn2 .playBtn {margin-right:20px;}
+						#btn2 p img {width:100%; height:100%; opacity:0.6; transition:all .2s; }
+					#btn2 p:hover img {opacity:0.8;}
+
+				#visualScreen:hover #btn2 {opacity:1;}
+				
+		/*################## mainText ##################*/
+			#mainText {width:100%;padding:50px 0; text-align:center;}
+				#mainText strong {display:block; width:100%; height:120px; font-size:32px; line-height:50px;}
+					#mainText strong .orange {color:#c43738; font-size:28px;}
+				#mainText p {width:100%; height:150px; line-height:200%;}
+
+		/*################## findUs ##################*/
+			#findUs {width:1px; height:500px; margin:0 auto; position:relative;}
+				#findBox1 {width:500px; height:500px;
+							   position:absolute; right:-30px; top:80px;
+							   box-shadow:0 0 30px rgba(0,0,0,0.5);
+							   z-index:2;}
+					#findBox1 a {width:100%; height:100%;}
+						#findBox1 .findImg1 {width:100%; height:250px; overflow:hidden;}
+							#findBox1 .findImg1 img {width:100%; height:100%;}
+						#findBox1 .findText {width:100%; height:180px;
+													 padding:35px 0;
+													 line-height:70px;
+													 text-align:center;
+													 background-color:#fff;
+													 transition:all .5s;}
+							#findBox1 .findText strong {font-size:23px;}
+							#findBox1 .findText span {font-size:25px;}
+					#findBox2 {width:500px;
+									position:absolute; left:-30px; top:20px;
+									background-color:#000; z-index:1;
+									box-shadow:0 0 30px rgba(0,0,0,0.5);
+									overflow:hidden;}
+						#findBox2 a {display:block; width:100%; height:100%;}
+					#findBox2 img {width:100%;}
+
+						#findBox1 a:hover .findImg1 img, #findBox1 a:focus .findImg1 img {
+							animation:expand1 15s ease-in-out alternate;}
+						#findBox1 a:hover .findText, #findBox1 a:focus .findText {background-color:rgb(200,200,125);}
+						#findBox1 a:hover strong, #findBox1 a:focus strong {color:#5A4931; text-decoration:none;}
+						#findBox1 a:hover span, #findBox1 a:focus span {color:#fff; font-weight:700; text-shadow:3px 3px 5px rgba(0,0,0,0.5); text-decoration:none;}
+						#findBox1 a:hover span:after, #findBox1 a:focus span:after {
+							content:""; display:block; width:350px; height:8px; margin-left:-175px;
+							background-color:rgba(230,230,180,0.7); position:absolute; left:50%; bottom:80px;}
+
+						#findBox2 a:hover img, #findBox2 a:focus img {animation:expand1 15s ease-in-out alternate;}
+							@keyframes expand1 {from {transform:scale(1);} to{transform:scale(2);}}
+
+
+		/*################## Shop ##################*/
+			#shopArea {width:100%; height:550px;
+							  padding-top:150px;
+							  background-color:#392710;
+							  background:url("../img/brownbg.png") repeat 0 0;
+							  background-size:100% 100%;}
+				#shopArea h2 {width:100%; height:80px; text-align:center; color:#ccc; font-size:30px;}
+				#shopBox {width:1025px; height:400px; margin:0 auto;}
+				#shopBox:after {content:""; display:block; clear:both;}
+					#shopArea ul li {width:30%; height:400px; float:left; margin-left:5%;}
+					#shopArea ul li:first-child {margin-left:0;}
+						#shopArea ul li a {display:block; width:100%; height:100%;
+											 position:relative; overflow:hidden;}
+							#shopArea ul li img {width:100%; height:100%; transition:all 2s;}
+							#shopArea ul li div {width:100%; height:100%; position:absolute; left:0; top:0;
+							background-image:-webkit-radial-gradient(bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,5));
+							background-image:-ms-linear-gradient(top, rgba(0,0,0,5) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0));
+							background-image:-o-linear-gradient(top, rgba(0,0,0,5) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0));
+							background-image:-moz-linear-gradient(top, rgba(0,0,0,5) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0));								}
+								#shopArea ul li .title, #shopArea ul li .view {
+									width:100%; height:50px;
+									text-align:center; font-weight:700;
+									line-height:50px; color:#fff;
+									font-size:120%; transition:all .5s;
+									position:absolute; left:0; top:0;
+									background-image:-webkit-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(200,200,125,0.5) 50%, rgba(0,0,0,0));
+									background-image:-ms-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(200,200,125,0.5) 50%, rgba(0,0,0,0));
+									background-image:-o-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(200,200,125,0.5) 50%, rgba(0,0,0,0));
+									background-image:-moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(200,200,125,0.5) 50%, rgba(0,0,0,0));
+									}
+								#shopArea ul li .view {opacity:0; transform:rotatex(180deg);}
+							#shopArea ul li .desc {width:90%; height:80px; font-size:15px;
+														position:absolute; left:0; bottom:-100px;
+														padding:0 5%; font-weight:400; transition:all .5s;
+														background-color:rgba(200,200,200,0.8);}
+							#shopArea a:hover .desc, #shopArea a:focus .desc {bottom:0;}
+								#shopArea ul li .desc strong {display:block; width:100%; height:40px;
+																	 line-height:50px; font-size:17px; color:#449;}
+								#shopArea ul li .desc span {display:block; width:100%; height:40px; line-height:40px;}
+
+								#shopArea ul a:hover .title, #shopArea ul a:focus .title {transform:rotatex(-180deg); opacity:0;}
+								#shopArea ul a:hover .view, #shopArea ul a:focus .view {opacity:1; transform:rotatex(0deg);
+									background-image:-webkit-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0));
+									background-image:-ms-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0));
+									background-image:-o-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0));
+									background-image:-moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0));}
+								#shopArea ul li a:hover img, #shopArea ul li a:focus img {transform:scale(1.1);}
+							#shopArea ul a:hover div, #shopArea ul a:focus div {background-image:none;}
+			/*========== 스마트폰 버전  =========*/
+				#shopScreen {display:none;}
+				#shopMobileBtn {display:none;}
+
+		/*################## Article ##################*/
+			#articleWrap {width:100%; background-color:#fff; padding:100px 0; overflow:hidden;}
+				#articleWrap h2 {width:100%; height:150px; text-align:center; font-size:30px;}
+				#articleArea {width:1025px; margin:0 auto;}
+					.leftArea, .rightArea {width:50%; float:left;}
+
+					/*============== 왼쪽 박스 영역 ==============*/
+						/*--- 커 핑 ---*/
+						#cupping {width:100%; height:250px;}
+							#cupping a {display:block; width:50%; height:100%; float:left; position:relative; overflow:hidden;}
+								#cupping a img {width:100%; height:100%; transition:all 1s;}
+								#cupping a:hover img, #cupping a:focus img {transform:scale(1.1);}
+								#cupping a p{width:100%; height:100%;
+													position:absolute; left:0; top:0;
+													background-color:rgba(0,0,0,0.2);
+													text-align:center; transition:all .5s;}
+								#cupping a:hover p, #cupping a:focus p {background-color:rgba(0,0,0,0.4); perspective:150px;}
+									#cupping a span {width:120px; height:30px;
+															line-height:30px; text-align:center;
+															color:#fff; font-size:18px;
+														    font-weight:700; display:inline-block;
+															border:1px solid #fff;
+															position:absolute; left:50%; top:50%;
+															margin-left:-60px; margin-top:-15px;
+															transition:all .5s;}
+
+									#cupping .businessCup span {font-size:18px;}
+									#cupping a span.view {opacity:0; transform:rotatex(180deg);}
+									#cupping a:hover span.cuppingTitle, #cupping a:focus span.cuppingTitle {
+										transform:rotatex(-180deg); opacity:0;}
+									#cupping a:hover span.view, #cupping a:focus span.view {
+										opacity:1; transform:rotatex(0deg); background-color:rgba(200,200,100,0.5);}
+
+						/*--- 이벤트 : 모모스 부산하다 ---*/
+						#busan {width:98%; height:480px; margin:10px 1% 10px 0;}
+							#busan p {float:left;}
+								#busanText {width:51%; height:476px; text-align:center; box-sizing:border-box;
+												 border:2px solid #524835; color:#524835;}
+									.logoAppear {display:block; width:100%; height:90px; transition:all .5s;
+														 padding:100px 0; line-height:30px;
+														 background-image:url("../img/logo_head.png"), url("../img/kimi.png");
+														 background-repeat:no-repeat, no-repeat;
+														 background-size:100px 60px, 60px 60px;
+														 background-position:370px -20px, -110px 230px;}
+									.logoAppear:hover, .logoAppear:focus {background-position:center 20px, center 210px;}
+									#busanText em {display:block; width:100%; font-size:22px; line-height:40px;
+															 font-style:normal; font-weight:700;}
+									.busanView {display:block; width:120px; height:30px;
+														line-height:30px; border:1px solid #524835;
+														color:#524835; margin:30px auto 0;}
+									.busanView:hover, .busanView:focus {background-color:#524835; color:#fff;}
+								#busanImg {width:48%; height:480px; background-color:#EC6900; position:relative;}
+									#busanImg img {width:100%; height:100%;}
+									#busanImg span {position:absolute; right:40%; top:5%;
+														  color:#132E71; font-size:35px; font-weight:700;}
+
+						/*--- 위클리마켓 ---*/
+						#weekly {width:100%; height:250px; position:relative; perspective:1000px;}
+							#weekly a {display:block; width:100%; height:100%;}
+								#weekly a div {width:100%; height:100%; position:absolute; left:0; top:0;}
+									#weekly a p {width:50%; height:100%; float:left;}
+										#weekly a p img {width:100%; height:100%;}
+											.rightText {background-color:#fff; text-align:center; border:1px solid #ccc; box-sizing:border-box;}
+												.rightText em {display:block; font-style:normal; font-weight:700;
+																	color:#c43738; padding:40px 0 20px; font-size:18px;
+																	line-height:160%;}
+												.rightText .wk_desc {font-size:14px; line-height:150%;}
+
+								.wkBoxB {transform:rotatey(180deg);
+												-ms-transform:rotatey(180deg);
+												transition:all .5s ease-in-out;}
+									.rightImg {position:relative; }
+										.rightImg img {position:absolute; left:0; top:0; transition:.5s ease-in-out;}
+										.wkFront {box-shadow:1px 0 5px rgba(0,0,0,0.5);
+													   transform:rotatey(180deg); opacity:1;
+													   -ms-transform:rotatey(180deg);}
+										.wkBack {opacity:0; box-shadow:-2px 0 5px rgba(0,0,0,0.5);}
+
+							#weekly a:hover .wkBoxB, #weekly a:focus .wkBoxB {transform:rotatey(0deg);}
+							#weekly a:hover .wkBack, #weekly a:focus .wkBack {opacity:1;}
+							#weekly a:hover .wkFront, #weekly a:focus .wkFront {opacity:0;}
+
+*/
+						/*--- 원두정기배달 ---*/
+						#delivery {width:100%; height:500px;}
+								.deliveryImg {width:100%; height:250px; position:relative; text-align:center;}
+									.deliveryImg img {width:100%; height:100%;}
+									.deliveryImg span {position:absolute; display:block;}
+									.deliveryImg span.deliveryWord1 {width:100%; left:0; top:70px; font-size:25px;}
+									.deliveryImg span.deliveryWord2 {width:100%; left:0; top:150px;}
+
+								.deliveryText {width:96%; height:240px;
+													margin:10px 2% 0;
+													border:2px solid #56704b;
+													position:relative;
+													line-height:30px;
+													text-align:center;}
+									.deliveryText strong {display:block; width:100%; height:100px;
+																  line-height:100px; font-size:20px; color:#56704b;}
+									.deliveryText a {display:block; width:120px; height:30px;
+														   line-height:30px; margin:30px auto 0;
+														   border:1px solid #56704b;
+														   color:#524835;}
+									.deliveryText a:hover, .deliveryText a:focus {
+										background-color:#524835; color:#fff; text-decoration:none;}
+									.deliveryText:before {content:""; display:block;
+															   position:absolute; left:50%; top:-50px; margin-left:-10px;
+															   border-top:20px solid transparent;
+															   border-bottom:20px solid #fff;
+															   border-right:20px solid transparent;
+															   border-left:20px solid transparent;} 
+
+					/*============== 오른쪽 박스 영역 ==============*/	
+					.rightArea {margin-top:-70px;}
+						/*--- 드립백 홍보 ---*/
+						#dripbag {width:100%; height:515px;}
+							.dripbagVideo {width:100%;/* height:289px;*/ background-color:#eee; position:relative;}
+								.dripbagVideo video {width:100%; height:100%;}
+								.dripbagVideo em {display:block; width:100%; text-align:center;
+														  font-style:normal; position:absolute; left:0; top:40%;
+														  font-size:30px; color:#fff;}
+							.dripbagVideo:hover em {display:none;}
+								.dripbagText {width:99%; height:200px;
+												   margin-top:10px;
+												   text-align:center;
+												   border:2px solid #56704b;
+												   line-height:25px;}
+									.dripbagText strong {display:block; width:100%; height:70px;
+																 line-height:70px; font-size:20px;}
+									.dripbagText .dripbagWord1 {display:block;
+																			height:15px;
+																			line-height:20px;
+																			font-size:15px;
+																			font-weight:700;}
+
+						/*---커피교실 ---*/
+						#academy {width:100%; height:250px;}
+							#academy p {width:50%; height:100%; float:left; position:relative;}
+								#academy p img {width:100%; height:100%; transition:all 1s;}
+								.academyImg1:after {content:""; display:block;
+															  position:absolute; right:-40px; top:50%;
+															  margin-top:-20px; z-index:2;															  
+															  border-top:20px solid transparent;
+															  border-bottom:20px solid transparent;
+															  border-right:20px solid transparent;
+															  border-left:20px solid  #C9B298;}
+									.academyImg1 a {display:block; width:100%; height:100%;}
+										.academyImg1 img {position:absolute; left:0; top:0;}
+										.academyImg1 img.hobbyBack {opacity:0; transition:all .5s;}
+								.academyImg2 {overflow:hidden;}
+									.academyImg2 a {display:block; width:120px; height:30px;
+															 line-height:30px; text-align:center;
+															 color:#fff; font-size:18px; margin-left:-60px;
+															 position:absolute; left:50%; top:110px;															 
+															 font-weight:700; border:1px solid #fff;}
+													
+						/*---다이렉트 에피소드 ---*/
+						#directEpisode {width:100%; height:250px; overflow:hidden;
+											   position:relative; background-color:#56704b;}
+							#directEpisode img {width:100%; height:100%; transition:all 2s;}
+							#directEpisode .episodeText {width:100%; height:200px; color:#fff;
+																	   position:absolute; left:0; top:0;
+																	   line-height:30px; text-align:center;
+																	   padding-top:50px; transition:all .5s;}
+								.episodeText .text1 {font-size:23px; font-weight:700;}
+								.episodeText .text3:before {content:"-";}
+								.episodeText .text3:after {content:"-";}
+								.episodeText a {display:block; width:120px; height:30px;
+													   line-height:30px; border:1px solid #fff; color:#fff;
+													   margin:30px auto 0; font-size:18px;}
+
+						/*---공지사항 ---*/
+						#notice {width:100%; height:500px;}
+						#notice:after {content:""; display:block; clear:both;}
+							#notice p {float:left; width:50%; height:250px;}
+								#notice p img {width:100%; height:100%;}
+
+							#notice .recruit {width:48%; height:230px;
+												   margin:10px 0 10px 2%;
+												   outline:2px solid #56704b;
+												   position:relative;}
+								.recruit:before {content:""; display:block;
+													  position:absolute; left:-50px; top:50%;
+													  margin-top:-15px;
+													  border-top:20px solid transparent;
+													  border-bottom:20px solid transparent;
+													  border-right:20px solid #fff;
+													  border-left:20px solid transparent;}
+								.recruit strong {display:block;
+													  width:95%; height:75px; 
+													  background-color:#fff;
+													  line-height:25px;
+													  padding:15px 0 15px 5%;
+													  font-size:20px;}
+								.recruit span {display:block;
+													width:95%; height:95px;
+													padding:15px 0 15px 5%;
+													background-color:#392710;
+													line-height:25px;
+													font-size:15px;
+													color:#fff;}
+								.centum1 {position:relative;}
+								.centum1:after {content:""; display:block;
+													  position:absolute; right:-40px; top:50%;
+													  z-index:2;
+													  margin-top:-20px;
+													  border-top:20px solid transparent;
+													  border-bottom:20px solid transparent;
+													  border-right:20px solid transparent;
+													  border-left:20px solid #392500;}
+
+								.centum2, .recruitImg {position:relative; overflow:hidden;}
+									.centum2 img, .recruitImg img{transition:all 1s;}
+									.centum2 a, .recruitImg a {display:block; width:100%; height:100%;
+																		 position:absolute; left:0; top:0;}
+										.centum2 a span, .recruitImg a span {display:block; width:120px; height:30px;
+																							line-height:30px; border:1px solid #fff;
+																							position:absolute; left:50%; top:105px;
+																							margin-left:-60px; text-align:center;
+																							transition:all .5s; font-weight:700;}
+										.centum2 span.centumTitle, .recruitImg span.recruitTitle {color:#fff; font-size:15px;}
+										.centum2 span.centumView, .recruitImg span.recruitView {opacity:0;
+																														  transform:rotatex(180deg); 
+																														  color:#fff; font-size:18px;}
+										.centum2:hover span.centumTitle, .recruitImg:hover span.recruitTitle {transform:rotatex(-180deg);
+																																	   opacity:0;}
+										.centum2:hover span.centumView, .recruitImg:hover span.recruitView {opacity:1;
+																																transform:rotatex(0deg);
+																																background-color:rgba(255,255,126,0.5);}
+
+		/*################## topBtn ##################*/
+		.topBtn {width:50px; height:50px; position:fixed; right:5%; bottom:20%;}
+			.topBtn a {display:block; width:100%; height:100%; position:relative;}
+				.circle1 {width:40px; height:40px; position:absolute; left:50%; top:50%;
+							background-color:rgba(250,250,250,0.2);
+							 margin-left:-20px; margin-top:-20px; animation:circle1 2s infinite linear 1s;
+							 border-radius:20px; border-left:1px solid #56704b;
+							 box-shadow:0 0 10px rgba(100,100,100,0.2);}
+					@keyframes circle1{ 0% {transform:rotatez(-360deg);} 100% {}}
+
+				.circle2 {width:50px; height:50px; position:absolute; left:0; top:0;
+							 border-radius:25px; border-left:1px solid #56704b;
+							 animation:circle2 2s infinite linear;
+							 
+							 box-shadow:0 0 10px rgba(200,200,200,0.5);}
+					@keyframes circle2{ 0% {transform:rotatez(360deg);}100% {}}
+
+				.topBtn span {display:block; width:50px; height:50px; 
+									  position:absolute; left:50%; top:50%;
+									  margin-left:-25px; margin-top:-25px;
+									  text-align:center; line-height:50px; font-size:12px;}

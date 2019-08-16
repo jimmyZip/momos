@@ -1,0 +1,9 @@
+	* {margin:0;padding:0;}
+	body,header,nav,section,footer,article,address,aside {margin:0; padding:0;}
+	header,nav,section,footer,article,address,aside {display:block;}
+	li {list-style-type:none;}
+	a:link, a:visited {text-decoration:none; color:#000;}
+	a:hover, a:focus {text-decoration:none;}
+	img {border:0;}
+	.hidden {width:1px; height:1px; font-size:1px; line-height:0; overflow:hidden; position:absolute; left:-9999px;}
+	em {font-style:normal;}

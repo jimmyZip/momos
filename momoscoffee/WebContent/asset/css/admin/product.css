@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+/*======section#adminContents 하위 상품등록영역=======*/
+.regist_zone{
+	width:100%;
+	overflow:hidden;
+	background-color:#ededed;
+	margin-bottom:20px;
+}
+/*row역할 하는 li 공통*/
+.regist_row{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	overflow:hidden;
+	margin-bottom:20px;	
+	box-sizing:border-box;
+}
+
+/*li div 하위요소 공통*/
+.regist_label span{
+	display:inline-block;
+	width:100px;
+	text-align:center;
+	vertical-align:middle;
+}
+.regist_label input{
+	display:inline-block;
+	vertical-align:middle;
+	width:180px;
+	padding:.5em .8em;
+}
+.regist_label select{
+	width:150px;
+	padding:.5em .8em;
+}
+
+/*첫 번째 li의 하위요소 div공통*/
+.regist_zone li:nth-child(1) div{
+	float:left;
+}
+.cate_label,.prod_search{
+	width:50%;
+}
+
+/*첫 번째 li 하위요소 중 검색영역*/
+.prod_search{
+	background-color:pink;
+}
+
+/*두 번째 li의 하위요소*/
+.regist_zone li:nth-child(2) div{
+	float:left;
+}
+.name_label,.price_label{
+	width:50%;
+}
+
+/*세 번째 li의 하위요소*/
+.regist_zone li:nth-child(3) div{
+	float:left;
+}
+.img_label,.stock_label{
+	width:50%;
+}
+input.fake_input{
+	display:inline-block;
+	/* width:390px; */
+	background-color:#1bbc9b;
+	color:#fff;
+	font-weight:700;
+	border:1px solid #1bbc9b;/* 필요 없으나 너비보정 때문에 설정 */
+}
+.img_label label{
+	padding:.4em .8em;
+	vertical-align:middle;
+	color:#1bbc9b;
+	border:none;
+	background-color:transparent;
+	border:1px solid #1bbc9b;
+	cursor:pointer;
+	transition:.3s all ease-in-out;
+}
+.img_label label:hover{
+	background-color:#1bbc9b;
+	font-weight:700;
+	color:#fff;
+}
+/*4번째 li */
+.regist_zone li:nth-child(4){
+	height:60px;
+}
+.desc_label textarea{
+	width:86%;
+	height:60px;
+	display:inline-block;
+	vertical-align:middle;
+	outline:none;
+	padding:5px;
+	text-indent:3px;
+}
+
+/*상품수, 검색결과 수 표시영역*/
+.infoBtnZone{
+	width:100%;
+	overflow:hidden;
+	margin-bottom:20px;
+}
+.infoBtnZone div{
+	float:left;
+	display:inline-block;
+}
+
+/*summary info : 상품 수, 검색결과 수 */
+.summInfo{
+	width:30%;
+}
+/*버튼 영역*/
+.prod_btn_zone{
+	width:70%;
+	text-align:right;
+}
+.prod_btn_zone button{
+	display:inline-block;
+	padding:.5em .8em;
+	font-weight:700;
+	text-align:right;
+}
+button#saveAsExcelBtn{}
+button#registProdBtn{}

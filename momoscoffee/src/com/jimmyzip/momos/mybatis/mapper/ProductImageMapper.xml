@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ProductImage">
+	<resultMap type="ProductImage" id="ProductImageMap">
+		<id column="product_image_id" property="product_image_id" />
+		<result column="prod_img" property="prod_img" />
+		<association column="product_id" property="product"
+			javaType="Product" select="Product.select" />
+	</resultMap>
+
+	<!-- select 공통 -->
+	<sql id="sql_select">
+		select product_image_id,product_id,prod_img from product_image
+	</sql>
+
+	<!-- 1건 조회 -->
+	<select id="select" parameterType="int"
+		resultType="ProductImage">
+		<include refid="sql_select" />
+		where product_image_id=#{product_image_id}
+	</select>
+
+	<!-- 조건없이 제품만 전체조회 -->
+	<select id="selectAll" resultMap="ProductImageMap">
+		<include refid="sql_select" />
+		order by product_image_id desc
+	</select>
+
+	<!-- 서브카테고리가 선택되어 해당 하위 제품들 전체조회 -->
+	<select id="selectAllByFk" parameterType="int"
+		resultMap="ProductImageMap">
+		<include refid="sql_select" />
+		where product_id = #{product_id}
+		order by product_id
+	</select>
+
+	<!-- excel용도 -->
+	<select id="selectExcel" resultMap="ProductImageMap">
+		<include refid="sql_select" />
+	</select>
+
+	<!-- 제품 이미지 등록 -->
+	<insert id="insert" parameterType="ProductImage">
+		insert into product_image(product_id,prod_img)
+		values(#{product.product_id}, #{prod_img})
+	</insert>
+
+	<!-- 제품 이미지 수정 -->
+	<update id="update" parameterType="ProductImage">
+		update product_image set prod_img=#{prod_img}
+		where product_id=#{product.product_id}
+	</update>
+	<insert id="updateFile" parameterType="ProductImage">
+		insert into product_image(product_id,prod_img)
+		values(#{product.product_id},#{prod_img})
+	</insert>
+
+	<!-- 제품 이미지 삭제 -->
+	<delete id="delete" parameterType="int">
+		delete from product_image
+		where product_id=#{product_id}
+	</delete>
+
+	<!-- 삭제 -->
+	<delete id="deleteFile" parameterType="ProductImage">
+		delete from product_image
+		where prod_img=#{prod_img}
+	</delete>
+
+	<!-- 제품명이나 설명으로 검색 -->
+	<select id="search" parameterType="String"
+		resultMap="ProductImageMap">
+		<include refid="sql_select" />
+		where prod_img like CONCAT('%',#{searchWord},'%')
+	</select>
+
+</mapper>
