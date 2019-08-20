@@ -86,10 +86,7 @@ function renderAllBranch(jsonArray){
 //지점 목록에서 지점명(링크) 클릭 시 지점 상세정보 요청
 function getBranchDetail(branch_id){
 	//컨트롤러에 지점 1개 정보 요청
-	
-	//api place정보 요청
-	
-	//상세페이지 이동
+	location.href="/admin/branch/page/"+branch_id;
 }
 
 ////////////////////////////////////네이버 지도 주소 좌표 검색 ///////////////////////
