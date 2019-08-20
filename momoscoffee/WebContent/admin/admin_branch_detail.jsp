@@ -71,7 +71,7 @@
 							</li>
 						</ul>
 						<div class="btn_zone">
-							<button id="showAllBranchBtn" onClick="showAllBranch()">지점목록으로</button>
+							<button id="showAllBranchBtn" onClick="showAllBranch()">지점관리목록으로</button>
 						</div>
 					</div>
 				</section>

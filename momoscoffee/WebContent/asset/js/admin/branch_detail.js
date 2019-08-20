@@ -40,6 +40,12 @@ function setZindex(n){
 	}
 }
 
+//지점관리 전체목록으로 돌아가기
+function showAllBranch(){
+	alert("지점관리 전체목록으로 돌아갑니다.");
+	location.href="/admin/branch/page";
+}
+
 window.addEventListener("load",function(){
 	init();
 });
