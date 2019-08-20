@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Branch">
+	<resultMap type="Branch" id="BranchMap">
+		<id column="branch_id" property="branch_id" />
+		<result column="branch_name" property="branch_name" />
+		<result column="branch_addr" property="branch_addr" />
+		<result column="lati" property="lati" />
+		<result column="longi" property="longi" />
+		<result column="message" property="message" />
+		<result column="branch_tel" property="branch_tel" />
+		<result column="open_h" property="open_h" />
+		<result column="close_h" property="close_h" />
+		<result column="last_order" property="last_order" />
+		<collection property="branchImage" column="branch_id"
+			javaType="java.util.ArrayList" ofType="BranchImage"
+			select="BranchImage.selectAllByFk" />
+	</resultMap>
+	<sql id="sql_select">
+		select branch_id, branch_name, branch_addr, lati, longi, message,
+		branch_tel, open_h, close_h, last_order
+		from branch
+	</sql>
+
+	<!-- 1건 조회 -->
+	<select id="select" parameterType="int" resultMap="BranchMap">
+		<include refid="sql_select" />
+		where branch_id=#{branch_id}
+	</select>
+
+	<!-- 조건없이 지점만 전체조회 -->
+	<select id="selectAll" resultMap="BranchMap">
+		<include refid="sql_select" />
+	</select>
+	<!-- 지역카테고리가 선택되어 해당 지역내 지점들 전체조회 -->
+	<!-- <select id="selectAllByFk" parameterType="int" resultMap="BranchMap"> 
+		<include refid="sql_select"/> where local_id = #{local.local_id} order by 
+		local_id </select> -->
+	<!-- excel용도 -->
+	<select id="selectExcel" resultMap="BranchMap">
+		<include refid="sql_select" />
+	</select>
+
+	<!-- 지점등록 -->
+	<insert id="insert" parameterType="Branch">
+		insert into branch(branch_name, branch_addr, lati, longi, message,
+		branch_tel, open_h, close_h, last_order)
+		values(#{branch_name},#{branch_addr},#{lati},#{longi},#{message},#{branch_tel},#{open_h},#{close_h},#{last_order})
+		<selectKey order="AFTER" resultType="int"
+			keyProperty="branch_id">
+			select max(branch_id) from branch
+		</selectKey>
+	</insert>
+
+	<!-- 지점명 중복확인 -->
+	<select id="branchNameCheck" parameterType="Branch"
+		resultType="Branch">
+		<include refid="sql_select" />
+		where branch_name=#{branch_name}
+	</select>
+
+	<!-- 지점정보 수정 -->
+	<update id="update" parameterType="Branch">
+		update branch set branch_name=#{branch_name}, branch_addr=#{branch_addr},
+		lati=#{lati}, longi=#{longi},
+		message=#{message}, branch_tel=#{branch_tel}, open_h=#{open_h}, close_h=#{close_h},
+		last_order=#{last_order}
+		where branch_id=#{branch_id}
+	</update>
+
+	<!-- 지점 삭제 -->
+	<delete id="delete" parameterType="int">
+		delete from branch where
+		branch_id=#{branch_id}
+	</delete>
+
+	<!-- 검색 -->
+	<select id="search" parameterType="String" resultMap="BranchMap">
+		<include refid="sql_select" />
+		where branch_name like CONCAT('%',#{searchWord},'%')
+		or branch_addr like CONCAT('%',#{searchWord},'%')
+	</select>
+
+</mapper>

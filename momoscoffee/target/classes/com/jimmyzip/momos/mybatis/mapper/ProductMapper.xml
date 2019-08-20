@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="Product">
+  	<resultMap type="Product" id="ProductMap">
+  		<id column="product_id" property="product_id"/>
+  		<result column="prod_name_kor" property="prod_name_kor"/>
+  		<result column="prod_name_eng" property="prod_name_eng"/>
+  		<result column="price" property="price"/>
+  		<result column="prod_desc" property="prod_desc"/>
+  		<result column="stock" property="stock"/>
+  		<association column="subcategory_id" property="subcategory" javaType="Subcategory" select="Subcategory.select"/>
+  		<collection property="productImage" column="product_id" javaType="java.util.ArrayList" ofType="ProductImage" select="ProductImage.selectAllByFk"/>
+  	</resultMap>
+  	<sql id="sql_select">
+  		select product_id, subcategory_id, prod_name_kor, prod_name_eng, price, prod_desc, stock
+  		from product
+  	</sql>
+  	
+  	<!-- 1건 조회 -->
+  	<select id="select" parameterType="int" resultMap="ProductMap">
+  		<include refid="sql_select"/>
+  		where product_id=#{product_id}
+  	</select>
+  	
+  	<!-- 조건없이 제품만 전체조회 -->
+  	<select id="selectAll" resultMap="ProductMap">
+  		<include refid="sql_select"/>
+  		order by product_id desc
+  	</select>
+  	<!-- 서브카테고리가 선택되어 해당 하위 제품들 전체조회 -->
+  	<select id="selectAllByFk" parameterType="int" resultMap="ProductMap">
+  		<include refid="sql_select"/>
+  		where subcategory_id = #{subcategory.subcategory_id} 
+  		order by subcategory_id
+  	</select>
+  	<!-- excel용도 -->
+  	<select id="selectExcel" resultMap="ProductMap">
+  		<include refid="sql_select"/>
+  	</select>
+  	
+  	<!-- 상품등록 --> 
+  	<insert id="insert" parameterType="Product">
+  		insert into product(subcategory_id,prod_name_kor,prod_name_eng,price,prod_desc,stock) 
+  		values(#{subcategory.subcategory_id}, #{prod_name_kor}, #{prod_name_eng}, #{price}, #{prod_desc}, #{stock})
+  		<selectKey order="AFTER" resultType="int" keyProperty="product_id">
+  			select max(product_id) from product
+  		</selectKey>
+  	</insert>
+  	 
+  	<!-- 제품명 중복확인 -->
+  	<select id="prodNameCheck" parameterType="Product" resultType="Product">
+  		<include refid="sql_select"/> 
+  		where prod_name_kor=#{prod_name_kor}
+  		or prod_name_eng=#{prod_name_eng}
+  	</select>
+  	
+  	<!-- 가격으로 조회 -->
+  	<select id="selectByPrice" parameterType="int" resultMap="ProductMap">
+  		<include refid="sql_select"/> where price=#{price}
+  		order by product_id
+  	</select>
+  	
+  	<!-- 제품정보 수정 -->
+  	<update id="update" parameterType="Product">
+  		update product set subcategory_id=#{subcategory.subcategory_id}, prod_name_kor=#{prod_name_kor}, prod_name_eng=#{prod_name_eng},
+  		price=#{price}, prod_desc=#{prod_desc}, stock=#{stock}
+  		where product_id=#{product_id}
+  	</update>
+  	
+	<!-- 제품 삭제 -->
+	 <delete id="delete" parameterType="int">
+		delete from product where product_id=#{product_id}
+	</delete>
+	
+  	<!-- 제품명이나 설명으로 검색 -->
+  	<select id="search" parameterType="String" resultMap="ProductMap">
+  		<include refid="sql_select"/> 
+  		where prod_name_kor like CONCAT('%',#{searchWord},'%')
+  		or prod_name_eng like CONCAT('%',#{searchWord},'%')
+  		or prod_desc like CONCAT('%',#{searchWord},'%')
+  		or price like CONCAT('%',#{searchWord},'%')
+  		or stock like CONCAT('%',#{searchWord},'%')
+  	</select>
+  	
+  </mapper>

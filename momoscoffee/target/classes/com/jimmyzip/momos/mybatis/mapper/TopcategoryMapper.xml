@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="Topcategory">
+  	<!-- 
+  	<sql id="sql_select">
+  		select topcategory_id, topcate_name
+  		from topcategory
+  	</sql>
+  	 -->
+  	 <select id="select" parameterType="int" resultType="Topcategory">
+  	 	select topcategory_id,topcate_name from topcategory
+  	 	where topcategory_id=#{topcategory_id}
+  	 </select>
+  	<!-- 전체조회 -->
+  	<select id="selectAll" resultType="Topcategory">
+  		select topcategory_id, topcate_name from topcategory
+  		order by topcategory_id
+  	</select>
+  	
+  	<!-- 카테고리명으로 조회, just in case... -->
+  	<select id="selectByName" parameterType="String" resultType="Topcategory">
+  		select topcategory_id, topcate_name from topcategory
+  		where topcate_name=#{topcate_name}
+  	</select>
+  	
+  	<!-- 탑카테고리 추가 -->
+  	<insert id="insert" parameterType="Topcategory">
+  		insert into topcategory(topcate_name) values(#{topcate_name})
+  	</insert>
+  	
+  	<!-- 탑카테고리 중복확인 -->
+  	<select id="cateNameCheck" parameterType="String" resultType="Topcategory">
+  		select topcategory_id,topcate_name from topcategory 
+  		where topcate_name=#{topcate_name}
+  	</select>
+  	
+  	<!-- 탑카테고리 수정 -->
+  	<update id="update" parameterType="Topcategory">
+  		update topcategory set topcate_name=#{topcate_name}
+  		where topcategory_id=#{topcategory_id}
+  	</update>
+  	
+	<!-- 탑카테고리 삭제 -->
+	 <delete id="delete" parameterType="int">
+		delete from topcategory where topcategory_id=#{topcategory_id}
+	</delete>
+	
+  	<!-- 검색 :: 갯수가 적어서 카테고리명으로 조회로 대체
+  	<select id="search" parameterType="String" resultType="topategory">
+  		<include refid="sql_select"/> where topcate_name like CONCAT("%",#{searchWord},"%")
+  	</select>
+  	-->
+  </mapper>

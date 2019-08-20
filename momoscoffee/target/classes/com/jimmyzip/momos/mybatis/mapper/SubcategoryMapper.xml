@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="Subcategory">
+  	<resultMap type="Subcategory" id="SubcateMap">
+  		<id column="subcategory_id" property="subcategory_id"/>
+  		<result column="subcate_name" property="subcate_name"/>
+  		<association column="topcategory_id" property="topcategory" javaType="Topcategory" select="Topcategory.select"/>
+  	</resultMap>
+  	<sql id="sql_select">
+  		select subcategory_id, topcategory_id, subcate_name
+  		from subcategory
+  	</sql>
+  	<select id="select" parameterType="int" resultMap="SubcateMap">
+  		<include refid="sql_select"/>
+  		where subcategory_id=#{subcategory_id}
+  	</select>
+  	<!-- 조건 없이 그냥 서브카테고리 전체조회 -->
+  	<select id="selectAll" resultMap="SubcateMap">
+  		<include refid="sql_select"/>
+  		order by topcategory_id, subcategory_id
+  	</select>
+  	<!-- 탑카테고리가 선택되어 해당 서브카테고리 전체조회 -->
+  	<select id="selectAllByFk" parameterType="int" resultMap="SubcateMap">
+  		<include refid="sql_select"/>
+  		where topcategory_id = #{topcategory.topcategory_id} 
+  		order by topcategory_id
+  	</select>
+  	
+  	<!-- 카테고리명으로 조회, just in case... -->
+  	<select id="selectByName" parameterType="String" resultType="Subcategory">
+  		<include refid="sql_select"/>
+  		where subcate_name=#{subcate_name}
+  	</select>
+  	
+  	<!-- 서브카테고리 추가 -->
+  	<insert id="insert" parameterType="Subcategory">
+  		insert into subcategory(topcategory_id,subcate_name) 
+  		values(#{topcategory.topcategory_id}, #{subcate_name})
+  	</insert>
+  	
+  	<!-- 서브카테고리 중복확인 -->
+  	<select id="cateNameCheck" parameterType="String" resultType="Subcategory">
+  		<include refid="sql_select"/> where subcate_name=#{subcate_name}
+  	</select>
+  	
+  	<!-- 서브카테고리 수정 -->
+  	<update id="update" parameterType="Subcategory">
+  		update subcategory set topcategory_id=#{topcategory.topcategory_id}, subcate_name=#{subcate_name}
+  		where subcategory_id=#{subcategory_id}
+  	</update>
+  	
+	<!-- 서브테고리 삭제 -->
+	 <delete id="delete" parameterType="int">
+		delete from subcategory where subcategory_id=#{subcategory_id}
+	</delete>
+	
+  	<!-- 검색 
+  	<select id="search" parameterType="String" resultMap="SubcateMap">
+  		<include refid="sql_select"/> where subcate_name like CONCAT('%',#{searchWord},'%')
+  	</select>
+  	-->
+  </mapper>

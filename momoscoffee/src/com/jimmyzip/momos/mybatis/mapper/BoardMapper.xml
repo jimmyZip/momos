@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="Freeboard">
+  	<resultMap type="Freeboard" id="FreeboardMap">
+  		<id column="board_id" property="board_id"/>
+  		<result column="title" property="title"/>
+  		<result column="content" property="content"/>
+  		<result column="wdate" property="wdate"/>
+  		<result column="modidate" property="modidate"/>
+  		<result column="ip" property="ip"/>
+  		<result column="hit" property="hit"/>
+  		<association column="member_id" property="members" javaType="Members" select="Members.select"/>
+  	</resultMap>
+  	<sql id="sql_select">
+  		select board_id, member_id, title, content, wdate, modidate, ip, hit
+  		from freeboard
+  	</sql>
+  	
+  	<!-- 1건 조회 -->
+  	<select id="select" parameterType="int" resultMap="FreeboardMap">
+  		<include refid="sql_select"/>
+  		where board_id=#{board_id}
+  	</select>
+  	
+  	<!-- 작성자 ip로 조회 -->
+  	<select id="selectAllByIp" parameterType="String" resultMap="FreeboardMap">
+  		<include refid="sql_select"/>
+  		where ip=#{ip}
+  	</select>
+  	
+  	<!-- 조건없이 게시글만 전체조회 -->
+  	<select id="selectAll" resultMap="FreeboardMap">
+  		<include refid="sql_select"/>
+  		order by board_id desc
+  	</select>
+  	<!-- 작성자명으로 조회 -->
+  	<select id="selectAllByFk" parameterType="int" resultMap="FreeboardMap">
+  		<include refid="sql_select"/>
+  		where member_id = #{members.member_id} 
+  		order by member_id
+  	</select>
+  	
+  	<!-- 글등록 --> 
+  	<insert id="insert" parameterType="Freeboard">
+  		insert into freeboard(board_id,member_id,title,content,modidate,ip,hit) 
+  		values(#{board_id}, #{members.member_id}, #{title}, #{content}, #{modidate},#{ip},#{hit})
+  		<selectKey order="AFTER" resultType="int" keyProperty="board_id">
+  			select max(board_id) from freeboard
+  		</selectKey>
+  	</insert>
+  	 	
+  	<!-- 게시글 수정 -->
+  	<update id="update" parameterType="Freeboard">
+  		update freeboard set title=#{title}, content=#{content}, modidate=now()
+  		where board_id=#{board_id}
+  	</update>
+  	
+	<!-- 게시글 삭제 -->
+	 <delete id="delete" parameterType="int">
+		delete from freeboard where board_id=#{board_id}
+	</delete>
+	
+  	<!-- 제목이나 내용으로 검색-->
+  	<select id="search" parameterType="String" resultMap="FreeboardMap">
+  		<include refid="sql_select"/> 
+  		where title like CONCAT('%',#{searchWord},'%')
+  		or content like CONCAT('%',#{searchWord},'%')
+  	</select>
+  	
+  	<!-- 조회수 -->
+  	<update id="hitUp" parameterType="int">
+  		update freeboard set hit=hit+1 where board_id=#{board_id}
+  	</update>
+  	
+  </mapper>
