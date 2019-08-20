@@ -33,7 +33,7 @@ public class MybatisAuthDAO implements AuthDAO{
 
 	@Override
 	public int update(Auth auth) {
-		return sessionTemplate.insert("Auth.insert", auth);
+		return sessionTemplate.update("Auth.update", auth);
 	}
 
 	@Override

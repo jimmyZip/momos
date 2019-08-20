@@ -50,7 +50,9 @@ public class AdminAssignController {
 	
 	//수정
 	@RequestMapping(value="/admin/assign",method=RequestMethod.PUT)
+	@ResponseBody
 	public String pdateAuth(Auth auth) {
+		System.out.println("권한수정요청 컨트롤러 메서드 호출");
 		authService.update(auth);
 		return "{\"resultCode\":1, \"msg\":\"권한 수정 성공\"}";
 	}
