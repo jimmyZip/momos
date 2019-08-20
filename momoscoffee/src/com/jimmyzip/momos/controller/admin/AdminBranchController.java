@@ -38,6 +38,15 @@ public class AdminBranchController {
 		return mav;
 	}
 	
+	//지점 상세페이지 이동
+	@RequestMapping(value="/branch/page/{branch_id}",method=RequestMethod.GET)
+	public ModelAndView showBranchDetail(@PathVariable("branch_id") int branch_id,HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("admin/admin_branch_detail");
+		Branch b = branchService.select(branch_id);
+		mav.addObject("branch_info", b);
+		return mav;
+	}
+	
 	//pk로 1건 조회
 	@RequestMapping(value="/branch/{branch_id}",method=RequestMethod.GET)
 	@ResponseBody
