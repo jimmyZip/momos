@@ -1,0 +1,55 @@
+#contentInnerWrap{
+	width:100%;
+	overflow:hidden;
+	background-color:#ededed;
+	margin-bottom:20px;
+}
+
+#contentInnerWrap div h3{
+	width:100%;
+	text-align:center;
+	color:#1bbc9b;
+	line-height:3rem;
+}
+
+#contentInnerWrap input,.searchBtn{
+	display:inline-block;
+	vertical-align:middle;
+	padding:.5em .8em;
+}
+.schBoard{
+	text-align:center;
+	margin-bottom:1rem;
+}
+.searchBtn{
+	display:inline-block;
+	width:80px;
+	border:none;
+	border:1px solid #223d4b;
+	background-color:#223d4b;
+	color:#fff;
+	text-align:center;
+	transition:.3s all;
+}
+
+.searchBtn:hover,.searchBtn:focus{
+	color:orange;
+	font-weight:700;
+}
+
+.infoBtnZone{
+	width:100%;
+	overflow:hidden;
+	margin-bottom:1rem;
+}
+.infoBtnZone div{
+	float:left;
+}
+
+.summInfo{
+	width:20%;
+}
+.board_btn_zone{
+	width:80%;
+	text-align:right;
+}

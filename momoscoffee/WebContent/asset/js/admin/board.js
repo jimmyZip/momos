@@ -2,6 +2,7 @@
  * 관리자 게시판관리 관련 기능
  */
 var flag=false;
+var infoMap = new Map();//글 게시자 정보 담을 객체
 
 $(function(){
 	getBoardList();
@@ -38,8 +39,8 @@ function renderAllBoard(jsonArray){
 			$("#container").append("</tr>");
 		}
 	}else{
-		$("#container").append("<tr>");
-		$("#container").append("<td colspan='5'>등록/검색된 글이 없습니다.</td>");
+		$("#container").append("<tr'>");
+		$("#container").append("<td colspan='9'>등록/검색된 글이 없습니다.</td>");
 		$("#container").append("</tr>");
 	}
 }
@@ -59,12 +60,13 @@ function checkCnt(){
 }
 
 //글 목록에서 체크박스 선택 시
-function selectedBoard(brd_id,mem_id,ip){
+function selectedBoard(brd_id,mem_id,userIp){
 	console.log("체크박스를 선택해서 selectedBoard()가 호출되었다.");
-	var board_id = parseInt(brd_id);
-	var member_id = mem_id;
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////여기부터
-	return board_id;
+	infoMap.clear();//map객체에 담기 전에 clear메서드로 초기화
+	//전역으로 설정한 infoMap객체에 매개로 넘겨받은 board_id,member_id,ip를 저장
+	infoMap.set("board_id",brd_id);
+	infoMap.set("member_id",mem_id);
+	infoMap.set("ip",userIp);
 }
 
 //검색영역 엔터키
@@ -135,5 +137,46 @@ function checkAll(){
 	flag=!flag;
 }
 
-//<button id="selectByIP" onClick="selectByIp()">선택IP글 모아보기</button>
+//선택한 ip로 조회하기(같은 ip글 모아보기)
+function selectByIp(){
+	var checkArray = checkCnt();
+	if(checkArray.length==0){
+		alert("ip조회 대상 글 체크박스를 하나 선택해주세요.");
+	}else if(checkArray.length>1){
+		alert("한 번에 한 ip 조회만 가능합니다. 다시 선택해주세요.");
+	}else if(checkArray.length==1){
+		var ip = infoMap.get("ip");
+		console.log("infoMap으로 부터 얻은 선택 ip 확인 : "+ip);
+		$.ajax({
+			url:"/admin/board/ip/"+ip,
+			type:"get",
+			success:function(result){
+				renderAllBoard(JSON.parse(result));
+				//체크박스 선택 해제
+				$("input[type=checkbox]").prop("checked",false);
+			}
+		});
+	}	
+}
 //<button id="selectByMember" onClick="selectByMember()">선택작성자글 모아보기</button>
+//같은 멤버 글 모아보기
+function selectByMember(){
+	var checkArray = checkCnt();
+	if(checkArray.length==0){
+		alert("게시자조회 대상 글 체크박스를 하나 선택해주세요.");
+	}else if(checkArray.length>1){
+		alert("한 번에 한 게시자 조회만 가능합니다. 다시 선택해주세요.");
+	}else if(checkArray.length==1){
+		var ip = infoMap.get("member_id");
+		console.log("infoMap으로 부터 얻은 선택 member_id 확인 : "+member_id);
+		$.ajax({
+			url:"/admin/board/b/"+member_id,
+			type:"get",
+			success:function(result){
+				renderAllBoard(JSON.parse(result));
+				//체크박스 선택 해제
+				$("input[type=checkbox]").prop("checked",false);
+			}
+		});
+	}	
+}

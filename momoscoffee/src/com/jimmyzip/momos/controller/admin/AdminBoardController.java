@@ -147,6 +147,13 @@ public class AdminBoardController {
 		return sb.toString();
 	}
 	
+	//동기삭제
+	@RequestMapping(value="/admin/board/del/{board_id}")
+	public ModelAndView deleteSync(@PathVariable("board_id") int board_id) {
+		ModelAndView mav = new ModelAndView("admin/admin_board");
+		return mav;
+	}
+	
 	//검색요청
 	@RequestMapping(value="/board/search/{searchWord}",method=RequestMethod.GET)
 	@ResponseBody

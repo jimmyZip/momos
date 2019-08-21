@@ -1,0 +1,44 @@
+#infoArea{
+	width:100%;
+	background-color:#ededed;
+	padding:1rem;
+	box-sizing:border-box;
+}
+#infoArea ul{
+	width:100%;
+}
+.infoRow{
+	width:100%;
+	overflow:hidden;
+	line-height:2rem;
+}
+.infoRow p{
+	float:left;
+	width:50%;
+}
+
+.infoRow label{
+	display:inline-block;
+	width:100px;
+	color:#787878;
+}
+.infoRow input{
+	display:inline-block;
+	width:calc(100% - 140px);
+	border:none;
+	padding:.3em .8em;
+	color:#333;
+	text-align:center;
+}
+
+/*=============btn==============*/
+.btnZone{
+	width:100%;
+	margin:.5rem 0;
+	text-align:center;
+}
+button{
+	display:inline-block;
+	padding:.3em .8em;
+	cursor:pointer;	
+}

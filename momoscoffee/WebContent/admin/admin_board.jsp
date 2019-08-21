@@ -27,11 +27,13 @@
 				<%@include file="/include/adminSide.jsp" %>
 				<!-- admin side menu ends -->
 				<section id="adminContents">
-					<div id="boardSchZone">					
-						<h3>게시글 검색 zone</h3>
-						<p class="schBoard">
-							<input type="text" placeholder="검색어(제목 또는 내용) 입력" id=""/>
-						</p>
+					<div id="contentInnerWrap">
+						<div id="boardSchZone">					
+							<h3>게시글 검색 zone</h3>
+							<p class="schBoard">
+								<input type="text" placeholder="검색어(제목 또는 내용) 입력" id="boardSearch" onkeydown="boardSearchKey()"/><button class="searchBtn" onClick="boardSearch()">검색</button>
+							</p>
+						</div>
 					</div>
 					<div class="infoBtnZone">
 						<div class="summInfo">
