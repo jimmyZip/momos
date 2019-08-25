@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.net.URL;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.List;
@@ -14,11 +15,15 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.json.simple.JSONObject;
 import org.springframework.stereotype.Service;
 
 @Service
 public class NaverApiServiceImpl implements NaverApiService{
-
+	
+	private String ncpClientId = "pg5xr50eua";
+	private String clientSecret = "x65EBiXdYRur5OmgKMUbRo5OskVgIV8Er2p5keOH";
+	
 	@Override
 	public String coordSearch(String addr) {
 		System.out.println("주소로 좌표검색 요청이 서비스impl로 넘어와서 수행");
@@ -35,8 +40,8 @@ public class NaverApiServiceImpl implements NaverApiService{
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		String ncpClientId = "pg5xr50eua";
-		String clientSecret = "x65EBiXdYRur5OmgKMUbRo5OskVgIV8Er2p5keOH";
+		//String ncpClientId = "pg5xr50eua";
+		//String clientSecret = "x65EBiXdYRur5OmgKMUbRo5OskVgIV8Er2p5keOH";
 		HttpClient client = HttpClientBuilder.create().build();
 		HttpGet request = new HttpGet(url);
 		//header에 clientId와 clientSecret 주입
@@ -66,5 +71,6 @@ public class NaverApiServiceImpl implements NaverApiService{
 		
 		return html.toString();
 	}
-	
+
+
 }

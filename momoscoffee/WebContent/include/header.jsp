@@ -21,7 +21,7 @@
 			<span class="arrowBtn arrowBtn2"></span>
 		</a>
 		<h1>
-			<a href="index.jsp" title="Go_main_page">
+			<a href="/index.jsp" title="Go_main_page">
 				<img src="/asset/img/logo.png" alt="logo"/>
 			</a>
 		</h1>
@@ -33,13 +33,13 @@
 			</p>
 			<ul class="fixGnb">
 				<li class="fixGnbList1">
-					<a href="sub1_1.jsp" title="about" class="fgl">ABOUT</a>
+					<a href="/client/pages/philosophy.jsp" title="about" class="fgl">ABOUT</a>
 					<ul class="fix_subNav">
-						<li><a href="sub1_1.jsp" title="PHILOSOPHY">PHILOSOPHY</a></li>
-						<li><a href="sub1_2.jsp" title="HISTORY">HISTORY</a></li>
-						<li><a href="sub1_3.jsp" title="PEOPLE">PEOPLE</a></li>
-						<li><a href="sub1_4.jsp" title="LOCATION">LOCATION</a></li>
-						<li><a href="sub1_5.jsp" title="OUTREACH">OUTREACH</a></li>
+						<li><a href="/client/pages/philosophy.jsp" title="PHILOSOPHY">PHILOSOPHY</a></li>
+						<li><a href="/client/pages/history.jsp" title="HISTORY">HISTORY</a></li>
+						<li><a href="/client/pages/people.jsp" title="PEOPLE">PEOPLE</a></li>
+						<li><a href="/client/goLocation" title="LOCATION">LOCATION</a></li>
+						<li><a href="/client/pages/outreach.jsp" title="OUTREACH">OUTREACH</a></li>
 					</ul>
 				</li>
 				<li class="fixGnbList2">
@@ -102,11 +102,11 @@
 					<dl>
 						<dt>ABOUT</dt>
 						<dd>
-							<a href="sub1_1.jsp" title="PHILOSOPHY">PHILOSOPHY</a>
-							<a href="sub1_2.jsp" title="HISTORY">HISTORY</a>
-							<a href="sub1_3.jsp" title="PEOPLE">PEOPLE</a>
-							<a href="sub1_4.jsp" title="LOCATION">LOCATION</a>
-							<a href="sub1_5.jsp" title="OUTREACH">OUTREACH</a>
+							<a href="/client/pages/philosophy.jsp" title="PHILOSOPHY">PHILOSOPHY</a>
+							<a href="/client/pages/history.jsp" title="HISTORY">HISTORY</a>
+							<a href="/client/pages/people.jsp" title="PEOPLE">PEOPLE</a>
+							<a href="/client/goLocation" title="LOCATION">LOCATION</a>
+							<a href="/client/pages/outreach.jsp" title="OUTREACH">OUTREACH</a>
 						</dd>
 					</dl>
 				</li>
@@ -147,11 +147,11 @@
 				<li class="gnbMobileList">
 					<div><em>ABOUT</em><span class="wLine"></span><span class="hLine"></span></div>
 					<p>
-						<a href="sub1_1.jsp" title="PHILOSOPHY">PHILOSOPHY</a>
-						<a href="sub1_2.jsp" title="HISTORY">HISTORY</a>
-						<a href="sub1_3.jsp" title="PEOPLE">PEOPLE</a>
-						<a href="sub1_4.jsp" title="LOCATION">LOCATION</a>
-						<a href="sub1_5.jsp" title="OUTREACH">OUTREACH</a>
+						<a href="/client/pages/philosophy.jsp" title="PHILOSOPHY">PHILOSOPHY</a>
+							<a href="/client/pages/history.jsp" title="HISTORY">HISTORY</a>
+							<a href="/client/pages/people.jsp" title="PEOPLE">PEOPLE</a>
+							<a href="/client/goLocation" title="LOCATION">LOCATION</a>
+							<a href="/client/pages/outreach.jsp" title="OUTREACH">OUTREACH</a>
 					</p>
 				</li>
 				<li class="gnbMobileList">

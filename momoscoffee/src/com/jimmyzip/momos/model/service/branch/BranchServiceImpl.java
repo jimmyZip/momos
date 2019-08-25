@@ -43,7 +43,13 @@ public class BranchServiceImpl implements BranchService{
 	}
 
 	public List<Branch> selectAll() {
-		return branchDAO.selectAll();
+		List<Branch> branchList = branchDAO.selectAll();
+		List<BranchImage> branchImgList = new ArrayList<BranchImage>();
+		for(Branch b:branchList) {
+			branchImgList = branchImageDAO.selectAllByFk(b.getBranch_id());
+			b.setBranchImage(branchImgList);
+		}
+		return branchList;
 	}
 	
 	//지점 1건 등록
