@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<!-- datasource :: localhost
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		p:driverClassName="org.mariadb.jdbc.Driver"
+		p:url="jdbc:mariadb://localhost:3306/momos" 
+		p:username="root"
+		p:password="root">
+	</bean>
+	-->
+	<!-- datasource :: hosting-->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		p:driverClassName="org.mariadb.jdbc.Driver"
+		p:url="jdbc:mariadb://localhost:3306/jimmyzip?characterEncoding=UTF8" 
+		p:username="jimmyzip"
+		p:password="ehdqnstjwn12!@">
+	</bean>
+	
+
+	<!-- transactionManager -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+		p:dataSource-ref="dataSource" />
+	
+	<!-- @Transactional annotation을 sacn하기 위한 설정 -->
+	<tx:annotation-driven proxy-target-class="true"/>
+
+	<!-- factory bean -->
+	<bean id="sqlSessionFactoryBean"
+		class="org.mybatis.spring.SqlSessionFactoryBean"
+		p:dataSource-ref="dataSource"
+		p:configLocation="classpath:com/jimmyzip/momos/mybatis/config/mybatis-config.xml" />
+	
+	<!-- factory bean으로 부터 만들어질 sessionTemplate 등록 -->
+	<bean id="sqlSessionTemplate"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactoryBean" />
+	</bean>
+
+	<!-- 
+		db연동 관련 객체서비스, 자동등록, autowired등 
+		Controller 계층만 servlet-context역할을 하는 front.xml이 스캔하도록 Controller 배제
+	-->
+	<context:component-scan	base-package="com.jimmyzip.momos">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+		<context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.RestController"/>
+	</context:component-scan>
+
+	<!-- bean configuration for file upload -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	</bean>
+	
+	<!-- 이메일 발송 -->
+	<bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.naver.com"/>
+		<property name="port" value="587"/>	
+		<property name="username" value="wlsghd1028@naver.com"/>	
+		<property name="password" value="ehdqnstjwn12!@"/>
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.ssl.trust">smtp.naver.com</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.smtp.auth">true</prop>
+			</props>
+		</property>	
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<property name="order" value="1"/>
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="order" value="0"/>
+		<property name="defaultErrorView" value="error"/>
+		<property name="exceptionMappings">
+			<props>
+				<prop key="RuntimeException">error</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- <resources mapping="/data/**" location="" /> -->
+	
+	<bean name="excelView" class="com.jimmyzip.momos.common.ExcelView"/>
+	
+	<bean id="memberService" class="com.jimmyzip.momos.model.service.member.MemberServiceImpl"/>
+</beans>

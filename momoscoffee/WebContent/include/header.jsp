@@ -45,8 +45,8 @@
 				<li class="fixGnbList2">
 					<a href="sub2_1.jsp" title="shop" class="fgl">SHOP</a>
 					<ul class="fix_subNav">
-						<li><a href="sub2_1.jsp" title="GOODs">GOODs</a></li>
-						<li><a href="index.jsp" title="GREEN BEAN" onClick="enterNotice();">GREEN BEAN</a></li>
+						<li><a href="/client/goGoods/page" title="GOODs">GOODs</a></li>
+						<!-- <li><a href="/client/goGreenbean" title="GREEN BEAN" onClick="enterNotice();">GREEN BEAN</a></li> -->
 					</ul>
 				</li>
 				<li class="fixGnbList3">
@@ -114,8 +114,8 @@
 					<dl>
 						<dt>SHOP</dt>
 						<dd>
-							<a href="sub2_1.jsp" title="GOODs">GOODs</a>
-							<a href="index.jsp" title="GREEN BEAN" onClick="enterNotice();">GREEN BEAN</a>
+							<a href="/client/goGoods/page" title="GOODs">GOODs</a>
+							<!-- <a href="/client/goGreenbean" title="GREEN BEAN" onClick="enterNotice();">GREEN BEAN</a> -->
 						</dd>
 					</dl>
 				</li>
@@ -157,8 +157,8 @@
 				<li class="gnbMobileList">
 					<div><em>SHOP</em><span class="wLine"></span><span class="hLine"></span></div>
 					<p>
-						<a href="sub2_1.jsp" title="GOODs">GOODs</a>
-						<a href="index.jsp" title="GREEN BEAN" onClick="enterNotice();">GREEN BEAN</a>
+						<a href="/client/goGoods/page" title="GOODs">GOODs</a>
+						<!-- <a href="/client/goGreenbean" title="GREEN BEAN" onClick="enterNotice();">GREEN BEAN</a> -->
 					</p>
 				</li>
 				<li class="gnbMobileList">

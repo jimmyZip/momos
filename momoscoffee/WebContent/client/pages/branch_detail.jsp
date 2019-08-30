@@ -7,67 +7,10 @@
 <head>
 	<%@include file="/include/head.jsp" %>
 	<link rel="stylesheet" type="text/css" href="/asset/plugin/plugin/bxslider/jquery.bxslider.css" />
+	<link rel="stylesheet" type="text/css" href="/asset/css/client/branch_detail.css" />
 	<script type="text/javascript" src="/asset/plugin/plugin/bxslider/jquery.bxslider.min.js"></script>
 	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=pg5xr50eua"></script>
 	<script type="text/javascript" src="/asset/js/client/branch_detail.js"></script>
-	<style type="text/css">
-		/*bxSlider 이미지 너비 설정*/
-		.bxslider li img{
-			width:100% !important;
-		}
-		/*bxSlider pager 색상변경 및 hover효과*/
-		.bx-wrapper .bx-pager.bx-default-pager a{
-			background-color:#fff !important;
-		}
-		.bx-wrapper .bx-pager.bx-default-pager a:hover, 
-		.bx-wrapper .bx-pager.bx-default-pager a.active, 
-		.bx-wrapper .bx-pager.bx-default-pager a:focus{
-			background-color:#1bbc9b !important;
-		}
-		
-		/*주변교통정보보기 버튼*/
-		#showTransBtn{
-			display:block;
-			width:200px;
-			margin:0 auto;
-			padding:.5em .8em;
-			border:none;
-			border:1px solid #ccc;
-			color:#ccc;
-			background-color:transparent;
-			font-weight:900;
-			margin-bottom:1.5rem;
-			outline:0;
-			transition:.3s all;
-			cursor:pointer;
-		}
-		#showTransBtn:hover,#showTransBtn:focus{
-			background-color:#ccc;
-			color:#223d4b;
-		}
-	</style>
-	<script type="text/javascript">
-		function getPubTransInfo(){
-			alert(1);
-			var lati = encodeURIComponent(parseFloat(document.getElementById("hiddenLati").value));
-			var longi = encodeURIComponent(parseFloat(document.getElementById("hiddenLongi").value));
-			//var lati = document.getElementById("hiddenLati").value;
-			//var longi = document.getElementById("hiddenLongi").value;
-			console.log(lati);
-			console.log(longi);
-			var xhr = new XMLHttpRequest();
-			var url = "https://api.odsay.com/v1/api/pointBusStation?x="+longi+"&y="+lati+"&apiKey={kWAnYhK47E4KTOdcP1N3bg}";
-			url=encodeURI(url);
-			xhr.open("GET", url, true);
-			xhr.send();
-			xhr.onreadystatechange = function() {
-				alert(2);
-				if (xhr.readyState == 4 && xhr.status == 200) {
-					console.log( xhr.responseText ); // <- xhr.responseText 로 결과를 가져올 수 있음
-				}
-			}
-		}
-	</script>
 </head>
 <body>
 	<div id="wrap">
@@ -81,8 +24,12 @@
 				<li class="route_here">
 					<a href="/pages/sub1_4_store1.jsp" title="store_ONCHEON">${branch.branch_name} &nbsp;▼</a>
 					<ul>
-						<li><a href="/pages/sub1_4_store1.jsp" title="store_ONCHEON">온천장점</a></li>
-						<li><a href="/pages/sub1_4_store2.jsp" title="store_CENTUM">센텀점</a></li>
+						<c:forEach var="allB" items="${allBranchList }">
+							<!-- 현재 보는 지점 상세페이지가 아닌 다른 상세페이지만 나오도록 -->
+							<c:if test="${allB.branch_id!=branch.branch_id}">							
+								<li><a href="javascript:void(0)" onClick="goBranchDetail(${allB.branch_id})" title="${allB.branch_name}">${allB.branch_name}</a></li>
+							</c:if>
+						</c:forEach>
 					</ul>
 				</li>
 			</ul><!--◁ 페이지 경로 ▷-->
@@ -93,6 +40,7 @@
 					<span>${branch.message}</span>
 				</p>
 			</section><!--◁ visual ▷-->
+			<!--◁ info, store_content ▷-->
 			<section class="store_content">
 				<h2 class="hidden">모모스커피 ${branch.branch_name } 매장정보</h2>
 				<c:set var="i" value="1"/>
@@ -122,16 +70,26 @@
 						<%-- <button id="showTransBtn" onClick="getPubTransInfo(${branch.lati},${branch.longi})">주변 대중교통정보 보기</button> --%>
 						<button id="showTransBtn" onClick="getPubTransInfo()">주변 대중교통정보 보기</button>
 						<div id="nearbyTransResult">
-							<!-- 
-							<p>
-								<em>지하철 :</em><span>부산 1호선 온천장역 4번 출구</span>
-							</p>
-							<p>
-								<em>버 스 :</em><span>온천장역 (8, 11, 12, 16, 144, 183, 1008, 1200, 1300, 1500)</span>
-							</p>
-							 -->
+							<h4 class="infoMsg">지하철역 이름이나 버스정류장 이름을 클릭해서 지도위치를 보실 수 있습니다.</h4>
+							<div id="transResultList">
+								<dl id="subwayResult">
+							      <dt>주변 지하철</dt>
+							      <dd id="nearSubway">
+							        <ul id="nearSubwayInner"></ul>
+							      </dd>
+							    </dl>
+							    <dl id="busResult">
+							      <dt>주변 버스</dt>
+							      <dd id="nearBus">
+							        <ul id="nearBusInner"></ul>
+							      </dd>
+							    </dl>
+							</div>
 						</div>
 					</div>
+					<p id="goBackBtn">
+						<button onClick="prevPage()">지점목록 페이지로 돌아가기</button>
+					</p>
 				</article>
 			</section><!--◁ content ▷-->
 		</div><!--◀ container ▶-->

@@ -16,6 +16,11 @@
 			$(".boxB").delay(6500).fadeOut(500);
 			$(".boxC").delay(6000).fadeIn(2000);
 		});
+		function loginByEnter(){
+			if(event.keyCode==13){
+				login();
+			}
+		}
 		function login(){
 			var userid=document.getElementById("userid");
 			var userpass=document.getElementById("userpass");
@@ -66,7 +71,7 @@
 							<input id="userid" type="text" name="userid" title="ID 입력" placeholder="아이디를 입력해주세요." maxlength="10"/>
 						</p>
 						<p>
-							<input id="userpass" type="password" name="userpass" title="PW 입력" placeholder="비밀번호를 입력해주세요" maxlength="8"/>
+							<input id="userpass" type="password" name="userpass" title="PW 입력" placeholder="비밀번호를 입력해주세요" maxlength="8" onKeyDown="loginByEnter()"/>
 						</p>
 					</div>
 					<div class="logBtn">

@@ -1,0 +1,273 @@
+.sub1-4-store {
+	width: 100%;
+}
+
+/*visual*/
+.store_visualWrap {
+	width: 100%;
+	height: 200px;
+	background-color: #857264;
+	position: relative;
+	overflow: hidden;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+}
+
+.store_visualText {
+	width: 500px;
+	height: 100px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -250px;
+	margin-top: -50px;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+}
+
+.store_visualText span {
+	font-size: 30px;
+}
+
+/*############매장정보##################*/
+.store_content {
+	width: 100%;
+	padding-top: 40px;
+}
+
+/*bxSlider 이미지 너비 설정*/
+.bxslider li img {
+	width: 100% !important;
+}
+/*bxSlider pager 색상변경 및 hover효과*/
+.bx-wrapper .bx-pager.bx-default-pager a {
+	background-color: #fff !important;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active,
+	.bx-wrapper .bx-pager.bx-default-pager a:focus {
+	background-color: #1bbc9b !important;
+}
+
+
+.store_addr {
+	width: 800px;
+	height: 120px;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
+
+.store_addr p {
+	width: 45%;
+	height: 60px;
+	float: left;
+	padding-left: 5%;
+}
+
+.store_addr p em {
+	display: inline-block;
+	width: 25%;
+	height: 100%;
+	line-height: 50px;
+}
+
+.store_addr p span, .store_addr a {
+	display: inline-block;
+	width: 75;
+	height: 100%;
+	color: #333;
+	line-height: 30px;
+}
+
+.store_addr p:first-child span {
+	letter-spacing: -1px;
+}
+
+/*##############여기부터가 지점 오시는길###################33*/
+.store_direct {
+	width: 100%;
+	background-color: #333;
+}
+
+.store_direct h3 {
+	width: 100%;
+	font-weight: 400;
+	font-size: 28px;
+	line-height: 100px;
+	text-align: center;
+	color: #fff;
+}
+
+.store_map {
+	width: 420px;
+	height: 370px;
+	margin: 0 auto;
+	border: 1px solid #fff;
+}
+
+.store1Visual {
+	background-image: url('/asset/img/panorama4_1.jpg');
+}
+
+.store2Visual {
+	background-image: url('/asset/img/panorama4_2.jpg');
+}
+
+.route_before {
+	color: #6eaf8f;
+	background: url("/asset/img/icons/pageRouteArrow.png") no-repeat center
+		right;
+}
+
+/*주변교통정보보기 버튼*/
+#showTransBtn {
+	display: block;
+	width: 200px;
+	margin: 0 auto;
+	padding: .5em .8em;
+	border: none;
+	border: 1px solid #ccc;
+	color: #ccc;
+	background-color: transparent;
+	font-weight: 900;
+	margin-bottom: 1.5rem;
+	outline: 0;
+	transition: .3s all;
+	cursor: pointer;
+}
+
+#showTransBtn:hover, #showTransBtn:focus {
+	background-color: #ccc;
+	color: #223d4b;
+}
+
+/* 주변 교통정보 영역*/
+.store_transit {
+	width: 100%;
+	color: #fff;
+	padding: 50px 0;
+}
+
+.store_transit p {
+	width: 100%;
+	height: 50px;
+	line-height: 25px;
+}
+
+.store_transit p em {
+	display: inline-block;
+	width: 20%;
+}
+
+.store_transit p span {
+	display: inline-block;
+	width: 80%;
+}
+
+/*api로 가져온 결과 출력영역*/
+h4.infoMsg{
+	width:100%;
+	padding:10px 0;
+	text-align:center;
+}
+#transResultList {
+	width: 100%;
+	padding: 10px 10%;
+	box-sizing: border-box;
+	overflow:hidden;
+}
+#subwayResult,#busResult{
+	width:50%;
+	float:left;
+}
+/*주변 지하철*/
+#subwayResult {
+	overflow: hidden;
+}
+
+#subwayResult dt,#busResult dt {
+    color: #ccc;
+    font-size: 1.5rem;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#nearSubway, #nearSubwayInner {
+	width: 100%;
+	overflow: hidden;
+}
+
+/*주변 버스*/
+#busResult {
+	overflow: hidden;
+}
+
+#busResult dt {
+	color: #ccc;
+}
+
+#nearBus, #nearBusInner {
+	width: 100%;
+	overflow: hidden;
+}
+
+/*주변교통 출력 li공통*/
+.list_row {
+	width: 100%;
+	overflow: hidden;
+	line-height:1.2rem;
+	padding:10px 0;
+}
+
+.list_item {
+	width: 100%;
+	overflow: hidden;
+}
+
+.list_item a {
+	display: inline-block;
+	width: 100%;
+	overflow: hidden;
+	color:orange;
+}
+
+.list_item a:hover, .list_item a:focus {
+	color: pink;
+}
+
+b.btype {
+	font-size: .6rem;
+	color: #999;
+}
+
+/* 이전 페이지(지점 상세페이지 목록으로 돌아가기 버튼 처리)*/
+/*주변교통정보보기 버튼*/
+#goBackBtn{
+	width:100%;
+}
+#goBackBtn button {
+	display: block;
+	width: 200px;
+	margin: 0 auto;
+	padding: .5em .8em;
+	border: none;
+	border: 1px solid #ccc;
+	color: #ccc;
+	background-color: transparent;
+	font-weight: 900;
+	margin-bottom: 1.5rem;
+	outline: 0;
+	transition: .3s all;
+	cursor: pointer;
+}
+
+#goBackBtn button:hover, #goBackBtn button:focus {
+	background-color: #ccc;
+	color: #223d4b;
+}

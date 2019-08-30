@@ -1,0 +1,11 @@
+/*
+	상품 리스트 중 description 부분
+*/
+.goods_desc{
+    height: 30px;
+    font-family: 'gulim',sans-serif;
+    font-size: 12px;
+	overflow:hidden !important;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}

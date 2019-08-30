@@ -1,5 +1,6 @@
 package com.jimmyzip.momos.controller.client;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,9 @@ public class BranchController {
 	public ModelAndView goLocationSubPage(@PathVariable("branch_id") int branch_id) {
 		ModelAndView mav = new ModelAndView("client/pages/branch_detail");
 		Branch b = branchService.select(branch_id);
+		List<Branch> allBranchList = branchService.selectAll();
 		mav.addObject("branch_info",b);
+		mav.addObject("allBranchList",allBranchList);
 		return mav;
 	}
 }
