@@ -22,36 +22,17 @@ public class ODsayPubTransServiceImpl implements ODsayPubTransService{
 	private String apiKey = "kWAnYhK47E4KTOdcP1N3bg";
 	@Override
 	public String getPubTransInfo(Double lati, Double longi) {
-		System.out.println("odsay컨트롤러,서비스인터페이스 타고 요청이 넘어와 수행");
 		System.out.println("서비스 impl에서 로직 수행 전 파라미터 확인 : "+lati);
 		System.out.println("서비스 impl에서 로직 수행 전 파라미터 확인 : "+longi);
 		StringBuilder urlBuilder = new StringBuilder();
 		String url = null;
+		urlBuilder.append("https://api.odsay.com/v1/api/pointBusStation");
+		urlBuilder.append("?lang=0");
+		urlBuilder.append("&x="+lati);
+		urlBuilder.append("&y="+longi);
+		urlBuilder.append("&apiKey="+apiKey);
+		url = urlBuilder.toString();
 		
-		
-	
-			urlBuilder.append("https://api.odsay.com/v1/api/pointBusStation");
-			/*
-			urlBuilder.append("?"+URLEncoder.encode("lang", "UTF-8")+"=0");
-			urlBuilder.append("&"+URLEncoder.encode("x", "UTF-8")+"="+URLEncoder.encode(longi.toString(), "UTF-8"));
-			urlBuilder.append("&"+URLEncoder.encode("y", "UTF-8")+"="+URLEncoder.encode(lati.toString(),"UTF-8"));
-			urlBuilder.append("&"+URLEncoder.encode("apiKey", "UTF-8")+"="+URLEncoder.encode(apiKey, "UTF-8"));
-			*/
-			urlBuilder.append("?lang=0");
-			urlBuilder.append("&x="+lati);
-			urlBuilder.append("&y="+longi);
-			urlBuilder.append("&apiKey="+apiKey);
-			url = urlBuilder.toString();
-	
-		//String url = null;
-		/*
-		 * try { //String apiKey = URLEncoder.encode(myApiKey, "UTF-8"); url =
-		 * "https://api.odsay.com/v1/api/pointBusStation?lang=0&x="+longi+"&y="+lati+
-		 * "&apiKey="+apiKey; } catch (UnsupportedEncodingException e) {
-		 * e.printStackTrace(); }
-		 */
-		//String url = "https://api.odsay.com/v1/api/pointBusStation?lang=0&x="+longi+"&y="+lati+"&apiKey="+apiKey;
-		//String url = "https://api.odsay.com/v1/api/pointBusStation?lang=0&x="+longi+"&y="+lati+"&apiKey=kWAnYhK47E4KTOdcP1N3bg";
 		HttpClient client = HttpClientBuilder.create().build();
 		HttpGet request = new HttpGet(url);
 		StringBuilder html = new StringBuilder();

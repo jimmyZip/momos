@@ -14,7 +14,7 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
-	<!-- datasource :: localhost
+	<!-- datasource :: localhost-->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 		p:driverClassName="org.mariadb.jdbc.Driver"
@@ -22,8 +22,8 @@
 		p:username="root"
 		p:password="root">
 	</bean>
-	-->
-	<!-- datasource :: hosting-->
+	
+	<!-- datasource :: hosting
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 		p:driverClassName="org.mariadb.jdbc.Driver"
@@ -31,7 +31,7 @@
 		p:username="jimmyzip"
 		p:password="ehdqnstjwn12!@">
 	</bean>
-	
+	-->
 
 	<!-- transactionManager -->
 	<bean id="transactionManager"

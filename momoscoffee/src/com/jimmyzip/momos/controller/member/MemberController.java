@@ -6,6 +6,7 @@ import java.util.Random;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -71,6 +72,26 @@ public class MemberController {
 		}else {
 			return "{\"msg\":\"사용가능한 아이디입니다.\",\"result\":1} ";
 		}
+	}
+	
+	//회원정보 1건 조회
+	@RequestMapping(value="/member/{member_id}",method=RequestMethod.GET)
+	@ResponseBody
+	public String selectMember(@PathVariable("member_id") int member_id) {
+		Members members = memberService.select(member_id);
+		JSONObject obj = new JSONObject();
+		obj.put("member_id", members.getMember_id());
+		obj.put("auth_id", members.getAuth().getAuth_id());
+		obj.put("userid", members.getUserid());
+		obj.put("userpass", members.getUserpass());
+		obj.put("usermail", members.getUsermail());
+		obj.put("userphone", members.getUserphone());
+		obj.put("add1", members.getAdd1());
+		obj.put("add2", members.getAdd2());
+		obj.put("post1", members.getPost1());
+		obj.put("post2", members.getPost2());
+		obj.put("post3", members.getPost3());
+		return obj.toString();
 	}
 	
 	//로그인 요청
@@ -165,17 +186,8 @@ public class MemberController {
 	@ResponseBody
 	public String codeCheck(HttpSession session, JoinCode clientJoinCode) {
 		JoinCode sendedCode = (JoinCode)session.getAttribute("joinCode");
-		//System.out.println("sendedCode : "+sendedCode);
-		//System.out.println("sendedCode로부터 나온 id : "+sendedCode.getId());
-		//System.out.println("sendedCode로부터 나온 num : "+sendedCode.getNum());
-		//System.out.println("clientJoinCode로부터 나온 id : "+clientJoinCode.getId());
-		//System.out.println("clientJoinCode로부터 나온 num : "+clientJoinCode.getNum());
 		if(clientJoinCode.getId().equals(sendedCode.getId())) {
 			if(clientJoinCode.getNum().equals(sendedCode.getNum())) {
-				//session.setAttribute("targetId", clientJoinCode.getId());
-				//session.setAttribute("targetMail", clientJoinCode.getEmail());
-				//System.out.println("세션에 id잘 담았나 확인 : "+session.getAttribute("targetId"));
-				//System.out.println("세션에 email잘 담았나 확인 : "+session.getAttribute("targetMail"));
 				return "{\"msg\":\"승인코드 일치\",\"result\":1}";
 			}else {
 				return "{\"msg\":\"승인코드 불일치\",\"result\":0}";

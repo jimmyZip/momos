@@ -77,7 +77,7 @@
 			<section class="findUs">
 				<h2 class="hidden">매장 안내</h2>
 				<div class="findUs_box1">
-					<a href="sub1_4_store1.jsp" title="온천장점 소개">
+					<a href="/client/goLocation/1" title="온천장점 소개">
 						<p class="findUs_img1"></p>
 						<p class="findUs_text">
 							<strong>Find us</strong><br /> <span>모모스 커피는 어디에 있을까요?</span>
@@ -85,7 +85,7 @@
 					</a>
 				</div>
 				<div class="findUs_box2">
-					<a href="sub1_4_store2.jsp" title="센텀점 소개"></a>
+					<a href="/client/goLocation/2" title="센텀점 소개"></a>
 				</div>
 			</section>	
 			<section class="main_shop">

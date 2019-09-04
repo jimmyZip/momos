@@ -25,7 +25,6 @@ public class ExcelController {
 	ExcelService excelService;
 	
 	@RequestMapping(value="/excelDownload",method=RequestMethod.GET)
-	//@ResponseBody
 	public String excelTransform(@RequestParam Map<String, Object> paramMap, Map<String, Object> ModelMap, HttpServletResponse response) throws Exception{
 		System.out.println("엑셀 다운로드 받겠다고 컨트롤러 요청 받았다.");
 		System.out.println("paramMap이 뭐가 넘어오나?"+paramMap);
@@ -34,8 +33,6 @@ public class ExcelController {
 		 * target에 따라 가져올 리스트를 선택한다.
 		 * */
 		String target = paramMap.get("target").toString();
-		//response.setHeader("Content-disposition", "attachment; filename="+target+".xlsx");//target명을 파일명으로 작성
-		//response.setHeader("Content-disposition", "attachment; filename="+target+".xls");//target명을 파일명으로 작성
 		response.addHeader("Content-Disposition", "attachment; filename="+target+".xlsx");//target명을 파일명으로 작성
 		//response.addHeader("Content-Disposition","attachment;filename=product"); 
 		

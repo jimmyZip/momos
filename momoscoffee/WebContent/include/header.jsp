@@ -21,13 +21,13 @@
 			<span class="arrowBtn arrowBtn2"></span>
 		</a>
 		<h1>
-			<a href="/index.jsp" title="Go_main_page">
+			<a href="/" title="Go_main_page">
 				<img src="/asset/img/logo.png" alt="logo"/>
 			</a>
 		</h1>
 		<div id="fixNav">
 			<p class="logoBox">
-				<a href="index.jsp" title="메인으로 이동">
+				<a href="/" title="메인으로 이동">
 					<img src="/asset/img/logo_head.png" alt="로고 이미지" />
 				</a>
 			</p>
@@ -61,7 +61,7 @@
 				<li class="fixGnbList4">
 					<a href="php/05_list.jsp" title="customer" class="fgl">CUSTOMER</a>
 					<ul class="fix_subNav">
-						<li><a href="php/05_list.jsp" title="NOTICE">NOTICE</a></li>
+						<li><a href="/client/goBoard/page" title="freeboard">FREEBOARD</a></li>
 						<li><a href="sub4_2.jsp" title="FAQ">FAQ</a></li>
 						<li><a href="sub4_3.jsp" title="Q &amp; A">Q &amp; A</a></li>
 					</ul>
@@ -134,7 +134,7 @@
 					<dl>
 						<dt>CUSTOMER</dt>
 						<dd>
-							<a href="php/05_list.jsp" title="NOTICE">NOTICE</a>
+							<a href="/client/goBoard/page" title="FREEBOARD">FREEBOARD</a>
 							<a href="sub4_2.jsp" title="FAQ">FAQ</a>
 							<a href="sub4_3.jsp" title="Q&amp;A">Q&amp;A</a>
 						</dd>
@@ -173,7 +173,7 @@
 				<li class="gnbMobileList">
 					<div><em>CUSTOMER</em><span class="wLine"></span><span class="hLine"></span></div>
 					<p>
-						<a href="sub4_1.jsp" title="NOTICE">NOTICE</a>
+						<a href="/client/goBoard/page" title="FREEBOARD">FREEBOARD</a>
 						<a href="sub4_2.jsp" title="FAQ">FAQ</a>
 						<a href="sub4_3.jsp" title="Q&amp;A">Q&amp;A</a>
 					</p>
