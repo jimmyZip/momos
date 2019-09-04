@@ -12,6 +12,7 @@ public interface BoardService {
 	public void insert(Freeboard freeboard);
 	public void update(Freeboard freeboard);
 	public void delete(List<Integer> deleteArray);
+	public void delete(int board_id);
 	public List<Freeboard> search(String searchWord);
 	public void hitUp(int board_id);
 }

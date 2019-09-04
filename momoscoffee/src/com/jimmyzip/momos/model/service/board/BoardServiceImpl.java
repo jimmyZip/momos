@@ -37,6 +37,7 @@ public class BoardServiceImpl implements BoardService{
 	}
 	//전체글 조회
 	public List<Freeboard> selectAll() {
+		System.out.println("boardServiceImpl 에서 전체글 조회 요청 받았다");
 		List<Freeboard> boardList = boardDAO.selectAll();
 		//List<Members> memberList = new ArrayList<Members>();
 		for(Freeboard b:boardList) {
@@ -79,7 +80,7 @@ public class BoardServiceImpl implements BoardService{
 			throw new EditFailException("글 수정에 실패했습니다.");
 		}
 	}
-	//글삭제
+	//글삭제 :: admin에서 여러 건 한 번에 삭제할 경우
 	public void delete(List<Integer> deleteArray) throws DeleteFailException{
 		int result=0;//삭제여부
 		for(int i=0;i<deleteArray.size();i++) {
@@ -100,5 +101,13 @@ public class BoardServiceImpl implements BoardService{
 		if(result==0) {
 			throw new EditFailException("글 조회수 증가오류");
 		}		
+	}
+
+	//1건삭제
+	public void delete(int board_id) throws DeleteFailException{
+		int result=boardDAO.delete(board_id);
+		if(result==0) {
+			throw new DeleteFailException("글 삭제에 실패했습니다.");
+		}
 	}
 }
