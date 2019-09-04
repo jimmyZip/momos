@@ -13,7 +13,7 @@
 		<%@include file="/include/header.jsp" %>
 		<div class="showAll_container">
 			<ul class="pageRoute">
-				<li><a href="index.jsp" title="메인 홈">HOME</span></li>
+				<li><a href="/" title="메인 홈">HOME</span></li>
 				<li>
 					<a href="#none" title="SHOP">SHOP &nbsp;▼</a>
 					<!-- <ul>
