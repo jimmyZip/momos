@@ -35,7 +35,21 @@ public class AdminMemberController {
 	
 	//로그인 페이지 이동
 	@RequestMapping(value="/admin/goLogin",method=RequestMethod.GET)
-	public String goLogin() {
+	public String goLogin(HttpServletRequest request) {
+		/*
+		Members admin = (Members)request.getSession().getAttribute("admin");
+		String viewName = null;
+		
+		if(admin==null) {
+			viewName = "admin/login/login";
+		}else {
+			//viewName = "admin/admin_main";
+			String prev = request.getHeader("referer");
+			viewName = "redirect:"+prev;
+			
+		}
+		return viewName;
+		*/
 		return "admin/login/login";
 	}
 	
@@ -54,6 +68,13 @@ public class AdminMemberController {
 		}
 		return mav;
 	}
+	
+	//admin logout
+	@RequestMapping(value="/admin/logout",method=RequestMethod.GET)
+		public String logout(HttpServletRequest request) {
+			request.getSession().invalidate();
+			return "redirect:/";
+		}
 	
 	//관리자 페이지에서 회원전체목록 또는 검색된 회원 조회
 	@RequestMapping(value="/admin/member/page",method=RequestMethod.GET)

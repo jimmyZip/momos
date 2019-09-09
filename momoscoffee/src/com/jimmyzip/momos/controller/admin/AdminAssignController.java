@@ -35,7 +35,7 @@ public class AdminAssignController {
 	//전체 리스트 반환(json)
 	@RequestMapping(value="/admin/assign",method=RequestMethod.GET)
 	@ResponseBody
-	public List<Auth> showAuthList(HttpServletRequest request){
+	public List<Auth> getAuthList(HttpServletRequest request){
 		return authService.selectAll();
 	}
 	

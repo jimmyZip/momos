@@ -48,7 +48,7 @@ public class AdminProductController {
 	
 	//상품관리 페이지 이동
 	@RequestMapping(value="/product/page",method=RequestMethod.GET)
-	public ModelAndView showCategory(HttpServletRequest request) {
+	public ModelAndView showProduct(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("admin/admin_product");
 		return mav;
 	}
@@ -57,7 +57,7 @@ public class AdminProductController {
 	//admin/product?currentPage=1&search='+data(검색기능) 함께 대응
 	@RequestMapping(value="/product",method=RequestMethod.GET)
 	@ResponseBody
-	public String showProduct(HttpServletRequest request) {
+	public String getAllProduct(HttpServletRequest request) {
 		System.out.println("상품 컨트롤러 전체조회");
 		List<Product> prodList = productService.selectAll();
 		//search파라미터가 있는지 확인

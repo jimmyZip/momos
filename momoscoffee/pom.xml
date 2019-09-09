@@ -51,6 +51,12 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>4.3.23.RELEASE</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt-->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.6.10</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
 		<dependency>
 			<groupId>org.aspectj</groupId>

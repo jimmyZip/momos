@@ -1,9 +1,12 @@
 package com.jimmyzip.momos.controller.member;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Date;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
@@ -34,8 +37,9 @@ public class MemberController {
 	     
 	//로그인 페이지로 이동
 	@RequestMapping(value="/member/goLogin",method=RequestMethod.GET)
-	public String goLogin() {
-		return "client/member/login";
+	public ModelAndView goLogin(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("client/member/login");
+		return mav;
 	}
 
 	//회원가입으로 이동

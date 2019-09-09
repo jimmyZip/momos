@@ -39,7 +39,7 @@ public class AdminCategoryController {
 	//관리 페이지로 이동
 	@RequestMapping(value="/category/page",method=RequestMethod.GET)
 	public ModelAndView showCategory(HttpServletRequest request) {
-		logger.trace("카테고리 관리 페이지로 이동");
+		//logger.trace("카테고리 관리 페이지로 이동");
 		ModelAndView mav = new ModelAndView("admin/admin_category");
 		return mav;
 	}

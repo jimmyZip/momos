@@ -6,8 +6,7 @@ public class Auth {
 	private boolean admin_assign;
 	private boolean member_del;
 	private boolean board_del;
-	private boolean review_del;
-	private boolean review_comment_del;
+	private boolean category_del;
 	private boolean product_del;
 	private boolean branch_del;
 	
@@ -42,18 +41,6 @@ public class Auth {
 	public void setBoard_del(boolean board_del) {
 		this.board_del = board_del;
 	}
-	public boolean isReview_del() {
-		return review_del;
-	}
-	public void setReview_del(boolean review_del) {
-		this.review_del = review_del;
-	}
-	public boolean isReview_comment_del() {
-		return review_comment_del;
-	}
-	public void setReview_comment_del(boolean review_comment_del) {
-		this.review_comment_del = review_comment_del;
-	}
 	public boolean isProduct_del() {
 		return product_del;
 	}
@@ -65,5 +52,11 @@ public class Auth {
 	}
 	public void setBranch_del(boolean branch_del) {
 		this.branch_del = branch_del;
+	}
+	public boolean isCategory_del() {
+		return category_del;
+	}
+	public void setCategory_del(boolean category_del) {
+		this.category_del = category_del;
 	}
 }
