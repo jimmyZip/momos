@@ -296,7 +296,7 @@
 							</p>
 							<p class="main_centum2 main_notice_img main_notice_link">
 								<img src="/asset/img/centum2.jpg" alt="센텀점 오픈" /> <a
-									href="sub1_4_store2.jsp" title="센텀점 자세히보기"> <span
+									href="/client/goLocation/2" title="센텀점 자세히보기"> <span
 									class="centumTitle">CENTUM OPEN</span> <span class="centumView">view</span>
 								</a>
 							</p>
