@@ -17,7 +17,7 @@
 	<div id="wrap">
 		<%@include file="/include/header.jsp" %>
 		<div class="main_container">	
-			<h2 class="green">모모스커피 게시판 상세페이지</h2>
+			<%@include file="/include/adminSubHeader.jsp" %>
 			<div class="admin_container">
 				<!-- admin side menu starts -->
 				<%@include file="/include/adminSide.jsp" %>

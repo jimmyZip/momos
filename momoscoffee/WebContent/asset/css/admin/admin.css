@@ -6,7 +6,22 @@
 	color:#1bbc9b;
 	text-align:center;
 	line-height:4rem;
-	border:1px solid red;
+	background-color:#ededed;
+}
+.green button{
+	display:inline-block;
+	vertical-align:middle;
+	padding:.5em .8em;
+	border:none;
+	background-color:#223d4b;
+	color:#fff;
+	border-radius:3px;
+	transition:.3s all;
+}
+.green button:hover,
+.green button:focus{
+	color:orange;
+	font-weight:700;
 }
 
 /*
@@ -25,6 +40,12 @@
 	content:'';
 	display:block;
 	clear:both;
+}
+
+#adminContents h3{
+	width:100%;
+	text-align:center;
+	line-height:10rem;
 }
 
 /*=====admin page의 admin_container 하위 사이드바======*/

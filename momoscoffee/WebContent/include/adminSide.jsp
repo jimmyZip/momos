@@ -13,7 +13,7 @@
 		<%if(auth.isAdmin_assign()){ %>
 			<li><a href="#" onClick="location.href='/admin/assign/page'">권한 관리 </a></li>
 		<%}%>
-		<%if(auth.isProduct_del()) {%>
+		<%if(auth.isCategory_del()) {%>
 			<li><a href="#" onClick="location.href='/admin/category/page'">카테고리 관리</a></li>
 		<%} %>
 		<%if(auth.isProduct_del()) {%>
@@ -25,14 +25,14 @@
 		<%if(auth.isMember_del()) {%>
 			<li><a href="#" onClick="location.href='/admin/member/page'">맴버 관리</a></li>
 		<%}%>
-		<%if(auth.isReview_del()) {%>
+		<%if(auth.isBoard_del()) {%>
+			<li><a href="#" onClick="location.href='/admin/board/page'">게시판 관리</a></li>
+		<%} %>
+		<%-- <%if(auth.isReview_del()) {%>
 			<li><a href="#" onClick="location.href='/admin/review/page'">리뷰 관리</a></li>
 		<%} %>
 		<%if(auth.isReview_comment_del()) {%>
 			<li><a href="#" onClick="location.href='/admin/review_comment/page'">리뷰 코멘트 관리</a></li>
-		<%} %>
-		<%if(auth.isBoard_del()) {%>
-			<li><a href="#" onClick="location.href='/admin/board/page'">게시판 관리</a></li>
-		<%} %>
+		<%} %> --%>
 	</ol>	    
 </div>

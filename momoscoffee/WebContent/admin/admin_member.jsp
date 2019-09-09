@@ -78,7 +78,7 @@
 	<div id="wrap">
 		<%@include file="/include/header.jsp" %>
 		<div class="main_container">	
-			<h2 class="green">관리자용 페이지 입니다</h2>
+			<%@include file="/include/adminSubHeader.jsp" %>
 			<div class="admin_container">
 				<!-- admin side menu starts -->
 				<%@include file="/include/adminSide.jsp" %>

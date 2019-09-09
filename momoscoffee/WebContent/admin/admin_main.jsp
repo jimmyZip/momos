@@ -5,18 +5,18 @@
 <head>
 	<%@include file="/include/head.jsp" %>
 	<link rel="stylesheet" type="text/css" href="/asset/css/admin/admin.css" />
-	<script type="text/javascript" src="/asset/js/page_related/index.js"></script>
 </head>
 <body>
 	<div id="wrap">
 		<%@include file="/include/header.jsp" %>
 		<div class="main_container">	
-			<h2 class="green">관리자용 페이지 입니다</h2>
+			<%@include file="/include/adminSubHeader.jsp" %>
 			<div class="admin_container">			
 				<!-- admin side menu starts -->
 				<%@include file="/include/adminSide.jsp" %>
 				<!-- admin side menu ends -->			
 				<section id="adminContents">
+					<h3>momos커피 웹 어플리케이션 관리자모드입니다.</h3>
 				</section>
 			</div>
 		</div>

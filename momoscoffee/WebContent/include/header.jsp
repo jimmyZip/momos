@@ -3,6 +3,7 @@
     pageEncoding="UTF-8"%>
 <%
 	Members members = (Members)session.getAttribute("members");
+	Members admin = (Members)session.getAttribute("admin");
 %>
 <div id="headerWrap">
 	<header id="header">
@@ -52,6 +53,9 @@
 				<li class="fixGnbList3">
 					<a href="sub3_1.jsp" title="business" class="fgl">BUSINESS</a>
 					<ul class="fix_subNav">
+						<%if(admin!=null){ %>
+							<li><a href="/admin/goAdmin" title="CAFE">관리자페이지</a></li>
+						<%} %>
 						<li><a href="sub3_1.jsp" title="CAFE">CAFE</a></li>
 						<li><a href="sub3_2.jsp" title="DIRECT TRADE">DIRECT TRADE</a></li>
 						<li><a href="sub3_3.jsp" title="ROASTERY">ROASTERY</a></li>
@@ -123,6 +127,9 @@
 					<dl>
 						<dt>BUSINESS</dt>
 						<dd>
+							<%if(admin!=null){ %>
+								<a href="/admin/goAdmin" title="admin page">관리자페이지</a>
+							<%} %>
 							<a href="sub3_1.jsp" title="CAFE">CAFE</a>
 							<a href="sub3_2.jsp" title="DIRECT TRADE">DIRECT TRADE</a>
 							<a href="sub3_3.jsp" title="ROASTERY">ROASTERY</a>
@@ -164,6 +171,9 @@
 				<li class="gnbMobileList">
 					<div><em>BUSINESS</em><span class="wLine"></span><span class="hLine"></span></div>
 					<p>
+						<%if(admin!=null){ %>
+							<a href="/admin/goAdmin" title="CAFE">관리자 페이지</a>
+						<%} %>
 						<a href="sub3_1.jsp" title="CAFE">CAFE</a>
 						<a href="sub3_2.jsp" title="DIRECT TRADE">DIRECT TRADE</a>
 						<a href="sub3_3.jsp" title="ROASTERY">ROASTERY</a>
@@ -192,13 +202,21 @@
 		</div>         	
 		<ul id="infoMenu">
 			<li class="loginBtn">
-				<a href="/admin/goLogin" title="관리자로그인"><img src="/asset/img/icons/admin.png" alt="관리자로그인" /></a>
+				<%if(admin==null){ %>
+					<a href="/admin/goLogin" title="관리자로그인"><img src="/asset/img/icons/admin.png" alt="관리자로그인" /></a>
+				<%}else{ %>
+					<a href="javascript:void(0);alert('이미 로그인한 상태입니다.');" title="관리자로그인"><img src="/asset/img/icons/admin.png" alt="관리자로그인" /></a>
+				<%} %>
 				<!-- 
 					<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 				 -->
 			</li>
 			<li class="loginBtn">
-				<a href="/member/goLogin" title="로그인 or 회원가입"><img src="/asset/img/icons/login.png" alt="로그인 or 회원가입" /></a>
+				<%if(members==null){ %>
+					<a href="/member/goLogin" title="로그인 or 회원가입"><img src="/asset/img/icons/login.png" alt="로그인 or 회원가입" /></a>
+				<%}else{ %>
+					<a href="javascript:void(0);alert('이미 로그인한 상태입니다.');" title="로그인 or 회원가입"><img src="/asset/img/icons/login.png" alt="로그인 or 회원가입" /></a>
+				<%} %>
 			</li>
 			<li class="cartBtn">
 				<a href="cart.jsp" title="장바구니"><img src="/asset/img/icons/cart.png" alt="장바구니" /></a>
