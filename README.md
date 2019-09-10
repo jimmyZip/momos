@@ -18,14 +18,14 @@
   
   <li>
     적용기술<br>
-    - SpringMVC패턴을 이용한 웹 어플리케이션 설계
-    - JNDI를 통한 데이터베이스 드라이버 및 URL연동
-    - REST API와 AJAX를 통한 비동기 호출
-    - Mybatis를 이용한 Database 설계 및 쿼리 작성
-    - ECMAScript 및 jQuery를 통한 기능구현
-    - SHA-256방식의 암호화
-    - AOP를 이용한 보안기능
-    - Naver MAP, Google MAP, ODsayLab 반경 내 대중교통정보 API연동
+    - SpringMVC패턴을 이용한 웹 어플리케이션 설계<br>
+    - JNDI를 통한 데이터베이스 드라이버 및 URL연동<br>
+    - REST API와 AJAX를 통한 비동기 호출<br>
+    - Mybatis를 이용한 Database 설계 및 쿼리 작성<br>
+    - ECMAScript 및 jQuery를 통한 기능구현<br>
+    - SHA-256방식의 암호화<br>
+    - AOP를 이용한 보안기능<br>
+    - Naver MAP, Google MAP, ODsayLab 반경 내 대중교통정보 API연동<br>
     -TOMCAT 호스팅
   </li>
 </ul>
