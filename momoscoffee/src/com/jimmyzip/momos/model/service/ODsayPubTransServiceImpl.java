@@ -18,8 +18,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ODsayPubTransServiceImpl implements ODsayPubTransService{
-	//private String myApiKey = "kWAnYhK47E4KTOdcP1N3bg";
-	private String apiKey = "kWAnYhK47E4KTOdcP1N3bg";
+	//private String myApiKey = "";
+	private String apiKey = "";
 	@Override
 	public String getPubTransInfo(Double lati, Double longi) {
 		System.out.println("서비스 impl에서 로직 수행 전 파라미터 확인 : "+lati);
