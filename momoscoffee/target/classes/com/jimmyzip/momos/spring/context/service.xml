@@ -19,8 +19,8 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 		p:driverClassName="org.mariadb.jdbc.Driver"
 		p:url="jdbc:mariadb://localhost:3306/momos" 
-		p:username="root"
-		p:password="root">
+		p:username=""
+		p:password="">
 	</bean>
 	-->
 	<!-- datasource :: hosting-->
@@ -28,8 +28,8 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 		p:driverClassName="org.mariadb.jdbc.Driver"
 		p:url="jdbc:mariadb://localhost:3306/jimmyzip?characterEncoding=UTF8" 
-		p:username="jimmyzip"
-		p:password="ehdqnstjwn12!@">
+		p:username=""
+		p:password="">
 	</bean>
 	
 
@@ -70,8 +70,8 @@
 	<bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.naver.com"/>
 		<property name="port" value="587"/>	
-		<property name="username" value="wlsghd1028@naver.com"/>	
-		<property name="password" value="ehdqnstjwn12!@"/>
+		<property name="username" value=""/>	
+		<property name="password" value=""/>
 		<property name="javaMailProperties">
 			<props>
 				<prop key="mail.smtp.ssl.trust">smtp.naver.com</prop>
